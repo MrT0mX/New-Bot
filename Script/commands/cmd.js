@@ -16,7 +16,6 @@ module.exports.config = {
 
 const loadCommand = function ({ moduleList, threadID, messageID }) {
 
-    const { execSync } = global.nodemodule['child_process'];
     const { writeFileSync, unlinkSync, readFileSync } = global.nodemodule['fs-extra'];
     const { join } = global.nodemodule['path'];
     const { configPath, mainPath, api } = global.client;
@@ -36,37 +35,15 @@ const loadCommand = function ({ moduleList, threadID, messageID }) {
                 throw new Error('[ 𝗖𝗠𝗗 ] - Module không đúng định dạng!');
             global.client['eventRegistered'] = global.client['eventRegistered']['filter'](info => info != command.config.name);
             if (command.config.dependencies && typeof command.config.dependencies == 'object') {
-                const listPackage = JSON.parse(readFileSync('./package.json')).dependencies,
-                    listbuiltinModules = require('module')['builtinModules'];
                 for (const packageName in command.config.dependencies) {
-                    var tryLoadCount = 0,
-                        loadSuccess = ![],
-                        error;
-                    const moduleDir = join(global.client.mainPath, 'nodemodules', 'node_modules', packageName);
                     try {
-                        if (listPackage.hasOwnProperty(packageName) || listbuiltinModules.includes(packageName)) global.nodemodule[packageName] = require(packageName);
-                        else global.nodemodule[packageName] = require(moduleDir);
-                    } catch {
-                        logger.loader('[ 𝗖𝗠𝗗 ] - Không tìm thấy package ' + packageName + ' hỗ trợ cho lệnh ' + command.config.name+ 'tiến hành cài đặt...', 'warn');
-                        const insPack = {};
-                        insPack.stdio = 'inherit';
-                        insPack.env = process.env ;
-                        insPack.shell = !![];
-                        insPack.cwd = join(global.client.mainPath,'nodemodules')
-                        execSync('npm --package-lock false --save install ' + packageName + (command.config.dependencies[packageName] == '*' || command.config.dependencies[packageName] == '' ? '' : '@' + command.config.dependencies[packageName]), insPack);
-                        for (tryLoadCount = 1; tryLoadCount <= 3; tryLoadCount++) {
-                            require['cache'] = {};
-                            try {
-                                if (listPackage.hasOwnProperty(packageName) || listbuiltinModules.includes(packageName)) global.nodemodule[packageName] = require(packageName);
-                                else global.nodemodule[packageName] = require(moduleDir);
-                                loadSuccess = !![];
-                                break;
-                            } catch (erorr) {
-                                error = erorr;
-                            }
-                            if (loadSuccess || !error) break;
-                        }
-                        if (!loadSuccess || error) throw 'Không thể tải package ' + packageName + (' cho lệnh ') + command.config.name +', lỗi: ' + error + ' ' + error['stack'];
+                        global.nodemodule[packageName] = require(global.client.mainPath + '/utils/packageCache')(
+                            packageName,
+                            command.config.dependencies[packageName],
+                            global.client.mainPath
+                        );
+                    } catch (error) {
+                        throw new Error(`Không thể tải package ${packageName} cho lệnh ${command.config.name}: ${error.message}`, { cause: error });
                     }
                 }
                 logger.loader('[ 𝗖𝗠𝗗 ] -  Đã tải thành công toàn bộ package cho lệnh' + command.config.name);

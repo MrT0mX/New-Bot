@@ -12,9 +12,6 @@
       join: W,
       resolve: K
     } = require("path"),
-    {
-      execFileSync: M
-    } = require("child_process"),
     G = "FUKEYBOT",
     _ = "FUKEYBOT CHAT BOT",
     $ = "FUKEYBOT",
@@ -26,9 +23,7 @@
     J = require("./utils/console"),
     le = require("./includes/login/login");
   J.init(ee);
-  const A = JSON.parse(R("./package.json")).dependencies,
-    x = require("module").builtinModules,
-    oe = require("chalk"),
+  const oe = require("chalk"),
     E = ["red", "green", "yellow", "blue", "magenta", "cyan", "white"],
     ae = E[Math.floor(Math.random() * E.length)],
     re = oe[ae]("\n░░░░░██╗██╗░░░██╗░██╗░░░░░░░██╗███████╗██╗░░░░░\n░░░░░██║██║░░░██║░██║░░██╗░░██║██╔════╝██║░░░░░\n░░░░░██║██║░░░██║░╚██╗████╗██╔╝█████╗░░██║░░░░░\n██╗░░██║██║░░░██║░░████╔═████║░██╔══╝░░██║░░░░░\n╚█████╔╝╚██████╔╝░░╚██╔╝░╚██╔╝░███████╗███████╗\n░╚════╝░░╚═════╝░░░░╚═╝░░░╚═╝░░╚══════╝╚══════╝\n          FUKEYBOT CHAT BOT\n            FUKEYBOT\n");
@@ -343,39 +338,17 @@
   }
   function k(n) {
     const t = n.config.dependencies;
-    if (!(!t || typeof t !== "object")) {
-      for (const l in t) {
-        const o = W(__dirname, "nodemodules", "node_modules", l);
-        try {
-          global.nodemodule.hasOwnProperty(l) || (A.hasOwnProperty(l) || x.includes(l) ? global.nodemodule[l] = require(l) : global.nodemodule[l] = require(o));
-        } catch {
-          let i = !1,
-            f;
-          if (!/^(?:@[a-z0-9][a-z0-9._-]*\/)?[a-z0-9][a-z0-9._-]*$/.test(l)) {
-            throw new Error(`Invalid npm package name "${l}" declared by module ${n.config.name}`);
-          }
-          a.loader(global.getText("shahadat", "notFoundPackage", l, n.config.name), "warn");
-          require("fs-extra").mkdirSync(W(__dirname, "nodemodules"), { recursive: true });
-          M("npm", ["install", "--no-audit", "--no-fund", "--package-lock=false", "--save", l + (t[l] == "*" || t[l] == "" ? "" : "@" + t[l])], {
-            stdio: "inherit",
-            env: process.env,
-            cwd: W(__dirname, "nodemodules")
-          });
-          A[l] = t[l] || "*";
-          for (let s = 1; s <= 3; s++) {
-            try {
-              require.cache = {}, A.hasOwnProperty(l) || x.includes(l) ? global.nodemodule[l] = require(l) : global.nodemodule[l] = require(o), i = !0;
-              break;
-            } catch (g) {
-              f = g;
-            }
-            if (i || !f) break;
-          }
-          if (!i || f) throw global.getText("shahadat", "cantInstallPackage", l, n.config.name, f);
-        }
+    if (!t || typeof t !== "object") return;
+    const loadPackage = require("./utils/packageCache");
+    for (const l in t) {
+      if (Object.prototype.hasOwnProperty.call(global.nodemodule, l)) continue;
+      try {
+        global.nodemodule[l] = loadPackage(l, t[l], __dirname);
+      } catch (error) {
+        throw new Error(global.getText("shahadat", "cantInstallPackage", l, n.config.name, error), { cause: error });
       }
-      a.loader(global.getText("shahadat", "loadedPackage", n.config.name));
     }
+    a.loader(global.getText("shahadat", "loadedPackage", n.config.name));
   }
   function Y(n) {
     if (!n.config.envConfig) return;

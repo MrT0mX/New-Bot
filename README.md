@@ -502,6 +502,7 @@ Render-এ Self Keep-Alive — UptimeRobot ছাড়াই সারাক্
 </p>
 
 > 💡 সব কমান্ডের তালিকা দেখতে বটে লিখুন `/help` · `/helpall` · `/menu` — গ্রুপভিত্তিক প্রিফিক্স বদলাতে `/setprefix`।
+> 📖 লম্বা help তালিকার পরের পৃষ্ঠা দেখতে `.help page 2`; কোনো কমান্ডের তথ্য দেখতে `.help <command>` লিখুন।
 
 <details>
 <summary><b>🛠️ SYSTEM & ADMIN</b> — ক্লিক করে দেখুন</summary>

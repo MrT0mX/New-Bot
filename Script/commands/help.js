@@ -1,5 +1,4 @@
 const fs = require("fs-extra");
-const axios = require("axios");
 
 module.exports.config = {
   name: "help",
@@ -23,22 +22,25 @@ function toMono(text) {
   }).join("");
 }
 
-// ── ⚙ সেটিংস ──
-const USER_COOLDOWN = 5 * 60 * 1000;   // একই ইউজার ৫ মিনিটের আগে আবার help দিতে পারবে না
 const AUTO_DELETE   = 5 * 60 * 1000;   // ৫ মিনিট পর মেসেজ অটো ডিলিট
-const userCooldowns = new Map();
+const MAX_PAGE_CONTENT_LENGTH = 1400;
 
 // ── 🗑️ অটো ডিলিট ──
 function scheduleDelete(api, info) {
   if (!info || !info.messageID) return;
-  setTimeout(() => {
+  const timer = setTimeout(() => {
     try { api.unsendMessage(info.messageID); } catch (e) {}
   }, AUTO_DELETE);
+  if (timer.unref) timer.unref();
 }
 
 function sendAutoDelete(api, msg, threadID, replyID) {
   return api.sendMessage(msg, threadID, (err, info) => {
-    if (!err) scheduleDelete(api, info);
+    if (err) {
+      console.error("[HELP] Failed to send help response:", err);
+      return;
+    }
+    scheduleDelete(api, info);
   }, replyID);
 }
 
@@ -64,7 +66,9 @@ async function sendCommandInfo(api, event, commandName) {
   const { commands } = global.client;
   const prefix = getPrefix();
 
-  const cmd = commands.get(commandName.toLowerCase());
+  const cmd = typeof global.client.resolveCommand === "function"
+    ? global.client.resolveCommand(commandName)
+    : [...commands.entries()].find(([name]) => name.toLowerCase() === commandName.toLowerCase())?.[1];
   if (!cmd) {
     return sendAutoDelete(api,
       `╔════════════════╗\n║  ❌ ${toMono("NOT FOUND")} ❌  ║\n╚════════════════╝\n\n` +
@@ -109,10 +113,26 @@ async function sendCommandInfo(api, event, commandName) {
 
 // ── 🔥 Main Help Function ──
 async function sendHelp(api, event, args) {
-  if (args && args.length > 0) {
-    return sendCommandInfo(api, event, args[0].trim());
+  const helpArgs = (Array.isArray(args) ? args : [])
+    .map((arg) => String(arg).trim())
+    .filter(Boolean);
+  const firstArg = helpArgs[0] ? helpArgs[0].toLowerCase() : "";
+  if (firstArg === "page") {
+    const requestedPage = Number(helpArgs[1]);
+    if (!Number.isInteger(requestedPage) || requestedPage < 1) {
+      return sendAutoDelete(api, `ব্যবহার: ${toMono(getPrefix())}help page <number>`, event.threadID, event.messageID);
+    }
+    return sendCommandPage(api, event, requestedPage);
   }
 
+  if (helpArgs.length > 0) {
+    return sendCommandInfo(api, event, helpArgs[0]);
+  }
+
+  return sendCommandPage(api, event, 1);
+}
+
+function sendCommandPage(api, event, requestedPage) {
   const { commands } = global.client;
   const { threadID, messageID } = event;
   const prefix = getPrefix();
@@ -122,80 +142,50 @@ async function sendHelp(api, event, args) {
     [...commands.keys()].map(n => (n || "").trim()).filter(Boolean)
   )].sort((a, b) => a.localeCompare(b));
 
-  // ── এক সিরিয়ালে লিস্ট: প্রতি লাইনে একটা কমান্ড, কোনো ফাঁক নেই ──
-  const pad = String(allCmds.length).length;
-  const commandList = allCmds.map((cmd, i) =>
-    `【${toMono(String(i + 1).padStart(pad, "0"))}】 ➜ ${toMono(cmd)}`
-  ).join("\n");
+  const rows = allCmds.map((cmd, index) =>
+    `【${toMono(String(index + 1))}】 ➜ ${toMono(cmd)}`
+  );
+  const pages = [];
+  let pageRows = [];
+  let pageLength = 0;
 
+  for (const row of rows) {
+    if (pageRows.length > 0 && pageLength + row.length + 1 > MAX_PAGE_CONTENT_LENGTH) {
+      pages.push(pageRows);
+      pageRows = [];
+      pageLength = 0;
+    }
+    pageRows.push(row);
+    pageLength += row.length + 1;
+  }
+  if (pageRows.length > 0 || pages.length === 0) pages.push(pageRows);
+
+  if (requestedPage > pages.length) {
+    return sendAutoDelete(
+      api,
+      `এই পেজটি নেই। মোট ${pages.length}টি পেজ আছে।\nব্যবহার: ${toMono(prefix)}help page <1-${pages.length}>`,
+      threadID,
+      messageID
+    );
+  }
+
+  const page = pages[requestedPage - 1];
   const finalText =
 `┏━━━━━━━━━━━━━━━━┓
    ✿ ${toMono("COMMAND LIST")} ✿
 ┗━━━━━━━━━━━━━━━━┛
-${commandList}
+${page.join("\n")}
 ┏━━━━━━━━━━━━━━━━┓
   ✦ ${toMono("Total")}: ${toMono(allCmds.length)} ${toMono("Commands")} ✦
+  ✦ ${toMono("Page")} ${toMono(requestedPage)}/${toMono(pages.length)} ✦
   📌 ${toMono("Info")}: ${toMono(prefix)}${toMono("help")} ${toMono("<cmd>")}
+  📖 ${toMono("More")}: ${toMono(prefix)}${toMono("help page")} ${toMono("<number>")}
 ┗━━━━━━━━━━━━━━━━┛`;
 
-  const cacheDir = __dirname + "/cache";
-  const imgPath = cacheDir + "/helpallbg.jpg";
-  const bg = "https://i.imgur.com/MZOc4a3.jpeg";
-
-  try {
-    fs.ensureDirSync(cacheDir);
-
-    const res = await axios({
-      url: encodeURI(bg),
-      method: "GET",
-      responseType: "stream",
-      headers: { "User-Agent": "Mozilla/5.0" }
-    });
-
-    const writer = fs.createWriteStream(imgPath);
-    res.data.pipe(writer);
-
-    writer.on("finish", () => {
-      api.sendMessage(
-        { body: finalText, attachment: fs.createReadStream(imgPath) },
-        threadID,
-        (err, info) => {
-          try { fs.unlinkSync(imgPath); } catch (e) {}
-          if (!err) scheduleDelete(api, info);
-        },
-        messageID
-      );
-    });
-
-    writer.on("error", () => {
-      sendAutoDelete(api, finalText, threadID, messageID);
-    });
-
-  } catch (error) {
-    console.error("Error:", error);
-    sendAutoDelete(api, finalText, threadID, messageID);
-  }
+  return sendAutoDelete(api, finalText, threadID, messageID);
 }
 
 // ── শুধু prefix দিয়ে চলবে ──
 module.exports.run = async function ({ api, event, args }) {
-  const { threadID, messageID, senderID } = event;
-  const now = Date.now();
-  const last = userCooldowns.get(senderID);
-
-  if (last && now - last < USER_COOLDOWN) {
-    const remain = Math.ceil((USER_COOLDOWN - (now - last)) / 1000);
-    const min = Math.floor(remain / 60);
-    const sec = remain % 60;
-    return sendAutoDelete(
-      api,
-      `⏳ ${toMono("Cooldown")}!\n\n` +
-      `আপনি এইমাত্র help কমান্ড ব্যবহার করেছেন।\n` +
-      `আবার ব্যবহার করতে অপেক্ষা করুন: ${min} মিনিট ${sec} সেকেন্ড`,
-      threadID, messageID
-    );
-  }
-
-  userCooldowns.set(senderID, now);
   return sendHelp(api, event, args);
 };

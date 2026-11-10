@@ -28,7 +28,7 @@
     "@miraipr0ject/assets": "^1.0.9",
     "axios": "^1.6.0",
     "bitly": "^7.1.2",
-    "canvas": "^3.2.0",
+    "canvas": "^3.2.3",
     "chalk": "^4.1.2",
     "cheerio": "^1.2.0",
     "discord-image-generation": "^1.4.25",

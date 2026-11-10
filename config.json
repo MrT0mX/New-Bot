@@ -62,7 +62,9 @@
         }
     },
     "╔═ 𝙾𝙵𝙵 ═╗": "",
-    "commandDisabled": [],
+    "commandDisabled": [
+        "help2.js"
+    ],
     "eventDisabled": [],
     "╚═ 𝙴𝙽𝙳 ═╝": "FukeyBot",
     "FUKEYBOT_ALERT": {

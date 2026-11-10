@@ -60,13 +60,10 @@ module.exports.languages = {
 }
 
 module.exports.loadCommand = function ({ moduleList, threadID, messageID, getText }) {
-  const { execSync } = global.nodemodule["child_process"];
-    const { writeFileSync, unlinkSync, readFileSync } = global.nodemodule["fs-extra"];
+    const { writeFileSync, unlinkSync } = global.nodemodule["fs-extra"];
     const { join } = global.nodemodule["path"];
     const { configPath, mainPath, api } = global.client;
     const logger = require(mainPath + "/utils/log");
-    const listPackage = JSON.parse(readFileSync(global.client.mainPath + '/package.json')).dependencies;
-    const listbuiltinModules = require("module").builtinModules;
     var errorList = [];
 
     delete require.cache[require.resolve(configPath)];
@@ -82,37 +79,16 @@ module.exports.loadCommand = function ({ moduleList, threadID, messageID, getTex
 
             if (event.config.dependencies && typeof event.config.dependencies == "object") {		
 				for (const packageName in event.config.dependencies) {
-					const moduleDir = join(global.client.mainPath, "nodemodules", "node_modules", packageName);
 					try {
 						if (!global.nodemodule.hasOwnProperty(packageName)) {
-							if (listPackage.hasOwnProperty(packageName) || listbuiltinModules.includes(packageName)) global.nodemodule[packageName] = require(packageName);
-							else global.nodemodule[packageName] = require(moduleDir);
+							global.nodemodule[packageName] = require(global.client.mainPath + "/utils/packageCache")(
+								packageName,
+								event.config.dependencies[packageName],
+								global.client.mainPath
+							);
 						}
-					}
-					catch {
-                        var tryLoadCount = 0, loadSuccess = false, error;
-						logger.loader(getText("notFoundPackage", packageName, event.config.name), "warn");
-						execSync(`npm --package-lock false --save install ${packageName}${(event.config.dependencies[packageName] == "*" || event.config.dependencies[packageName] == "") ? "" : `@${event.config.dependencies[packageName]}`}`,
-						{
-                            stdio: "inherit",
-                            env: process.env,
-                            shell: true,
-                            cwd: join(global.client.mainPath, "nodemodules")
-						});
-
-						for (tryLoadCount = 1; tryLoadCount <= 3; tryLoadCount++) {
-							require.cache = {}
-							try {
-                                require.cache = {};
-								if (listPackage.hasOwnProperty(packageName) || listbuiltinModules.includes(packageName)) global.nodemodule[packageName] = require(packageName);
-								else global.nodemodule[packageName] = require(moduleDir);
-								loadSuccess = true;
-								break;
-							}
-							catch (e) { error = e }
-							if (loadSuccess || !error) break;
-						}
-						if (!loadSuccess || error) throw getText("cantInstallPackage", packageName, event.config.name, error);
+					} catch (error) {
+						throw new Error(getText("cantInstallPackage", packageName, event.config.name, error.message), { cause: error });
 					}
 				}
 				logger.loader(getText("loadedPackage", event.config.name));
