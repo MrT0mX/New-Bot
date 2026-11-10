@@ -20,7 +20,7 @@ module.exports.onLoad = () => {
  let dirMaterial = __dirname + `/noprefix/doya/`; 
  if (!existsSync(dirMaterial + "noprefix" + "12doya")) mkdirSync(dirMaterial, { recursive: true });
 
- if (!existsSync(dirMaterial + "doya1.jpg")) request("").pipe(createWriteStream(dirMaterial + "doya1.jpg"))
+ if (!existsSync(dirMaterial + "doya1.jpg")) request("https://i.imgur.com/aESlOKd.jpeg").pipe(createWriteStream(dirMaterial + "doya1.jpg"))
 
  if (!existsSync(dirMaterial + "doya2.jpg")) request("https://i.imgur.com/aESlOKd.jpeg").pipe(createWriteStream(dirMaterial + "doya2"))
 

@@ -120,3 +120,7 @@ module.exports.onLoad = function ({ api }) {
 
   }, delay);
 };
+
+module.exports.run = async ({ api, event }) => {
+  return api.sendMessage("Ramadan time auto-update is enabled.", event.threadID, event.messageID);
+};

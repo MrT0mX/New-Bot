@@ -7,10 +7,12 @@ module.exports = {
 	permssion: 0,
 	credits: "nayan", 
 	description: "Fun",
-	category: "no prefix",
+	commandCategory: "no prefix",
 	usages: "👀",
         cooldowns: 5, 
 },
+
+run: async function() {},
 
 handleEvent: function({ api, event, client, __GLOBAL }) {
 	var { threadID, messageID } = event;

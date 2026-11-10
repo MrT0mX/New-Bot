@@ -4,7 +4,7 @@ const path = require("path");
 // ✅ approval মডিউল সেফ লোড
 let approval = null;
 try {
-  approval = require("../../includes/approval");
+  approval = require("../../includes/approve");
 } catch (e) {
   console.error("[pending] approval module missing:", e.message);
 }
@@ -67,7 +67,7 @@ function _pendingList() {
 module.exports.config = {
   name: "pending",
   version: "3.1.1",
-  credits: "𝐌𝐑 𝐉𝐔𝐖𝐄𝐋",
+  credits: "FukeyBot",
   hasPermssion: 2,
   description: "Manage bot's pending group requests (config ADMINBOT users allowed)",
   commandCategory: "system",

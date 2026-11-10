@@ -15,8 +15,7 @@ module.exports.config = {
   usePrefix: true,
   prefix: true,
   description: "Take a screenshot of a website",
-  commabdCategory: "utility",
-  category: "utility",
+  commandCategory: "utility",
   guide: { en: "screenshot [URL]" },
   coolDowns: 5,
 };

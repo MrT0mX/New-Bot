@@ -195,7 +195,12 @@ function adaptCommandModule(mod) {
   if (!mod || typeof mod !== "object" || !mod.config || adapted.has(mod)) return;
   const hasGoat = GOAT_HANDLERS.some(h => typeof mod[h] === "function");
   const entry = mod.onStart || mod.onLaunch || mod.execute;
-  if (typeof mod.run === "function" && !hasGoat) return; // খাঁটি মিরাই কমান্ড — হাত দেওয়া হয় না
+  if (typeof mod.run === "function" && !hasGoat) {
+    if (mod.config.commandCategory === undefined && mod.config.category !== undefined) {
+      mod.config.commandCategory = String(mod.config.category);
+    }
+    return; // খাঁটি মিরাই কমান্ড — হাত দেওয়া হয় না
+  }
   if (typeof mod.run !== "function" && !hasGoat && typeof entry !== "function") return; // কমান্ড ফাইলই না
 
   ensureClientProps();

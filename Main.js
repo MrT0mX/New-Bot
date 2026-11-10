@@ -351,7 +351,7 @@
         } catch {
           let i = !1,
             f;
-          a.loader(global.getText("shahadat", "notFoundPackage", l, n.config.name), "warn"), M("npm --package-lock false --save install " + l + (t[l] == "*" || t[l] == "" ? "" : "@" + t[l]), {
+          a.loader(global.getText("shahadat", "notFoundPackage", l, n.config.name), "warn"), require("fs-extra").mkdirSync(W(__dirname, "nodemodules"), { recursive: true }), M("npm --package-lock false --save install " + l + (t[l] == "*" || t[l] == "" ? "" : "@" + t[l]), {
             stdio: "inherit",
             env: process.env,
             shell: !0,
