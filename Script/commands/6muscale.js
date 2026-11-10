@@ -1,5 +1,5 @@
 module.exports.config = {
-  name: "6mui",
+  name: "6muscle",
   version: "1.0.0",
   hasPermssion: 0,
   credits: "Thắng",
