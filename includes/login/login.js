@@ -207,7 +207,7 @@ module.exports = function fcaLogin(loginData, callback) {
           lastErrorAt = Date.now();
           monitor.markListenError(error);
           const text = typeof global.getText === "function"
-            ? global.getText("shahadat", "handleListenError", errorText(error))
+            ? global.getText("mtx", "handleListenError", errorText(error))
             : "Listener error: " + errorText(error);
           logger(text, "error");
 

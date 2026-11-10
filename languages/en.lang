@@ -42,24 +42,24 @@ Main.loginFailed=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗟𝗼𝗴𝗶𝗻 𝗳�
 # ╔══════════════════════════════════════════════╗
 # ║  ✦ FukeyBot specific texts
 # ╚══════════════════════════════════════════════╝
-shahadat.foundPathAppstate=🔹 『 𝗜𝗡𝗙𝗢 』 ➤ 𝗙𝗼𝘂𝗻𝗱 appstate.json 𝗽𝗮𝘁𝗵 𝘀𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆
-shahadat.notFoundPathAppstate=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ Appstate.json 𝗻𝗼𝘁 𝗳𝗼𝘂𝗻𝗱 𝗼𝗿 𝗶𝗻𝘃𝗮𝗹𝗶𝗱!
-shahadat.errorFormat=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗜𝗻𝘃𝗮𝗹𝗶𝗱 𝗺𝗼𝗱𝘂𝗹𝗲 𝗳𝗼𝗿𝗺𝗮𝘁 𝗱𝗲𝘁𝗲𝗰𝘁𝗲𝗱!
-shahadat.nameExist=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗠𝗼𝗱𝘂𝗹𝗲 𝗻𝗮𝗺𝗲 𝗮𝗹𝗿𝗲𝗮𝗱𝘆 𝗲𝘅𝗶𝘀𝘁𝘀 𝗶𝗻 𝘁𝗵𝗲 𝘀𝘆𝘀𝘁𝗲𝗺!
-shahadat.notFoundLanguage=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗡𝗼 𝗹𝗮𝗻𝗴𝘂𝗮𝗴𝗲 𝘀𝘂𝗽𝗽𝗼𝗿𝘁 𝗳𝗼𝘂𝗻𝗱 𝗳𝗼𝗿 𝗺𝗼𝗱𝘂𝗹𝗲: %1
-shahadat.notFoundPackage=⏳ 『 𝗪𝗔𝗜𝗧 』 ➤ 𝗥𝗲𝗾𝘂𝗶𝗿𝗲𝗱 𝗽𝗮𝗰𝗸𝗮𝗴𝗲 %1 𝗻𝗼𝘁 𝗳𝗼𝘂𝗻𝗱 𝗳𝗼𝗿 𝗺𝗼𝗱𝘂𝗹𝗲 %2, 𝗶𝗻𝘀𝘁𝗮𝗹𝗹𝗶𝗻𝗴 𝗻𝗼𝘄...
-shahadat.cantInstallPackage=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗙𝗮𝗶𝗹𝗲𝗱 𝘁𝗼 𝗶𝗻𝘀𝘁𝗮𝗹𝗹 𝗽𝗮𝗰𝗸𝗮𝗴𝗲 %1 𝗳𝗼𝗿 𝗺𝗼𝗱𝘂𝗹𝗲 %2. 𝗘𝗿𝗿𝗼𝗿: %3
-shahadat.loadedPackage=✅ 『 𝗗𝗢𝗡𝗘 』 ➤ 𝗔𝗹𝗹 𝗱𝗲𝗽𝗲𝗻𝗱𝗲𝗻𝗰𝗶𝗲𝘀 𝗹𝗼𝗮𝗱𝗲𝗱 𝘀𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 𝗳𝗼𝗿 𝗺𝗼𝗱𝘂𝗹𝗲 %1
-shahadat.loadedConfig=✅ 『 𝗗𝗢𝗡𝗘 』 ➤ 𝗖𝗼𝗻𝗳𝗶𝗴𝘂𝗿𝗮𝘁𝗶𝗼𝗻 𝗹𝗼𝗮𝗱𝗲𝗱 𝘀𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 𝗳𝗼𝗿 𝗺𝗼𝗱𝘂𝗹𝗲 %1
-shahadat.cantOnload=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗙𝗮𝗶𝗹𝗲𝗱 𝘁𝗼 𝗶𝗻𝗶𝘁𝗶𝗮𝗹𝗶𝘇𝗲 𝗺𝗼𝗱𝘂𝗹𝗲 %1. 𝗘𝗿𝗿𝗼𝗿: %2
-shahadat.successLoadModule=✅ 『 𝗗𝗢𝗡𝗘 』 ➤ 𝗠𝗼𝗱𝘂𝗹𝗲 %1 𝗹𝗼𝗮𝗱𝗲𝗱 𝘀𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆
-shahadat.failLoadModule=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗙𝗮𝗶𝗹𝗲𝗱 𝘁𝗼 𝗹𝗼𝗮𝗱 𝗺𝗼𝗱𝘂𝗹𝗲 %1. 𝗘𝗿𝗿𝗼𝗿: %2
-shahadat.finishLoadModule=✅ 『 𝗗𝗢𝗡𝗘 』 ➤ 𝗦𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 𝗹𝗼𝗮𝗱𝗲𝗱 %1 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 𝗮𝗻𝗱 %2 𝗲𝘃𝗲𝗻𝘁𝘀
-shahadat.handleListenError=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗟𝗶𝘀𝘁𝗲𝗻𝗲𝗿 𝗲𝗻𝗰𝗼𝘂𝗻𝘁𝗲𝗿𝗲𝗱 𝗮𝗻 𝗲𝗿𝗿𝗼𝗿: %1
-shahadat.warningSourceCode=⚠️ 『 𝗪𝗔𝗥𝗡𝗜𝗡𝗚 』 ➤ 𝗦𝗼𝘂𝗿𝗰𝗲 𝗰𝗼𝗱𝗲 𝘀𝘁𝗿𝘂𝗰𝘁𝘂𝗿𝗲 𝗺𝗼𝗱𝗶𝗳𝗶𝗲𝗱 𝘂𝗻𝗲𝘅𝗽𝗲𝗰𝘁𝗲𝗱𝗹𝘆!
-shahadat.successConnectDatabase=✅ 『 𝗗𝗢𝗡𝗘 』 ➤ 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲 𝗰𝗼𝗻𝗻𝗲𝗰𝘁𝗶𝗼𝗻 𝗲𝘀𝘁𝗮𝗯𝗹𝗶𝘀𝗵𝗲𝗱 𝘀𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆
-shahadat.cantLoadConfig=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗙𝗮𝗶𝗹𝗲𝗱 𝘁𝗼 𝗹𝗼𝗮𝗱 𝗰𝗼𝗻𝗳𝗶𝗴 𝗳𝗼𝗿 𝗺𝗼𝗱𝘂𝗹𝗲 %1. 𝗘𝗿𝗿𝗼𝗿: %2
-shahadat.restartRequired=🔹 『 𝗜𝗡𝗙𝗢 』 ➤ 𝗥𝗲𝘀𝘁𝗮𝗿𝘁 𝗿𝗲𝗾𝘂𝗶𝗿𝗲𝗱 𝘁𝗼 𝗮𝗽𝗽𝗹𝘆 𝗻𝗲𝘄 𝗰𝗵𝗮𝗻𝗴𝗲𝘀
+mtx.foundPathAppstate=🔹 『 𝗜𝗡𝗙𝗢 』 ➤ 𝗙𝗼𝘂𝗻𝗱 appstate.json 𝗽𝗮𝘁𝗵 𝘀𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆
+mtx.notFoundPathAppstate=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ Appstate.json 𝗻𝗼𝘁 𝗳𝗼𝘂𝗻𝗱 𝗼𝗿 𝗶𝗻𝘃𝗮𝗹𝗶𝗱!
+mtx.errorFormat=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗜𝗻𝘃𝗮𝗹𝗶𝗱 𝗺𝗼𝗱𝘂𝗹𝗲 𝗳𝗼𝗿𝗺𝗮𝘁 𝗱𝗲𝘁𝗲𝗰𝘁𝗲𝗱!
+mtx.nameExist=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗠𝗼𝗱𝘂𝗹𝗲 𝗻𝗮𝗺𝗲 𝗮𝗹𝗿𝗲𝗮𝗱𝘆 𝗲𝘅𝗶𝘀𝘁𝘀 𝗶𝗻 𝘁𝗵𝗲 𝘀𝘆𝘀𝘁𝗲𝗺!
+mtx.notFoundLanguage=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗡𝗼 𝗹𝗮𝗻𝗴𝘂𝗮𝗴𝗲 𝘀𝘂𝗽𝗽𝗼𝗿𝘁 𝗳𝗼𝘂𝗻𝗱 𝗳𝗼𝗿 𝗺𝗼𝗱𝘂𝗹𝗲: %1
+mtx.notFoundPackage=⏳ 『 𝗪𝗔𝗜𝗧 』 ➤ 𝗥𝗲𝗾𝘂𝗶𝗿𝗲𝗱 𝗽𝗮𝗰𝗸𝗮𝗴𝗲 %1 𝗻𝗼𝘁 𝗳𝗼𝘂𝗻𝗱 𝗳𝗼𝗿 𝗺𝗼𝗱𝘂𝗹𝗲 %2, 𝗶𝗻𝘀𝘁𝗮𝗹𝗹𝗶𝗻𝗴 𝗻𝗼𝘄...
+mtx.cantInstallPackage=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗙𝗮𝗶𝗹𝗲𝗱 𝘁𝗼 𝗶𝗻𝘀𝘁𝗮𝗹𝗹 𝗽𝗮𝗰𝗸𝗮𝗴𝗲 %1 𝗳𝗼𝗿 𝗺𝗼𝗱𝘂𝗹𝗲 %2. 𝗘𝗿𝗿𝗼𝗿: %3
+mtx.loadedPackage=✅ 『 𝗗𝗢𝗡𝗘 』 ➤ 𝗔𝗹𝗹 𝗱𝗲𝗽𝗲𝗻𝗱𝗲𝗻𝗰𝗶𝗲𝘀 𝗹𝗼𝗮𝗱𝗲𝗱 𝘀𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 𝗳𝗼𝗿 𝗺𝗼𝗱𝘂𝗹𝗲 %1
+mtx.loadedConfig=✅ 『 𝗗𝗢𝗡𝗘 』 ➤ 𝗖𝗼𝗻𝗳𝗶𝗴𝘂𝗿𝗮𝘁𝗶𝗼𝗻 𝗹𝗼𝗮𝗱𝗲𝗱 𝘀𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 𝗳𝗼𝗿 𝗺𝗼𝗱𝘂𝗹𝗲 %1
+mtx.cantOnload=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗙𝗮𝗶𝗹𝗲𝗱 𝘁𝗼 𝗶𝗻𝗶𝘁𝗶𝗮𝗹𝗶𝘇𝗲 𝗺𝗼𝗱𝘂𝗹𝗲 %1. 𝗘𝗿𝗿𝗼𝗿: %2
+mtx.successLoadModule=✅ 『 𝗗𝗢𝗡𝗘 』 ➤ 𝗠𝗼𝗱𝘂𝗹𝗲 %1 𝗹𝗼𝗮𝗱𝗲𝗱 𝘀𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆
+mtx.failLoadModule=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗙𝗮𝗶𝗹𝗲𝗱 𝘁𝗼 𝗹𝗼𝗮𝗱 𝗺𝗼𝗱𝘂𝗹𝗲 %1. 𝗘𝗿𝗿𝗼𝗿: %2
+mtx.finishLoadModule=✅ 『 𝗗𝗢𝗡𝗘 』 ➤ 𝗦𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 𝗹𝗼𝗮𝗱𝗲𝗱 %1 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 𝗮𝗻𝗱 %2 𝗲𝘃𝗲𝗻𝘁𝘀
+mtx.handleListenError=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗟𝗶𝘀𝘁𝗲𝗻𝗲𝗿 𝗲𝗻𝗰𝗼𝘂𝗻𝘁𝗲𝗿𝗲𝗱 𝗮𝗻 𝗲𝗿𝗿𝗼𝗿: %1
+mtx.warningSourceCode=⚠️ 『 𝗪𝗔𝗥𝗡𝗜𝗡𝗚 』 ➤ 𝗦𝗼𝘂𝗿𝗰𝗲 𝗰𝗼𝗱𝗲 𝘀𝘁𝗿𝘂𝗰𝘁𝘂𝗿𝗲 𝗺𝗼𝗱𝗶𝗳𝗶𝗲𝗱 𝘂𝗻𝗲𝘅𝗽𝗲𝗰𝘁𝗲𝗱𝗹𝘆!
+mtx.successConnectDatabase=✅ 『 𝗗𝗢𝗡𝗘 』 ➤ 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲 𝗰𝗼𝗻𝗻𝗲𝗰𝘁𝗶𝗼𝗻 𝗲𝘀𝘁𝗮𝗯𝗹𝗶𝘀𝗵𝗲𝗱 𝘀𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆
+mtx.cantLoadConfig=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗙𝗮𝗶𝗹𝗲𝗱 𝘁𝗼 𝗹𝗼𝗮𝗱 𝗰𝗼𝗻𝗳𝗶𝗴 𝗳𝗼𝗿 𝗺𝗼𝗱𝘂𝗹𝗲 %1. 𝗘𝗿𝗿𝗼𝗿: %2
+mtx.restartRequired=🔹 『 𝗜𝗡𝗙𝗢 』 ➤ 𝗥𝗲𝘀𝘁𝗮𝗿𝘁 𝗿𝗲𝗾𝘂𝗶𝗿𝗲𝗱 𝘁𝗼 𝗮𝗽𝗽𝗹𝘆 𝗻𝗲𝘄 𝗰𝗵𝗮𝗻𝗴𝗲𝘀
 
 # ╔══════════════════════════════════════════════╗
 # ║  ✦ FukeyBot keys (same texts, new prefix)

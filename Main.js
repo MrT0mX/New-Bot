@@ -212,13 +212,13 @@
     var D = K(W(global.client.mainPath, global.config.APPSTATEPATH || "appstate.json"));
     if (U(D)) {
       var O = require(D);
-      a.loader(global.getText("shahadat", "foundPathAppstate"));
+      a.loader(global.getText("mtx", "foundPathAppstate"));
     } else {
       var O = null;
-      a.loader(global.getText("shahadat", "notFoundPathAppstate"), "warn");
+      a.loader(global.getText("mtx", "notFoundPathAppstate"), "warn");
     }
   } catch {
-    return a.loader(global.getText("shahadat", "notFoundPathAppstate"), "error");
+    return a.loader(global.getText("mtx", "notFoundPathAppstate"), "error");
   }
   a("FUKEYBOT BOT", "[ Starting ]");
   const se = require("express"),
@@ -264,7 +264,7 @@
             sequelize: T
           },
           t = require("./includes/database/model")(n);
-        a(global.getText("shahadat", "successConnectDatabase"), "[ DATABASE ]"), ue({
+        a(global.getText("mtx", "successConnectDatabase"), "[ DATABASE ]"), ue({
           models: t
         });
       } catch (n) {
@@ -345,19 +345,19 @@
       try {
         global.nodemodule[l] = loadPackage(l, t[l], __dirname);
       } catch (error) {
-        throw new Error(global.getText("shahadat", "cantInstallPackage", l, n.config.name, error), { cause: error });
+        throw new Error(global.getText("mtx", "cantInstallPackage", l, n.config.name, error), { cause: error });
       }
     }
-    a.loader(global.getText("shahadat", "loadedPackage", n.config.name));
+    a.loader(global.getText("mtx", "loadedPackage", n.config.name));
   }
   function Y(n) {
     if (!n.config.envConfig) return;
     const t = n.config.name;
     try {
       for (const l in n.config.envConfig) typeof global.configModule[t] == "undefined" && (global.configModule[t] = {}), typeof global.config[t] == "undefined" && (global.config[t] = {}), typeof global.config[t][l] !== "undefined" ? global.configModule[t][l] = global.config[t][l] : global.configModule[t][l] = n.config.envConfig[l] || "", typeof global.config[t][l] == "undefined" && (global.config[t][l] = n.config.envConfig[l] || "");
-      a.loader(global.getText("shahadat", "loadedConfig", t));
+      a.loader(global.getText("mtx", "loadedConfig", t));
     } catch (l) {
-      throw new Error(global.getText("shahadat", "loadedConfig", t, JSON.stringify(l)), "error");
+      throw new Error(global.getText("mtx", "loadedConfig", t, JSON.stringify(l)), "error");
     }
   }
   function ue({
@@ -380,22 +380,22 @@
           var r = null;
           try {
             var c = require(global.client.mainPath + "/Script/commands/" + d);
-            if (!c.config || !c.run || !c.config.commandCategory) throw new Error(global.getText("shahadat", "errorFormat"));
+            if (!c.config || !c.run || !c.config.commandCategory) throw new Error(global.getText("mtx", "errorFormat"));
             if (r = global.client.registerCommand(c, d), !r.ok) throw new Error(r.reason);
             for (const p of r.skipped) a.loader("Command \"" + r.name + "\": alias \"" + p.alias + "\" was ignored because " + p.reason + ".", "warn");
-            if ((!c.languages || typeof c.languages != "object" || Object.keys(c.languages).length == 0) && a.loader(global.getText("shahadat", "notFoundLanguage", c.config.name), "warn"), k(c), Y(c), c.onLoad) try {
+            if ((!c.languages || typeof c.languages != "object" || Object.keys(c.languages).length == 0) && a.loader(global.getText("mtx", "notFoundLanguage", c.config.name), "warn"), k(c), Y(c), c.onLoad) try {
               c.onLoad({
                 api: o,
                 models: n
               });
             } catch (p) {
-              throw new Error(global.getText("shahadat", "cantOnload", c.config.name, JSON.stringify(p)), "error");
+              throw new Error(global.getText("mtx", "cantOnload", c.config.name, JSON.stringify(p)), "error");
             }
-            c.handleEvent && global.client.eventRegistered.push(r.name), a.loader(global.getText("shahadat", "successLoadModule", c.config.name));
+            c.handleEvent && global.client.eventRegistered.push(r.name), a.loader(global.getText("mtx", "successLoadModule", c.config.name));
           } catch (p) {
             r && r.ok && global.client.unregisterCommand(r.name);
             const be = c && c.config && c.config.name ? c.config.name : d;
-            a.loader(global.getText("shahadat", "failLoadModule", be, p), "error");
+            a.loader(global.getText("mtx", "failLoadModule", be, p), "error");
           }
         }
       }(), function () {
@@ -403,29 +403,29 @@
           u = q(global.client.mainPath + "/Script/events").filter(c => c.endsWith(".js") && !/\(\d+\)\.js$/i.test(c) && !g.includes(c));
         for (const c of u) try {
           var r = require(global.client.mainPath + "/Script/events/" + c);
-          if (!r.config || !r.run) throw new Error(global.getText("shahadat", "errorFormat"));
-          if (global.client.events.has(r.config.name) || "") throw new Error(global.getText("shahadat", "nameExist"));
+          if (!r.config || !r.run) throw new Error(global.getText("mtx", "errorFormat"));
+          if (global.client.events.has(r.config.name) || "") throw new Error(global.getText("mtx", "nameExist"));
           if (k(r), Y(r), r.onLoad) try {
             r.onLoad({
               api: o,
               models: n
             });
           } catch (d) {
-            throw new Error(global.getText("shahadat", "cantOnload", r.config.name, JSON.stringify(d)), "error");
+            throw new Error(global.getText("mtx", "cantOnload", r.config.name, JSON.stringify(d)), "error");
           }
-          global.client.events.set(r.config.name, r), a.loader(global.getText("shahadat", "successLoadModule", r.config.name));
+          global.client.events.set(r.config.name, r), a.loader(global.getText("mtx", "successLoadModule", r.config.name));
         } catch (d) {
           const p = r && r.config && r.config.name ? r.config.name : c;
-          a.loader(global.getText("shahadat", "failLoadModule", p, d), "error");
+          a.loader(global.getText("mtx", "failLoadModule", p, d), "error");
         }
-      }(), console.log(re), a.loader(global.getText("shahadat", "finishLoadModule", global.client.commands.size, global.client.events.size)), a.loader("Startup Time: " + ((Date.now() - global.client.timeStart) / 1e3).toFixed() + "s"), a.loader("===== [ " + (Date.now() - global.client.timeStart) + "ms ] ====="), w(global.client.configPath, JSON.stringify(global.config, null, 4), "utf8"), U(global.client.configPath + ".temp") && C(global.client.configPath + ".temp");
+      }(), console.log(re), a.loader(global.getText("mtx", "finishLoadModule", global.client.commands.size, global.client.events.size)), a.loader("Startup Time: " + ((Date.now() - global.client.timeStart) / 1e3).toFixed() + "s"), a.loader("===== [ " + (Date.now() - global.client.timeStart) + "ms ] ====="), w(global.client.configPath, JSON.stringify(global.config, null, 4), "utf8"), U(global.client.configPath + ".temp") && C(global.client.configPath + ".temp");
       const i = require("./includes/listen")({
         api: o,
         models: n,
         logAnthorName: $
       });
       function f(s, g) {
-        if (s) return a(global.getText("shahadat", "handleListenError", a.redactSecrets(JSON.stringify(s))), "error");
+        if (s) return a(global.getText("mtx", "handleListenError", a.redactSecrets(JSON.stringify(s))), "error");
         if (!["presence", "typ", "read_receipt"].some(u => u == g.type)) return global.config.DeveloperMode == !0 && console.log(g), Ve(o, g), i(g);
       }
       if (typeof o.listenMqtt === "function") try {
@@ -437,7 +437,7 @@
       try {
         typeof checkBan === "function" && (await checkBan(o));
       } catch {}
-      global.checkBan || a(global.getText("shahadat", "warningSourceCode"), "[ GLOBAL BAN ]");
+      global.checkBan || a(global.getText("mtx", "warningSourceCode"), "[ GLOBAL BAN ]");
     });
   }
   process.on("uncaughtException", n => {
