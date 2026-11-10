@@ -45,6 +45,10 @@
 > This fork runs **both Mirai and GoatBot** commands/events — drop either style into `Script/commands` or `Script/events`.
 >
 > 📖 Details: **[GOAT_COMPAT.md](GOAT_COMPAT.md)** · Start with `npm install` then `npm start`.
+>
+> **VS Code one-key start:** use `Terminal → Run Task → Run FukeyBot`, or press `Ctrl+Shift+B`. This uses the same `npm start` command.
+>
+> Commands with syntax or required-file errors are kept in **[Script/commands/error](Script/commands/error/README.md)** and are excluded from startup until repaired.
 
 ---
 

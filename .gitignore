@@ -20,7 +20,8 @@ npm-debug.log*
 .DS_Store
 Thumbs.db
 .idea/
-.vscode/
+.vscode/*
+!.vscode/tasks.json
 
 status.json
 status.json.tmp

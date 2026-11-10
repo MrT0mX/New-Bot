@@ -20,10 +20,10 @@ module.exports.onLoad = async function () {
 const {mkdirSync, existsSync, readFileSync } = global.nodemodule['fs-extra']
 const { join } = global.nodemodule['path']
 const semver = global.nodemodule['semver']
-const dirmain = join(global.client.mainPath, 'modules', 'commands', 'cache', 'FishingData');
+const dirmain = join(__dirname, 'cache', 'FishingData');
 if (semver.lt(global.config.version, '1.2.10')) 
     return console.log('======= KHÔNG HỖ TRỢ CHO SOURCE CODE CŨ =======');
-if (!existsSync(dirmain)) mkdirSync(dirmain);
+if (!existsSync(dirmain)) mkdirSync(dirmain, { recursive: true });
 if (typeof global.configModule[this.config.name] == 'undefined') global.configModule[this.config.name] = {};
 if (typeof global.configModule[this.config.name].fishData == 'undefined') global.configModule[this.config.name].fishData = [];
 if (typeof global.configModule[this.config.name].rodData == 'undefined') global.configModule[this.config.name].rodData = [];
@@ -41,22 +41,27 @@ if (global.configModule[this.config.name].rodData.length == 0) {
 
     let stringToDec = ["0U27YebgH","bgH22U27","UWh876y7","99sjYWHGS7","jJWuJuv752"];
 
-    require("axios").get("https://raw.githubusercontent.com/RFS-ADRENO/mirai-modules/main/version.json").then(res => {
+    try {
+        const res = await require("axios").get("https://raw.githubusercontent.com/RFS-ADRENO/mirai-modules/main/version.json");
         if (res.data["fishing_x092"] != this.config.version) console.log("-FISHING ĐÃ CÓ PHIÊN BẢN MỚI, LIÊN HỆ DungUwU ĐỂ ĐƯỢC CẬP NHẬT-");
-    })
+    } catch (error) {
+        console.warn("[cauca] Fishing module version check failed:", error.message);
+    }
     let path = __dirname + '/fishingImages/';
     if (!fs.existsSync(path)) fs.mkdirSync(path, { recursive: true });
-    await require("axios").get("https://raw.githubusercontent.com/RFS-ADRENO/fishingData_based-on-base64/main/data.json").then(async (res) => {
+    try {
+        const res = await require("axios").get("https://raw.githubusercontent.com/RFS-ADRENO/fishingData_based-on-base64/main/data.json");
         for (let e in res.data) {
             if (fs.existsSync(path + e)) continue;
             let encData = res.data[e];
-            for (str of stringToDec) {
-                str = new RegExp(str, "g");
-                encData = encData.replace(str, "");
+            for (const marker of stringToDec) {
+                encData = encData.replace(new RegExp(marker, "g"), "");
                 await fs.writeFileSync(path + e, encData, 'base64');
             };
         }
-    });
+    } catch (error) {
+        console.error("[cauca] Fishing image data download failed:", error.message);
+    }
     if (!global.client.xidach_otm) global.client.xidach_otm = {};
     console.log("=======[ FISHING LOADED SUCCESSFULLY ]=======");
     return;

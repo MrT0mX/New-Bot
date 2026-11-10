@@ -1,6 +1,7 @@
 require("./FukeyBotKeepalive"); // <-- Keep-alive (Render ঘুমিয়ে যাওয়া ঠেকায়)
 const { spawn } = require("child_process");
 const path = require("path");
+const vm = require("vm");
 
 const packageInfo = require("./package.json");
 
@@ -19,7 +20,6 @@ let consecutiveFails = 0;
    ===== নতুন যোগ করা অংশ (ADDED FEATURES) - শুরু ==============
    ============================================================ */
 const fs = require("fs");
-const { spawnSync } = require("child_process");
 
 const C = {
   reset: "\x1b[0m", bold: "\x1b[1m", dim: "\x1b[2m",
@@ -189,11 +189,11 @@ function walkJs(dir, out = []) {
   let items = [];
   try { items = fs.readdirSync(dir, { withFileTypes: true }); } catch (_) { return out; }
   for (const it of items) {
-    if (it.name === "node_modules" || it.name === ".git") continue;
     const full = path.join(dir, it.name);
+    if (it.name === "node_modules" || it.name === ".git" ||
+        full === path.join(__dirname, "Script", "commands", "error")) continue;
     if (it.isDirectory()) walkJs(full, out);
-    else if (it.isFile() && it.name.endsWith(".js")) out.push(full);
-    if (out.length > 400) break;
+    else if (it.isFile() && it.name.endsWith(".js") && !it.name.includes("example") && !/\(\d+\)\.js$/i.test(it.name)) out.push(full);
   }
   return out;
 }
@@ -233,16 +233,17 @@ function checkCode() {
   for (const f of files) {
     const rel = path.relative(__dirname, f);
 
-    const r = spawnSync(process.execPath, ["--check", f], { encoding: "utf8" });
-    if (r.status !== 0) {
+    let src = "";
+    try {
+      src = fs.readFileSync(f, "utf8");
+      new vm.Script(src, { filename: f });
+    } catch (e) {
       syntaxErrors++;
-      const msg = (r.stderr || "").split("\n").filter(Boolean).slice(0, 4).join("\n      ");
+      const msg = (e.stack || e.message).split("\n").filter(Boolean).slice(0, 4).join("\n      ");
       fail(`Syntax error in ${rel}\n      ${msg}`);
       continue;
     }
 
-    let src = "";
-    try { src = fs.readFileSync(f, "utf8"); } catch (_) { continue; }
     const re = /require\(\s*["'](\.{1,2}\/[^"']*)["']\s*\)/g;
     let m;
     while ((m = re.exec(src))) {

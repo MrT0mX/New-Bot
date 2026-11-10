@@ -13,7 +13,7 @@
       resolve: K
     } = require("path"),
     {
-      execSync: M
+      execFileSync: M
     } = require("child_process"),
     G = "FUKEYBOT",
     _ = "FUKEYBOT CHAT BOT",
@@ -351,12 +351,17 @@
         } catch {
           let i = !1,
             f;
-          a.loader(global.getText("shahadat", "notFoundPackage", l, n.config.name), "warn"), require("fs-extra").mkdirSync(W(__dirname, "nodemodules"), { recursive: true }), M("npm --package-lock false --save install " + l + (t[l] == "*" || t[l] == "" ? "" : "@" + t[l]), {
+          if (!/^(?:@[a-z0-9][a-z0-9._-]*\/)?[a-z0-9][a-z0-9._-]*$/.test(l)) {
+            throw new Error(`Invalid npm package name "${l}" declared by module ${n.config.name}`);
+          }
+          a.loader(global.getText("shahadat", "notFoundPackage", l, n.config.name), "warn");
+          require("fs-extra").mkdirSync(W(__dirname, "nodemodules"), { recursive: true });
+          M("npm", ["install", "--no-audit", "--no-fund", "--package-lock=false", "--save", l + (t[l] == "*" || t[l] == "" ? "" : "@" + t[l])], {
             stdio: "inherit",
             env: process.env,
-            shell: !0,
             cwd: W(__dirname, "nodemodules")
           });
+          A[l] = t[l] || "*";
           for (let s = 1; s <= 3; s++) {
             try {
               require.cache = {}, A.hasOwnProperty(l) || x.includes(l) ? global.nodemodule[l] = require(l) : global.nodemodule[l] = require(o), i = !0;
@@ -397,7 +402,7 @@
       }
       global.client.api = o, global.client.timeStart = new Date().getTime(), function () {
         const g = Array.isArray(global.config.commandDisabled) ? global.config.commandDisabled : [],
-          u = q(global.client.mainPath + "/Script/commands").filter(d => d.endsWith(".js") && !d.includes("example") && !g.includes(d));
+          u = q(global.client.mainPath + "/Script/commands").filter(d => d.endsWith(".js") && !/\(\d+\)\.js$/i.test(d) && !d.includes("example") && !g.includes(d));
         for (const d of u) {
           var r = null;
           try {
@@ -422,7 +427,7 @@
         }
       }(), function () {
         const g = Array.isArray(global.config.eventDisabled) ? global.config.eventDisabled : [],
-          u = q(global.client.mainPath + "/Script/events").filter(c => c.endsWith(".js") && !g.includes(c));
+          u = q(global.client.mainPath + "/Script/events").filter(c => c.endsWith(".js") && !/\(\d+\)\.js$/i.test(c) && !g.includes(c));
         for (const c of u) try {
           var r = require(global.client.mainPath + "/Script/events/" + c);
           if (!r.config || !r.run) throw new Error(global.getText("shahadat", "errorFormat"));
