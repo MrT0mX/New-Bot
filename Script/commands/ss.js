@@ -11,7 +11,7 @@ module.exports.config = {
   version: "1.0",
   credits: "Dipto",
   role: 0,
-  hasPermssion 0,
+  hasPermssion: 0,
   usePrefix: true,
   prefix: true,
   description: "Take a screenshot of a website",

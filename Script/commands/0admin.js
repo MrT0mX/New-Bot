@@ -14,7 +14,7 @@ module.exports.config = {
     name: "0admin",
     version: "1.0.6",
     hasPermssion: 3,
-    credits: "乛 ",
+    credits: "FukeyBot",
     description: "Admin Config",
     commandCategory: "Admin",
     usages: "Admin",

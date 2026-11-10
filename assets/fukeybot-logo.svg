@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" role="img" aria-label="JUWEL — MR JUWEL BOT — MIRAI_GOAT_MIX_FORK">
-  <title>JUWEL — MR JUWEL BOT — MIRAI_GOAT_MIX_FORK</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" role="img" aria-label="FUKEYBOT — FUKEYBOT BOT — MIRAI_GOAT_MIX_FORK">
+  <title>FUKEYBOT — FUKEYBOT BOT — MIRAI_GOAT_MIX_FORK</title>
   <defs>
     <!-- background -->
     <radialGradient id="bg" cx="50%" cy="38%" r="80%">
@@ -57,7 +57,7 @@
 
     <!-- clip for the title shine -->
     <clipPath id="titleClip">
-      <text x="480" y="438" text-anchor="middle" font-family="Verdana, 'Arial Black', sans-serif" font-size="92" font-weight="900" letter-spacing="14">JUWEL</text>
+      <text x="480" y="438" text-anchor="middle" font-family="Verdana, 'Arial Black', sans-serif" font-size="92" font-weight="900" letter-spacing="14">FUKEYBOT</text>
     </clipPath>
 
     <!-- grid pattern -->
@@ -202,7 +202,7 @@
   </g>
 
   <!-- ═════════ TITLE ═════════ -->
-  <text x="480" y="438" text-anchor="middle" font-family="Verdana, 'Arial Black', sans-serif" font-size="92" font-weight="900" letter-spacing="14" fill="url(#titleG)" filter="url(#glow)">JUWEL</text>
+  <text x="480" y="438" text-anchor="middle" font-family="Verdana, 'Arial Black', sans-serif" font-size="92" font-weight="900" letter-spacing="14" fill="url(#titleG)" filter="url(#glow)">FUKEYBOT</text>
   <!-- moving shine across the title -->
   <g clip-path="url(#titleClip)">
     <rect x="-200" y="350" width="120" height="110" fill="url(#shine)" transform="skewX(-20)">
@@ -210,7 +210,7 @@
     </rect>
   </g>
 
-  <text x="480" y="478" text-anchor="middle" font-family="Verdana, Arial, sans-serif" font-size="28" font-weight="800" letter-spacing="12" fill="url(#rainbow)">MR JUWEL BOT
+  <text x="480" y="478" text-anchor="middle" font-family="Verdana, Arial, sans-serif" font-size="28" font-weight="800" letter-spacing="12" fill="url(#rainbow)">FUKEYBOT BOT
     <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
   </text>
 

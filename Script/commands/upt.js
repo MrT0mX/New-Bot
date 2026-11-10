@@ -7,7 +7,7 @@ module.exports.config = {
   name: "upt",
   version: "9.0.0",
   hasPermssion: 0,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "System Status Image (Uptime, RAM, Memory, Ping, Disk)",
   commandCategory: "system",
   usages: "upt",

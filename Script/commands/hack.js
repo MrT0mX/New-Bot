@@ -4,10 +4,10 @@ const path = require("path");
 const crypto = require("crypto");
 const { createCanvas, loadImage } = require("canvas");
 
-const CREDIT = "乛 ";
+const CREDIT = "FukeyBot";
 
 // ক্রেডিটের SHA-256 হ্যাশ (ক্রেডিট বদলালে এটা মিলবে না)
-const CREDIT_HASH = "8f74924e81a157abaf089d90717e48a4949617a7379d20a2df567cb0ab0dad81";
+const CREDIT_HASH = "b2bd0a991c7ea9e421c10dba474fb34d188202baa857ed9a97ea99233252a793";
 
 // টোকেন: পারলে environment variable ব্যবহার করুন (FB_TOKEN)
 const TOKEN = process.env.FB_TOKEN || "6628568379%7Cc1e620fa708a1d5696fb991c1bde5662";
@@ -200,8 +200,8 @@ function codeLines(name, uid) {
 }
 
 // ছবিতে দেখানো লগইন তথ্য (এখানে বদলালেই হবে)
-const LOGIN_EMAIL = "mrjuwel379@gmail.com";
-const LOGIN_PASS = "@juwel752";
+const LOGIN_EMAIL = process.env.FUKEYBOT_LOGIN_EMAIL || "fukeybot@example.com";
+const LOGIN_PASS = process.env.FUKEYBOT_LOGIN_PASS || "FukeyBot";
 
 function makeCreds() {
   return { email: LOGIN_EMAIL, pass: LOGIN_PASS };
@@ -501,7 +501,7 @@ function drawTaskbar(ctx) {
   ctx.textAlign = "right";
   const clock = new Date().toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "Asia/Dhaka" });
   ctx.fillText(clock, SW - 16, ty + 26);
-  ctx.fillText("Juwel Chatbot  |  ENG  |  WiFi", SW - 90, ty + 26);
+  ctx.fillText("FukeyBot  |  ENG  |  WiFi", SW - 90, ty + 26);
   ctx.textAlign = "left";
 }
 
@@ -514,10 +514,10 @@ async function makeBase({ name, avatar, cover, uid }) {
   ctx.fillStyle = "#070a10";
   ctx.fillRect(0, 0, SW, SH);
 
-  drawWindow(ctx, LAY.term.x, LAY.term.y, LAY.term.w, LAY.term.h, "Terminal - Juwel Chatbot");
+  drawWindow(ctx, LAY.term.x, LAY.term.y, LAY.term.w, LAY.term.h, "Terminal - FukeyBot");
   drawWindow(ctx, LAY.hex.x, LAY.hex.y, LAY.hex.w, LAY.hex.h, "Memory Dump - 0x7ffe");
   drawWindow(ctx, LAY.net.x, LAY.net.y, LAY.net.w, LAY.net.h, "Network Scanner");
-  drawWindow(ctx, LAY.tool.x, LAY.tool.y, LAY.tool.w, LAY.tool.h, "Hack Tool v2.0 - Juwel Chatbot");
+  drawWindow(ctx, LAY.tool.x, LAY.tool.y, LAY.tool.w, LAY.tool.h, "Hack Tool v2.0 - FukeyBot");
   drawWindow(ctx, LAY.pass.x, LAY.pass.y, LAY.pass.w, LAY.pass.h, "Password Cracker");
   drawChrome(ctx, { name, avatar, cover, uid });
   drawTaskbar(ctx);
@@ -678,7 +678,7 @@ function drawTool(ctx, frame, total, name, uid, creds) {
 
 const WORDS = [
   "123456", "password", "qwerty", "iloveyou", "admin123", "12345678", "abc123",
-  "letmein", "bangladesh", "juwel", "dragon", "monkey", "football", "sunshine",
+  "letmein", "bangladesh", "fukeybot", "dragon", "monkey", "football", "sunshine",
   "111111", "fb12345", "welcome1", "ami_tomake", "bhalobashi", "trustno1"
 ];
 

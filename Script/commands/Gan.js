@@ -6,7 +6,7 @@ module["exports"]['config'] = {
   'name': "gan",
   'version': '1.1.0',
   'hasPermission': 0x0,
-  'credits': "MR JUWEL",
+  'credits': "FUKEYBOT",
   'description': 'Play\x20random\x20song\x20without\x20prefix',
   'commandCategory': "music",
   'usages': "gan",
@@ -41,7 +41,7 @@ async function playSong(_0x2280ec, _0x324e27) {
       _0x1c199d = fs['createWriteStream'](_0x441cd3);
     _0x4e0fe6['data']['pipe'](_0x1c199d), _0x1c199d['on']('finish', () => {
       _0x2280ec['sendMessage']({
-        'body': 'MR\x20JUWEL\x0a\x0a🎵\x20Song\x20No:\x20' + _0x44cacf + '/' + _0x368e35['length'] + "\n🔀 Mode: No Prefix\n\nEnjoy 🎶",
+        'body': 'MR\x20FUKEYBOT\x0a\x0a🎵\x20Song\x20No:\x20' + _0x44cacf + '/' + _0x368e35['length'] + "\n🔀 Mode: No Prefix\n\nEnjoy 🎶",
         'attachment': fs["createReadStream"](_0x441cd3)
       }, _0x189cf0, () => {
         if (fs['existsSync'](_0x441cd3)) fs["unlinkSync"](_0x441cd3);

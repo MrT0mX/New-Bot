@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 960 860" width="960" height="860" role="img" aria-label="MR JUWEL">
-<title>MR JUWEL</title>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 960 860" width="960" height="860" role="img" aria-label="FUKEYBOT">
+<title>FUKEYBOT</title>
 <defs>
 <radialGradient id="h0"><stop offset="0" stop-color="#ff2b4d" stop-opacity="0.95"/><stop offset="0.45" stop-color="#ff2b4d" stop-opacity="0.35"/><stop offset="1" stop-color="#ff2b4d" stop-opacity="0"/></radialGradient><radialGradient id="h1"><stop offset="0" stop-color="#ff7a18" stop-opacity="0.95"/><stop offset="0.45" stop-color="#ff7a18" stop-opacity="0.35"/><stop offset="1" stop-color="#ff7a18" stop-opacity="0"/></radialGradient><radialGradient id="h2"><stop offset="0" stop-color="#ffb300" stop-opacity="0.95"/><stop offset="0.45" stop-color="#ffb300" stop-opacity="0.35"/><stop offset="1" stop-color="#ffb300" stop-opacity="0"/></radialGradient><radialGradient id="h3"><stop offset="0" stop-color="#ffee32" stop-opacity="0.95"/><stop offset="0.45" stop-color="#ffee32" stop-opacity="0.35"/><stop offset="1" stop-color="#ffee32" stop-opacity="0"/></radialGradient><radialGradient id="h4"><stop offset="0" stop-color="#9dff3a" stop-opacity="0.95"/><stop offset="0.45" stop-color="#9dff3a" stop-opacity="0.35"/><stop offset="1" stop-color="#9dff3a" stop-opacity="0"/></radialGradient><radialGradient id="h5"><stop offset="0" stop-color="#00e676" stop-opacity="0.95"/><stop offset="0.45" stop-color="#00e676" stop-opacity="0.35"/><stop offset="1" stop-color="#00e676" stop-opacity="0"/></radialGradient><radialGradient id="h6"><stop offset="0" stop-color="#00e5ff" stop-opacity="0.95"/><stop offset="0.45" stop-color="#00e5ff" stop-opacity="0.35"/><stop offset="1" stop-color="#00e5ff" stop-opacity="0"/></radialGradient><radialGradient id="h7"><stop offset="0" stop-color="#2b7bff" stop-opacity="0.95"/><stop offset="0.45" stop-color="#2b7bff" stop-opacity="0.35"/><stop offset="1" stop-color="#2b7bff" stop-opacity="0"/></radialGradient><radialGradient id="h8"><stop offset="0" stop-color="#b04dff" stop-opacity="0.95"/><stop offset="0.45" stop-color="#b04dff" stop-opacity="0.35"/><stop offset="1" stop-color="#b04dff" stop-opacity="0"/></radialGradient><radialGradient id="h9"><stop offset="0" stop-color="#ff2bd6" stop-opacity="0.95"/><stop offset="0.45" stop-color="#ff2bd6" stop-opacity="0.35"/><stop offset="1" stop-color="#ff2bd6" stop-opacity="0"/></radialGradient>
 <radialGradient id="bg" cx="50%" cy="42%" r="78%"><stop offset="0" stop-color="#2b1a63"/><stop offset="0.55" stop-color="#0d0e2e"/><stop offset="1" stop-color="#04050d"/></radialGradient>
@@ -222,9 +222,9 @@
 
 <!-- TITLE -->
 <g text-anchor="middle" font-family="'Segoe UI','Trebuchet MS','Arial Black',Arial,sans-serif" font-weight="900" font-style="italic">
-  <text x="480" y="758" font-size="92" letter-spacing="18" fill="url(#ttl)" opacity="0.65" filter="url(#glow)">MR JUWEL</text>
-  <text x="480" y="758" font-size="92" letter-spacing="18" fill="url(#ttl)" stroke="#05060f" stroke-width="7" paint-order="stroke">MR JUWEL</text>
-  <text x="480" y="758" font-size="92" letter-spacing="18" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="1.2">MR JUWEL</text>
+  <text x="480" y="758" font-size="92" letter-spacing="18" fill="url(#ttl)" opacity="0.65" filter="url(#glow)">FUKEYBOT</text>
+  <text x="480" y="758" font-size="92" letter-spacing="18" fill="url(#ttl)" stroke="#05060f" stroke-width="7" paint-order="stroke">FUKEYBOT</text>
+  <text x="480" y="758" font-size="92" letter-spacing="18" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="1.2">FUKEYBOT</text>
 </g>
 <g transform="translate(480 790)">
   <rect x="-250" y="-1.5" width="190" height="3" rx="1.5" fill="url(#ttl)"/>

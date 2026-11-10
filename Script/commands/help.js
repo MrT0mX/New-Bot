@@ -5,7 +5,7 @@ module.exports.config = {
   name: "help",
   version: "6.1.0",
   hasPermssion: 0,
-  credits: "乛 MR ཐི༏ཋྀ JU𝆠፝֟W𝆠፝֟ELꜛཐི༏ཋྀ࿐",
+  credits: "FukeyBot",
   description: "All commands in one serial list + command info",
   commandCategory: "system",
   usages: "[command name]",
@@ -77,7 +77,7 @@ async function sendCommandInfo(api, event, commandName) {
   const cfg = cmd.config || {};
   const cfgJson = readConfig();
   const botName = cfgJson.BOTNAME || "⎯꯭𓆩꯭𝆺𝅥😻⃞𝐑⃞𝐈⃞𝐘⃞𝐀⃞༢࿐";
-  const ownerName = cfgJson.OWNER_NAME || "乛 ";
+  const ownerName = cfgJson.OWNER_NAME || "FukeyBot";
 
   const permMap = {
     0: "👤 " + toMono("All User"),

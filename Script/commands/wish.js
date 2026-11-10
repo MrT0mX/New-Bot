@@ -2,9 +2,9 @@ module.exports.config = {
   name: "wish",
   version: "2.0.0",
   hasPermssion: 0,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "Happy birthday wish for your friends (global groups)",
-  commandCategory: "JUWEL ",
+  commandCategory: "FUKEYBOT ",
   usages: "@tag",
   dependencies: {
     axios: "latest",

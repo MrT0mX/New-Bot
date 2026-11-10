@@ -1,5 +1,5 @@
 // ══════════════════════════════════════════════
-// Credit : 乛 
+// Credit : FukeyBot
 // ══════════════════════════════════════════════
 module.exports = function ({ api, models, Users, Threads, Currencies }) {
   const stringSimilarity = require('string-similarity'),

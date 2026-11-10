@@ -2,7 +2,7 @@ module.exports.config = {
   name: "adminonly",
   version: "2.0",
   hasPermssion: 2,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "Admin only mode on/off",
   commandCategory: "Admin",
   usages: "adminonly [on | off | status]",

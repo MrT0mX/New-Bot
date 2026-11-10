@@ -88,6 +88,4 @@ module.exports.run = async ({ event, api }) => {
  "Do you know if it's the Noprefix command??",
  event.threadID
  );
-};D
- );
 };

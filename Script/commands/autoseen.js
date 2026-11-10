@@ -2,7 +2,7 @@ module.exports.config = {
     name: "autoseen",
     version: "4.0.0",
     hasPermssion: 1,
-    credits: "MR JUWEL",
+    credits: "FukeyBot",
     description: "Auto Seen (বট চালু হলে সবসময় অফ থাকবে)",
     commandCategory: "tools",
     usages: "on / on 10m / off",

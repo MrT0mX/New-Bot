@@ -1,9 +1,9 @@
 /**
- * Credit: 乛 
+ * Credit: FukeyBot
  *
- * JuwelKeepalive.js — Juwel.js-এর একদম প্রথম লাইনে শুধু এটা যোগ করুন:
+ * FukeyBotKeepalive.js — FukeyBot.js-এর একদম প্রথম লাইনে শুধু এটা যোগ করুন:
  *
- *     require("./JuwelKeepalive");
+ *     require("./FukeyBotKeepalive");
  *
  * কাজ (সব অটো):
  *  - Render-এর PORT-এ ছোট health সার্ভার তোলে
@@ -14,8 +14,8 @@
 const https = require("https");
 const http = require("http");
 
-if (!global.__juwelKeepAlive) {
-  global.__juwelKeepAlive = true;
+if (!global.__fukeybotKeepAlive) {
+  global.__fukeybotKeepAlive = true;
 
   const PORT = Number(process.env.PORT) || 3000;
   const INTERVAL_MS = Number(process.env.KEEPALIVE_INTERVAL_MS) || 4 * 60 * 1000;

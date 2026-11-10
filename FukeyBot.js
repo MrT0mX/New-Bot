@@ -1,4 +1,4 @@
-require("./JuwelKeepalive"); // <-- Keep-alive (Render ঘুমিয়ে যাওয়া ঠেকায়)
+require("./FukeyBotKeepalive"); // <-- Keep-alive (Render ঘুমিয়ে যাওয়া ঠেকায়)
 const { spawn } = require("child_process");
 const path = require("path");
 
@@ -66,7 +66,7 @@ function showBanner() {
   console.log("");
   console.log(`${C.magenta}${C.bold}╔${line}╗${C.reset}`);
   console.log(`${C.magenta}${C.bold}║${C.cyan}${center("")}${C.magenta}║${C.reset}`);
-  console.log(`${C.magenta}${C.bold}║${C.cyan}${center("♦  J E W E L   C H A T   B O T  ♦")}${C.magenta}║${C.reset}`);
+  console.log(`${C.magenta}${C.bold}║${C.cyan}${center("♦  F U K E Y B O T  ♦")}${C.magenta}║${C.reset}`);
   console.log(`${C.magenta}${C.bold}║${C.yellow}${center("~ Smart • Fast • Reliable ~")}${C.magenta}║${C.reset}`);
   console.log(`${C.magenta}${C.bold}║${C.cyan}${center("")}${C.magenta}║${C.reset}`);
   console.log(`${C.magenta}${C.bold}╠${line}╣${C.reset}`);

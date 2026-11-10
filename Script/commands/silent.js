@@ -1,5 +1,5 @@
 // ══════════════════════════════════════════════
-// Credit : 乛 
+// Credit : FukeyBot
 // ══════════════════════════════════════════════
 const silent = require("../../includes/silent");
 
@@ -7,7 +7,7 @@ module.exports.config = {
   name: "silent",
   version: "2.0.1",
   hasPermssion: 2,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "Silent Mode: যে গ্রুপে চালু করবেন শুধু ওই গ্রুপে বট বন্ধের মতো হবে, শুধু বট অ্যাডমিনের কমান্ড কাজ করবে",
   commandCategory: "Admin",
   usages: "on / off / status",

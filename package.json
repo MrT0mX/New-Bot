@@ -1,37 +1,29 @@
 {
-  "name": "mirai-goat-mix-mix",
+  "name": "fukeybot",
   "version": "3.0.0",
-  "description": "MIRAI + GoatBot hybrid Messenger bot - runs Mirai AND GoatBot commands/events side by side. Based on Mirai (乛 ).",
-  "main": "Juwel.js",
+  "description": "FukeyBot - MIRAI + GoatBot hybrid Messenger bot",
+  "main": "FukeyBot.js",
   "engines": {
     "node": "22.x",
     "npm": ">=10.0.0 <13.0.0"
   },
   "scripts": {
-    "start": "node Juwel.js",
+    "start": "node FukeyBot.js",
     "login": "node login"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/GOAT-MIRAI-MIX/MR-JUWEL.git"
   },
   "keywords": [
     "bot",
     "facebook",
-    "juwelproject",
+    "fukeybotproject",
     "messenger",
     "javascript",
-    "JUWEL",
+    "FukeyBot",
     "mirai",
     "goat",
     "goat mirai mix bot"
   ],
-  "author": "乛 ",
+  "author": "FukeyBot",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/GOAT-MIRAI-MIX/MR-JUWEL/issues"
-  },
-  "homepage": "https://github.com/GOAT-MIRAI-MIX/MR-JUWEL#readme",
   "dependencies": {
     "@miraipr0ject/assets": "^1.0.9",
     "axios": "^1.6.0",

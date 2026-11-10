@@ -6,7 +6,7 @@ module.exports.config = {
   name: "pet",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "nexo | Converted by MR JUWEL",
+  credits: "nexo | Converted by FUKEYBOT",
   description: "Pet a tagged user with image/video",
   commandCategory: "fun",
   usages: "pet @mention",

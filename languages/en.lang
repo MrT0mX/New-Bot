@@ -1,4 +1,4 @@
-# If you want to move down the line, please use \n. e.g: tina\nJUWEL.
+# If you want to move down the line, please use \n. e.g: tina\nFUKEYBOT.
 # After changed, you have to restart the bot to use.
 # Put the # character at the beginning of each sentence if you don't want the code to run those lines.
 # Thanks to https://www.facebook.com/duong.than.net for translate to English!
@@ -40,7 +40,7 @@ Main.missingToken=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗧𝗼𝗸𝗲𝗻 𝗶
 Main.loginFailed=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗟𝗼𝗴𝗶𝗻 𝗳𝗮𝗶𝗹𝗲𝗱, 𝗲𝗿𝗿𝗼𝗿: %1
 
 # ╔══════════════════════════════════════════════╗
-# ║  ✦ Juwel specific texts
+# ║  ✦ FukeyBot specific texts
 # ╚══════════════════════════════════════════════╝
 shahadat.foundPathAppstate=🔹 『 𝗜𝗡𝗙𝗢 』 ➤ 𝗙𝗼𝘂𝗻𝗱 appstate.json 𝗽𝗮𝘁𝗵 𝘀𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆
 shahadat.notFoundPathAppstate=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ Appstate.json 𝗻𝗼𝘁 𝗳𝗼𝘂𝗻𝗱 𝗼𝗿 𝗶𝗻𝘃𝗮𝗹𝗶𝗱!
@@ -62,26 +62,26 @@ shahadat.cantLoadConfig=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗙𝗮𝗶𝗹�
 shahadat.restartRequired=🔹 『 𝗜𝗡𝗙𝗢 』 ➤ 𝗥𝗲𝘀𝘁𝗮𝗿𝘁 𝗿𝗲𝗾𝘂𝗶𝗿𝗲𝗱 𝘁𝗼 𝗮𝗽𝗽𝗹𝘆 𝗻𝗲𝘄 𝗰𝗵𝗮𝗻𝗴𝗲𝘀
 
 # ╔══════════════════════════════════════════════╗
-# ║  ✦ Juwel keys (same texts, new prefix)
+# ║  ✦ FukeyBot keys (same texts, new prefix)
 # ╚══════════════════════════════════════════════╝
-juwel.foundPathAppstate=🔹 『 𝗜𝗡𝗙𝗢 』 ➤ 𝗙𝗼𝘂𝗻𝗱 appstate.json 𝗽𝗮𝘁𝗵 𝘀𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆
-juwel.notFoundPathAppstate=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ Appstate.json 𝗻𝗼𝘁 𝗳𝗼𝘂𝗻𝗱 𝗼𝗿 𝗶𝗻𝘃𝗮𝗹𝗶𝗱!
-juwel.errorFormat=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗜𝗻𝘃𝗮𝗹𝗶𝗱 𝗺𝗼𝗱𝘂𝗹𝗲 𝗳𝗼𝗿𝗺𝗮𝘁 𝗱𝗲𝘁𝗲𝗰𝘁𝗲𝗱!
-juwel.nameExist=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗠𝗼𝗱𝘂𝗹𝗲 𝗻𝗮𝗺𝗲 𝗮𝗹𝗿𝗲𝗮𝗱𝘆 𝗲𝘅𝗶𝘀𝘁𝘀 𝗶𝗻 𝘁𝗵𝗲 𝘀𝘆𝘀𝘁𝗲𝗺!
-juwel.notFoundLanguage=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗡𝗼 𝗹𝗮𝗻𝗴𝘂𝗮𝗴𝗲 𝘀𝘂𝗽𝗽𝗼𝗿𝘁 𝗳𝗼𝘂𝗻𝗱 𝗳𝗼𝗿 𝗺𝗼𝗱𝘂𝗹𝗲: %1
-juwel.notFoundPackage=⏳ 『 𝗪𝗔𝗜𝗧 』 ➤ 𝗥𝗲𝗾𝘂𝗶𝗿𝗲𝗱 𝗽𝗮𝗰𝗸𝗮𝗴𝗲 %1 𝗻𝗼𝘁 𝗳𝗼𝘂𝗻𝗱 𝗳𝗼𝗿 𝗺𝗼𝗱𝘂𝗹𝗲 %2, 𝗶𝗻𝘀𝘁𝗮𝗹𝗹𝗶𝗻𝗴 𝗻𝗼𝘄...
-juwel.cantInstallPackage=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗙𝗮𝗶𝗹𝗲𝗱 𝘁𝗼 𝗶𝗻𝘀𝘁𝗮𝗹𝗹 𝗽𝗮𝗰𝗸𝗮𝗴𝗲 %1 𝗳𝗼𝗿 𝗺𝗼𝗱𝘂𝗹𝗲 %2. 𝗘𝗿𝗿𝗼𝗿: %3
-juwel.loadedPackage=✅ 『 𝗗𝗢𝗡𝗘 』 ➤ 𝗔𝗹𝗹 𝗱𝗲𝗽𝗲𝗻𝗱𝗲𝗻𝗰𝗶𝗲𝘀 𝗹𝗼𝗮𝗱𝗲𝗱 𝘀𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 𝗳𝗼𝗿 𝗺𝗼𝗱𝘂𝗹𝗲 %1
-juwel.loadedConfig=✅ 『 𝗗𝗢𝗡𝗘 』 ➤ 𝗖𝗼𝗻𝗳𝗶𝗴𝘂𝗿𝗮𝘁𝗶𝗼𝗻 𝗹𝗼𝗮𝗱𝗲𝗱 𝘀𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 𝗳𝗼𝗿 𝗺𝗼𝗱𝘂𝗹𝗲 %1
-juwel.cantOnload=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗙𝗮𝗶𝗹𝗲𝗱 𝘁𝗼 𝗶𝗻𝗶𝘁𝗶𝗮𝗹𝗶𝘇𝗲 𝗺𝗼𝗱𝘂𝗹𝗲 %1. 𝗘𝗿𝗿𝗼𝗿: %2
-juwel.successLoadModule=✅ 『 𝗗𝗢𝗡𝗘 』 ➤ 𝗠𝗼𝗱𝘂𝗹𝗲 %1 𝗹𝗼𝗮𝗱𝗲𝗱 𝘀𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆
-juwel.failLoadModule=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗙𝗮𝗶𝗹𝗲𝗱 𝘁𝗼 𝗹𝗼𝗮𝗱 𝗺𝗼𝗱𝘂𝗹𝗲 %1. 𝗘𝗿𝗿𝗼𝗿: %2
-juwel.finishLoadModule=✅ 『 𝗗𝗢𝗡𝗘 』 ➤ 𝗦𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 𝗹𝗼𝗮𝗱𝗲𝗱 %1 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 𝗮𝗻𝗱 %2 𝗲𝘃𝗲𝗻𝘁𝘀
-juwel.handleListenError=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗟𝗶𝘀𝘁𝗲𝗻𝗲𝗿 𝗲𝗻𝗰𝗼𝘂𝗻𝘁𝗲𝗿𝗲𝗱 𝗮𝗻 𝗲𝗿𝗿𝗼𝗿: %1
-juwel.warningSourceCode=⚠️ 『 𝗪𝗔𝗥𝗡𝗜𝗡𝗚 』 ➤ 𝗦𝗼𝘂𝗿𝗰𝗲 𝗰𝗼𝗱𝗲 𝘀𝘁𝗿𝘂𝗰𝘁𝘂𝗿𝗲 𝗺𝗼𝗱𝗶𝗳𝗶𝗲𝗱 𝘂𝗻𝗲𝘅𝗽𝗲𝗰𝘁𝗲𝗱𝗹𝘆!
-juwel.successConnectDatabase=✅ 『 𝗗𝗢𝗡𝗘 』 ➤ 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲 𝗰𝗼𝗻𝗻𝗲𝗰𝘁𝗶𝗼𝗻 𝗲𝘀𝘁𝗮𝗯𝗹𝗶𝘀𝗵𝗲𝗱 𝘀𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆
-juwel.cantLoadConfig=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗙𝗮𝗶𝗹𝗲𝗱 𝘁𝗼 𝗹𝗼𝗮𝗱 𝗰𝗼𝗻𝗳𝗶𝗴 𝗳𝗼𝗿 𝗺𝗼𝗱𝘂𝗹𝗲 %1. 𝗘𝗿𝗿𝗼𝗿: %2
-juwel.restartRequired=🔹 『 𝗜𝗡𝗙𝗢 』 ➤ 𝗥𝗲𝘀𝘁𝗮𝗿𝘁 𝗿𝗲𝗾𝘂𝗶𝗿𝗲𝗱 𝘁𝗼 𝗮𝗽𝗽𝗹𝘆 𝗻𝗲𝘄 𝗰𝗵𝗮𝗻𝗴𝗲𝘀
+fukeybot.foundPathAppstate=🔹 『 𝗜𝗡𝗙𝗢 』 ➤ 𝗙𝗼𝘂𝗻𝗱 appstate.json 𝗽𝗮𝘁𝗵 𝘀𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆
+fukeybot.notFoundPathAppstate=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ Appstate.json 𝗻𝗼𝘁 𝗳𝗼𝘂𝗻𝗱 𝗼𝗿 𝗶𝗻𝘃𝗮𝗹𝗶𝗱!
+fukeybot.errorFormat=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗜𝗻𝘃𝗮𝗹𝗶𝗱 𝗺𝗼𝗱𝘂𝗹𝗲 𝗳𝗼𝗿𝗺𝗮𝘁 𝗱𝗲𝘁𝗲𝗰𝘁𝗲𝗱!
+fukeybot.nameExist=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗠𝗼𝗱𝘂𝗹𝗲 𝗻𝗮𝗺𝗲 𝗮𝗹𝗿𝗲𝗮𝗱𝘆 𝗲𝘅𝗶𝘀𝘁𝘀 𝗶𝗻 𝘁𝗵𝗲 𝘀𝘆𝘀𝘁𝗲𝗺!
+fukeybot.notFoundLanguage=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗡𝗼 𝗹𝗮𝗻𝗴𝘂𝗮𝗴𝗲 𝘀𝘂𝗽𝗽𝗼𝗿𝘁 𝗳𝗼𝘂𝗻𝗱 𝗳𝗼𝗿 𝗺𝗼𝗱𝘂𝗹𝗲: %1
+fukeybot.notFoundPackage=⏳ 『 𝗪𝗔𝗜𝗧 』 ➤ 𝗥𝗲𝗾𝘂𝗶𝗿𝗲𝗱 𝗽𝗮𝗰𝗸𝗮𝗴𝗲 %1 𝗻𝗼𝘁 𝗳𝗼𝘂𝗻𝗱 𝗳𝗼𝗿 𝗺𝗼𝗱𝘂𝗹𝗲 %2, 𝗶𝗻𝘀𝘁𝗮𝗹𝗹𝗶𝗻𝗴 𝗻𝗼𝘄...
+fukeybot.cantInstallPackage=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗙𝗮𝗶𝗹𝗲𝗱 𝘁𝗼 𝗶𝗻𝘀𝘁𝗮𝗹𝗹 𝗽𝗮𝗰𝗸𝗮𝗴𝗲 %1 𝗳𝗼𝗿 𝗺𝗼𝗱𝘂𝗹𝗲 %2. 𝗘𝗿𝗿𝗼𝗿: %3
+fukeybot.loadedPackage=✅ 『 𝗗𝗢𝗡𝗘 』 ➤ 𝗔𝗹𝗹 𝗱𝗲𝗽𝗲𝗻𝗱𝗲𝗻𝗰𝗶𝗲𝘀 𝗹𝗼𝗮𝗱𝗲𝗱 𝘀𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 𝗳𝗼𝗿 𝗺𝗼𝗱𝘂𝗹𝗲 %1
+fukeybot.loadedConfig=✅ 『 𝗗𝗢𝗡𝗘 』 ➤ 𝗖𝗼𝗻𝗳𝗶𝗴𝘂𝗿𝗮𝘁𝗶𝗼𝗻 𝗹𝗼𝗮𝗱𝗲𝗱 𝘀𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 𝗳𝗼𝗿 𝗺𝗼𝗱𝘂𝗹𝗲 %1
+fukeybot.cantOnload=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗙𝗮𝗶𝗹𝗲𝗱 𝘁𝗼 𝗶𝗻𝗶𝘁𝗶𝗮𝗹𝗶𝘇𝗲 𝗺𝗼𝗱𝘂𝗹𝗲 %1. 𝗘𝗿𝗿𝗼𝗿: %2
+fukeybot.successLoadModule=✅ 『 𝗗𝗢𝗡𝗘 』 ➤ 𝗠𝗼𝗱𝘂𝗹𝗲 %1 𝗹𝗼𝗮𝗱𝗲𝗱 𝘀𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆
+fukeybot.failLoadModule=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗙𝗮𝗶𝗹𝗲𝗱 𝘁𝗼 𝗹𝗼𝗮𝗱 𝗺𝗼𝗱𝘂𝗹𝗲 %1. 𝗘𝗿𝗿𝗼𝗿: %2
+fukeybot.finishLoadModule=✅ 『 𝗗𝗢𝗡𝗘 』 ➤ 𝗦𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 𝗹𝗼𝗮𝗱𝗲𝗱 %1 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 𝗮𝗻𝗱 %2 𝗲𝘃𝗲𝗻𝘁𝘀
+fukeybot.handleListenError=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗟𝗶𝘀𝘁𝗲𝗻𝗲𝗿 𝗲𝗻𝗰𝗼𝘂𝗻𝘁𝗲𝗿𝗲𝗱 𝗮𝗻 𝗲𝗿𝗿𝗼𝗿: %1
+fukeybot.warningSourceCode=⚠️ 『 𝗪𝗔𝗥𝗡𝗜𝗡𝗚 』 ➤ 𝗦𝗼𝘂𝗿𝗰𝗲 𝗰𝗼𝗱𝗲 𝘀𝘁𝗿𝘂𝗰𝘁𝘂𝗿𝗲 𝗺𝗼𝗱𝗶𝗳𝗶𝗲𝗱 𝘂𝗻𝗲𝘅𝗽𝗲𝗰𝘁𝗲𝗱𝗹𝘆!
+fukeybot.successConnectDatabase=✅ 『 𝗗𝗢𝗡𝗘 』 ➤ 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲 𝗰𝗼𝗻𝗻𝗲𝗰𝘁𝗶𝗼𝗻 𝗲𝘀𝘁𝗮𝗯𝗹𝗶𝘀𝗵𝗲𝗱 𝘀𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆
+fukeybot.cantLoadConfig=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗙𝗮𝗶𝗹𝗲𝗱 𝘁𝗼 𝗹𝗼𝗮𝗱 𝗰𝗼𝗻𝗳𝗶𝗴 𝗳𝗼𝗿 𝗺𝗼𝗱𝘂𝗹𝗲 %1. 𝗘𝗿𝗿𝗼𝗿: %2
+fukeybot.restartRequired=🔹 『 𝗜𝗡𝗙𝗢 』 ➤ 𝗥𝗲𝘀𝘁𝗮𝗿𝘁 𝗿𝗲𝗾𝘂𝗶𝗿𝗲𝗱 𝘁𝗼 𝗮𝗽𝗽𝗹𝘆 𝗻𝗲𝘄 𝗰𝗵𝗮𝗻𝗴𝗲𝘀
 
 # ╔══════════════════════════════════════════════╗
 # ║  ✦ includes/listen.js
@@ -130,7 +130,7 @@ handleCommand.commandUserBanned=𝗬𝗼𝘂 𝗮𝗿𝗲 𝘂𝗻𝗮𝗯𝗹�
 handleCommand.threadNotAllowNSFW=╭─ 🔒 『 𝗗𝗘𝗡𝗜𝗘𝗗 』 ─╮\n│ 𝗧𝗵𝗶𝘀 𝗖𝗼𝗺𝗺𝗻𝗱 𝗢𝗻𝗹𝘆 𝘂𝘀𝗲 𝗕𝗼𝘀𝘀 𝗠𝗥 𝗝𝗨𝗪𝗘𝗟\n╰────────────────╯
 handleCommand.cantGetInfoThread=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗖𝗮𝗻'𝘁 𝗴𝗲𝘁 𝘆𝗼𝘂𝗿 𝘁𝗵𝗿𝗲𝗮𝗱'𝘀 𝗶𝗻𝗳𝗼, 𝗲𝗿𝗿𝗼𝗿: %1
 handleCommand.cantGetUserInfo=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗖𝗮𝗻'𝘁 𝗴𝗲𝘁 𝘂𝘀𝗲𝗿'𝘀 𝗶𝗻𝗳𝗼, 𝗲𝗿𝗿𝗼𝗿: %1
-handleCommand.permssionNotEnough=╭──────────────╮\n  🚫 𝗔𝗖𝗖𝗘𝗦𝗦 𝗗𝗘𝗡𝗜𝗘𝗗 \n╰──────────────╯\n👤 %1, এটা কমান্ড শুধু আমার বস  🐸\n👑 乛  ব্যাবহার করতে পারবে🎀🙌
+handleCommand.permssionNotEnough=╭──────────────╮\n  🚫 𝗔𝗖𝗖𝗘𝗦𝗦 𝗗𝗘𝗡𝗜𝗘𝗗 \n╰──────────────╯\n👤 %1, এটা কমান্ড শুধু আমার বস  🐸\n👑 FukeyBot ব্যাবহার করতে পারবে🎀🙌
 handleCommand.cantSetMessageReaction=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗛𝗮𝘃𝗶𝗻𝗴 𝘀𝗼𝗺𝗲 𝘂𝗻𝗲𝘅𝗽𝗲𝗰𝘁𝗲𝗱 𝗲𝗿𝗿𝗼𝗿 𝗮𝘁 setMessageReaction, 𝗲𝗿𝗿𝗼𝗿: %1
 handleCommand.executeCommand=📌 『 𝗟𝗢𝗚 』 ➤ [ %1 ] 𝗖𝗼𝗺𝗺𝗮𝗻𝗱 𝘂𝘀𝗲𝗱: %2 𝗯𝘆 𝘂𝘀𝗲𝗿: %3 𝗮𝘁 𝘁𝗵𝗿𝗲𝗮𝗱: %4 | 𝗔𝗿𝗴𝘀 𝗶𝗻𝗰𝗹𝘂𝗱𝗲𝗱: %5 | 𝗣𝗿𝗼𝗰𝗲𝘀𝘀𝗶𝗻𝗴 𝘁𝗶𝗺𝗲: %6𝗺𝘀
 handleCommand.commandError=❌ 『 𝗘𝗥𝗥𝗢𝗥 』 ➤ 𝗛𝗮𝘃𝗶𝗻𝗴 𝘀𝗼𝗺𝗲 𝘂𝗻𝗲𝘅𝗽𝗲𝗰𝘁𝗲𝗱 𝗲𝗿𝗿𝗼𝗿 𝘄𝗵𝗲𝗻 𝘂𝘀𝗶𝗻𝗴 𝗰𝗼𝗺𝗺𝗮𝗻𝗱 %1, 𝗲𝗿𝗿𝗼𝗿: %2

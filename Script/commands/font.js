@@ -168,7 +168,7 @@ module.exports.run = async ({ event, api, args }) => {
 𝟖 - 🄹🅄🅆🄴🄻
 𝟗 - 𝐉𝐔𝐖𝐄𝐋 | 𝐣𝐮𝐰𝐞𝐥
 𝟏𝟎 - 𝙹𝚄𝚆𝙴𝙻 | 𝚓𝚞𝚠𝚎𝚕
-Ex: font 1 JUWEL/juwel`;
+Ex: font 1 FUKEYBOT/fukeybot`;
     return api.sendMessage(helpMessage, event.threadID, event.messageID);
   }
 

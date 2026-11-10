@@ -2,7 +2,7 @@ module.exports.config = {
   name: "crush",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "Me & My Crush banner with both users mentioned and random caption",
   commandCategory: "banner",
   usePrefix: true,
@@ -26,7 +26,7 @@ const REF_H = 887;
 // ছোট/বড় করতে rx, ry কমাও/বাড়াও; সরাতে x, y বদলাও
 const LEFT  = { x: 442,  y: 363, rx: 180, ry: 172 };
 const RIGHT = { x: 1345, y: 363, rx: 175, ry: 172 };
-const CREDIT = "乛 ";
+const CREDIT = "FukeyBot";
 // ================================
 
 // ====== Captions ======

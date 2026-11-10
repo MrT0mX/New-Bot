@@ -74,7 +74,7 @@ module.exports.config = {
   name: "ban",
   version: "4.1.0",
   hasPermssion: 2,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "Mirai Stable Ban System with Persistent Storage",
   commandCategory: "group",
   cooldowns: 3

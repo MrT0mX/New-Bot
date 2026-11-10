@@ -18,9 +18,9 @@
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,18,24&height=240&section=header&text=RIYA%20CHAT%20BOT&fontSize=62&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=Ultra%20Premium%20Messenger%20Automation%20System&descSize=20&descAlignY=58" width="100%"/>
 </p>
 
-<!-- ═══════════════ LOGO: Mirai + Goat + JUWEL / MR JUWEL BOT ═══════════════ -->
+<!-- ═══════════════ FukeyBot logo ═══════════════ -->
 <p align="center">
-  <img src="assets/juwel-logo.svg" alt="Mirai + Goat — JUWEL — MR JUWEL BOT" width="640"/>
+  <img src="assets/fukeybot-logo.svg" alt="FukeyBot" width="640"/>
 </p>
 
 <h1 align="center">𝚁𝙸𝚈𝙰</h1>
@@ -53,15 +53,10 @@
   <img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=6&section=header" width="60%"/>
 </p>
 <p align="center">
-  <img src="assets/juwel-photo-float.svg" width="100%" />
+  <img src="assets/fukeybot-photo-float.svg" width="100%" />
 </p>
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=20,11,6&height=6&section=header" width="60%"/>
-</p>
-
-<!-- VISITOR -->
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=MR-JUWEL-CHAT-BOT2026&label=VISITORS&color=ff00cc&style=for-the-badge" />
 </p>
 
 ---
@@ -181,13 +176,13 @@ Render নিজে যে লিংক দেয় (`RENDER_EXTERNAL_URL`) ব
 
 | ধাপ | কাজ |
 |:---|:---|
-| 1️⃣ | `JuwelKeepalive.js` ফাইলটা রিপোতে `Juwel.js`-এর পাশে থাকতে হবে |
+| 1️⃣ | `FukeyBotKeepalive.js` ফাইলটা রিপোতে `FukeyBot.js`-এর পাশে থাকতে হবে |
 | 2️⃣ | Render → আপনার সার্ভিস → **Settings** → **Build & Deploy** |
-| 3️⃣ | **Start Command** এ লিখুন: `node JuwelKeepalive.js` |
+| 3️⃣ | **Start Command** এ লিখুন: `node FukeyBotKeepalive.js` |
 | 4️⃣ | **Save Changes** → **Manual Deploy → Deploy latest commit** |
 | 5️⃣ | লগে `[KEEPALIVE] ... (200)` দেখলেই কাজ হচ্ছে ✅ — UptimeRobot-এ আর কিছু করতে হবে না |
 
-> 🍪 **Auto Cookie (Guardian) ও চালাতে চাইলে:** Start Command একই থাকবে (`node JuwelKeepalive.js`), শুধু Render-এর **Environment Variables**-এ `USE_GUARDIAN` = `1` দিন। তাহলে Keep-Alive + Auto Cookie দুটোই একসাথে চলবে।
+> 🍪 **Auto Cookie (Guardian) ও চালাতে চাইলে:** Start Command একই থাকবে (`node FukeyBotKeepalive.js`), শুধু Render-এর **Environment Variables**-এ `USE_GUARDIAN` = `1` দিন। তাহলে Keep-Alive + Auto Cookie দুটোই একসাথে চলবে।
 >
 > ℹ️ Render ফ্রি প্ল্যানে মাসে ৭৫০ ঘণ্টা পাওয়া যায় — একটা বট ২৪/৭ চালানোর জন্য এটাই যথেষ্ট, তাই একই অ্যাকাউন্টে একটার বেশি সার্ভিস চালাবেন না।
 
@@ -233,30 +228,18 @@ Render নিজে যে লিংক দেয় (`RENDER_EXTERNAL_URL`) ব
 |:---|:---|
 | 1️⃣ | Telegram-এ **@BotFather** থেকে বট বানিয়ে **Token** নিন |
 | 2️⃣ | সেই বটকে একবার `/start` দিন এবং আপনার **Chat ID** নিন |
-| 3️⃣ | `config.json`-এর `JUWEL_ALERT` অংশে `TG_TOKEN` ও `TG_CHAT` বসান *(অথবা হোস্টের Variables-এ `JUWEL_TG_TOKEN`, `JUWEL_TG_CHAT`)* |
-| 4️⃣ | বট চালু করে `juwelalert test` দিন — Telegram-এ টেস্ট নোটিশ আসবে |
+| 3️⃣ | `config.json`-এর `FUKEYBOT_ALERT` অংশে `TG_TOKEN` ও `TG_CHAT` বসান *(অথবা হোস্টের Variables-এ `FUKEYBOT_TG_TOKEN`, `FUKEYBOT_TG_CHAT`)* |
+| 4️⃣ | বট চালু করে `fukeybotalert test` দিন — Telegram-এ টেস্ট নোটিশ আসবে |
 
 > ⚠️ **নিরাপত্তা:** Telegram Token কখনো পাবলিক GitHub-এ কমিট করবেন না। হোস্টের **Environment Variables** ব্যবহার করুন।
+>
+> ঐচ্ছিক: নিজের AI endpoint দিতে `FUKEYBOT_AI_ENDPOINT`, আর `#fork` কমান্ডে repository link দেখাতে `FUKEYBOT_REPOSITORY_URL` সেট করুন।
 
 ---
 
 <h1 align="center">📞 ABOUT · CONTACT · ADMIN &amp; SUPPORT GROUP</h1>
 
-<p align="center">
-  কোনো সাহায্য লাগলে নিচের বাটনে চাপ দিন — সোজা অ্যাডমিনের আইডিতে চলে যাবেন।<br/>
-  বিশেষ প্রয়োজন ছাড়া অ্যাডমিনকে বিরক্ত করবেন না। ধন্যবাদ! 🙏
-</p>
-
-<p align="center">
-  <a href="https://wa.me/8801943488192?text=Assalamualaikum%20Admin%20Need%20Help%20Please"><img src="assets/whatsapp.svg" alt="WhatsApp" width="240"/></a>
-  <a href="https://t.me/mrjuwel2025"><img src="assets/telegram.svg" alt="Telegram" width="240"/></a>
-  <a href="https://fb.com/mrjuwel777"><img src="assets/facebook.svg" alt="Facebook" width="240"/></a>
-</p>
-<p align="center">
-  <a href="mailto:mrjuwel315@gmail.com"><img src="assets/gmail.svg" alt="Gmail" width="240"/></a>
-  <a href="https://www.youtube.com/@BdBotTame"><img src="assets/youtube.svg" alt="YouTube" width="240"/></a>
-  <a href="https://m.me/j/bUq30eov7FMa149R/?send_source=gc%3Acopy_invite_link_t"><img src="assets/messenger-group.svg" alt="Messenger Support Group" width="300"/></a>
-</p>
+<p align="center">FukeyBot contact links are not configured.</p>
 
 ---
 
@@ -593,16 +576,6 @@ Render-এ Self Keep-Alive — UptimeRobot ছাড়াই সারাক্
 
 </details>
 
-<p align="center">
-  <a href="https://github.com/GOAT-MIRAI-MIX/MR-JUWEL/blob/main/LICENSE"><img src="https://img.shields.io/github/license/GOAT-MIRAI-MIX/MR-JUWEL?style=for-the-badge" alt="License"/></a>
-  <a href="https://github.com/GOAT-MIRAI-MIX/MR-JUWEL/issues"><img src="https://img.shields.io/github/issues/GOAT-MIRAI-MIX/MR-JUWEL?style=for-the-badge" alt="GitHub issues"/></a>
-  <a href="https://github.com/GOAT-MIRAI-MIX/MR-JUWEL/network/members"><img src="https://img.shields.io/github/forks/GOAT-MIRAI-MIX/MR-JUWEL?style=for-the-badge" alt="GitHub forks"/></a>
-  <a href="https://github.com/GOAT-MIRAI-MIX/MR-JUWEL/stargazers"><img src="https://img.shields.io/github/stars/GOAT-MIRAI-MIX/MR-JUWEL?style=for-the-badge" alt="GitHub stars"/></a>
-  <a href="https://github.com/GOAT-MIRAI-MIX/MR-JUWEL/commits/main"><img src="https://img.shields.io/github/last-commit/GOAT-MIRAI-MIX/MR-JUWEL?style=for-the-badge" alt="Last commit"/></a>
-</p>
-
----
-
 <h1 align="center">⚙️ CONFIG HIGHLIGHTS</h1>
 
 | Option | মান | কাজ |
@@ -622,20 +595,9 @@ Render-এ Self Keep-Alive — UptimeRobot ছাড়াই সারাক্
 
 ---
 
-<h1 align="center">📊 GITHUB STATS</h1>
-
-<p align="center">
-  <a href="https://github.com/GOAT-MIRAI-MIX/MR-JUWEL">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=GOAT-MIRAI-MIX&repo=MR-JUWEL&theme=tokyonight&hide_border=true"/>
-  </a>
-</p>
-
----
-
 <h1 align="center">⚡ LIVE DEPLOY</h1>
 
 <p align="center">
-  <a href="https://heroku.com/deploy?template=https://github.com/GOAT-MIRAI-MIX/MR-JUWEL"><img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku"/></a>
   <a href="https://render.com"><img src="https://img.shields.io/badge/Deploy%20On-Render-4353ff?style=for-the-badge&logo=render&logoColor=white" alt="Render"/></a>
   <a href="https://railway.app"><img src="https://img.shields.io/badge/Deploy%20On-Railway-a855f7?style=for-the-badge&logo=railway&logoColor=white" alt="Railway"/></a>
 </p>
@@ -687,19 +649,18 @@ jobs:
 **Start Command** — বটের ফোল্ডারে গিয়ে:
 
 ```bash
-git clone https://github.com/GOAT-MIRAI-MIX/MR-JUWEL.git
-cd MR-JUWEL
+# Clone your FukeyBot repository and enter its folder before continuing
 npm install
-node Juwel.js        # অথবা: npm start
+node FukeyBot.js     # অথবা: npm start
 ```
 
 **Render-এ** (UptimeRobot ছাড়া সারাক্ষণ অনলাইন):
 
 ```bash
-node JuwelKeepalive.js
+node FukeyBotKeepalive.js
 ```
 
-> ⚠️ সবসময় `npm start` / `node Juwel.js` / `node JuwelKeepalive.js` — `node Main.js` নয়।
+> ⚠️ সবসময় `npm start` / `node FukeyBot.js` / `node FukeyBotKeepalive.js` — `node Main.js` নয়।
 > `appstate.json` এ কুকি বসান, `config.json` এ `ADMINBOT` / `DEVELOPER` এ আপনার UID দিন।
 
 ---
@@ -714,30 +675,22 @@ node JuwelKeepalive.js
 
 ---
 
-<h1 align="center">👤 ABOUT ADMIN</h1>
+<h1 align="center">🤖 ABOUT FUKEYBOT</h1>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=22&duration=2500&pause=700&color=FF00CC&center=true&vCenter=true&width=640&lines=JUWEL;Sigma+Boy+%F0%9F%98%8E;Attitude+King+%F0%9F%91%91" alt="Admin"/>
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=22&duration=2500&pause=700&color=FF00CC&center=true&vCenter=true&width=640&lines=FukeyBot;Messenger+Bot" alt="FukeyBot"/>
 </p>
 
 ```text
 ╔════════════════════════════════════════════╗
-║      ✦  A D M I N   P R O F I L E  ✦       ║
+║      ✦  F U K E Y B O T   P R O F I L E  ✦  ║
 ╠════════════════════════════════════════════╣
-║ ❖ NAME         ➤  Juwel                    ║
-║ ❖ BOT NAME     ➤  RIYA                     ║
-║ ❖ BIRTHDAY     ➤  24 April                 ║
-║ ❖ AGE          ➤  22 Years                 ║
-║ ❖ HEIGHT       ➤  5.5 ft                   ║
-║ ❖ ADDRESS      ➤  Rangpur City             ║
-║ ❖ WORK         ➤  Construction             ║
-║ ❖ RELATIONSHIP ➤  Single                   ║
-║ ❖ STYLE        ➤  Sigma Boy                ║
-║ ❖ ATTITUDE     ➤  King                     ║
-║ ❖ INTEREST     ➤  Free Fire Lover          ║
-║ ❖              ➤  Hacking Lover            ║
+║ ❖ NAME         ➤  FukeyBot                 ║
+║ ❖ TYPE         ➤  Messenger Bot            ║
+║ ❖ FEATURES     ➤  Mirai + GoatBot          ║
+║ ❖ COMMANDS     ➤  Commands and events      ║
 ╠════════════════════════════════════════════╣
-║          Stay Sigma  •  Stay King          ║
+║         Automation • Utilities             ║
 ╚════════════════════════════════════════════╝
 ```
 
@@ -752,10 +705,6 @@ node JuwelKeepalive.js
 
 <p align="center">
   ⭐ <b>Please don't forget to give a star after forking! It really helps!</b>
-</p>
-
-<p align="center">
-  <a href="https://github.com/GOAT-MIRAI-MIX/MR-JUWEL"><img src="https://img.icons8.com/fluency/48/000000/github.png" alt="GitHub"></a>
 </p>
 
 <p align="center"><b>I hope you enjoy my fork! Thank you for supporting the cyber chat bot community! 🫶</b></p>

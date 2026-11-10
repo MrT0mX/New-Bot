@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "offbot",
 	version: "1.1.0",
 	hasPermssion: 2,
-	credits: "乛 ",
+	credits: "FukeyBot",
 	description: "turn the bot off and show how long it was running",
 	commandCategory: "system",
 	cooldowns: 0

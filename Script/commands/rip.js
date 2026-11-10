@@ -2,7 +2,7 @@ module.exports.config = {
   name: "rip",
   version: "1.0.3",
   hasPermssion: 0, // 0 = সবাই চালাতে পারবে
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "scooby doo template memes",
   commandCategory: "Picture",
   usages: "[@mention]",

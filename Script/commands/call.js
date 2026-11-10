@@ -8,7 +8,7 @@ function expToLevel(exp) {
 module.exports.config = {
   name: "call",
   version: "1.0.2",
-  author: "Chitron Bhattacharjee + Modified by JUWEL",
+  author: "Chitron Bhattacharjee + Modified by FUKEYBOT",
   countDown: 15,
   role: 0,
   shortDescription: "Call bomber (BD only)",

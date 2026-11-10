@@ -2,7 +2,7 @@ module.exports.config = {
   name: "cot",
   version: "2.0.0",
   hasPermssion: 0,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "Cot banner: ছেলে (মেনশন/রিপ্লাই) + গ্রুপের র‍্যান্ডম মেয়ে",
   commandCategory: "banner",
   usePrefix: true,

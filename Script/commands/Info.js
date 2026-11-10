@@ -2,7 +2,7 @@ module.exports.config = {
   name: "info",
   version: "2.0.0",
   hasPermssion: 0,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "Bot information command",
   commandCategory: "For users",
   hide: true,
@@ -146,9 +146,9 @@ module.exports.run = async function ({ api, event, args, Users, Threads }) {
 ┃ ➤ 𝐈𝐧𝐟𝐨 𝐔𝐬𝐞𝐝 ⟫ ${usedCount} বার
 ┗━━━━━━━━━━━━━━━━━━━━━
 ┏━━━ 👑 𝐎𝐖𝐍𝐄𝐑 ━━━━━━━
-┃ ➤ 𝐍𝐚𝐦𝐞 ⟫ 乛 
-┃ ➤ 𝐅𝐁   ⟫ fb.com/mrjuwel444
-┃ ➤ 𝐌𝐒𝐆  ⟫ m.me/mrjuwel444
+┃ ➤ 𝐍𝐚𝐦𝐞 ⟫ FukeyBot
+┃ ➤ 𝐅𝐁   ⟫ fb.com/mrfukeybot444
+┃ ➤ 𝐌𝐒𝐆  ⟫ m.me/mrfukeybot444
 ┃ ➤ 𝐖𝐀   ⟫ +8801943488192
 ┗━━━━━━━━━━━━━━━━━━━━━
 ╭━━━━━━━━━━━━━━━━━━━━━━╮
@@ -187,6 +187,6 @@ module.exports.run = async function ({ api, event, args, Users, Threads }) {
 };
 
 // 🔒 Credits Protection
-if (module.exports.config.credits !== "乛 ") {
+if (module.exports.config.credits !== "FukeyBot") {
   throw new Error("⚠️ Credits পরিবর্তন করা হয়েছে! অনুগ্রহ করে আসল ক্রেডিট ব্যবহার করুন।");
 }

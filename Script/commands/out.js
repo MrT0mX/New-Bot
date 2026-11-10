@@ -1,5 +1,5 @@
 // ══════════════════════════════════════════════
-// Credit : 乛 
+// Credit : FukeyBot
 // ══════════════════════════════════════════════
 
 let approval = null;
@@ -13,7 +13,7 @@ module.exports.config = {
   name: "out",
   version: "3.0.0",
   hasPermssion: 2,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "বটকে গ্রুপ থেকে বের করা: out | out <গ্রুপ আইডি>",
   commandCategory: "Admin",
   usages: "out | out <গ্রুপ আইডি>",

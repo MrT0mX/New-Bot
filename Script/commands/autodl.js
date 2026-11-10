@@ -3,7 +3,7 @@ module["exports"] = {
     'name': 'autodl',
     'version': "0.0.2",
     'hasPermssion': 0x0,
-    'credits': "MR JUWEL",
+    'credits': "FUKEYBOT",
     'description': "auto video download",
     'commandCategory': 'user',
     'usages': '',

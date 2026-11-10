@@ -1,11 +1,11 @@
 // ══════════════════════════════════════════════
-// Credit : 乛 
+// Credit : FukeyBot
 // ══════════════════════════════════════════════
 module.exports.config = {
   name: "kick",
   version: "1.2.0",
   hasPermssion: 2,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "গ্রুপ থেকে মেম্বারকে কিক করা (শুধু বট অ্যাডমিন)",
   commandCategory: "Admin",
   usages: "kick @মেনশন | kick (রিপ্লাই করে) | kick <UID>",

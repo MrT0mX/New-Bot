@@ -2,7 +2,7 @@ module.exports.config = {
   name: "bondu",
   version: "1.2.0",
   hasPermssion: 0,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "প্রেম মিম টেমপ্লেট (পা ধরে প্রেম ভিক্ষা)",
   commandCategory: "Picture",
   usages: "[@mention / reply]",

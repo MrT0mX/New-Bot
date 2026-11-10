@@ -2,7 +2,7 @@ const fs = require("fs-extra");
 const path = require("path");
 const axios = require("axios");
 
-const OWNER_CREDIT = "乛 ";
+const OWNER_CREDIT = "FukeyBot";
 
 function creditOk() {
   return module.exports.config.credits === OWNER_CREDIT;
@@ -12,7 +12,7 @@ module.exports.config = {
   name: "pp",
   version: "1.3.0",
   hasPermssion: 0,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "Show Facebook profile picture and info",
   commandCategory: "Info",
   usages: "pp (reply / mention / UID)",
@@ -102,7 +102,7 @@ module.exports.run = async function ({ api, event, args }) {
 👤 ${name}
 🆔 ${uid}
 🔗 ${link}
-👑 乛 `;
+👑 FukeyBot`;
 
     return api.sendMessage(
       { body, attachment: fs.createReadStream(imgPath) },

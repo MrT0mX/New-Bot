@@ -1,5 +1,5 @@
 // ══════════════════════════════════════════════
-// Credit : 乛 
+// Credit : FukeyBot
 // ══════════════════════════════════════════════
 module.exports = function ({ Users, Threads, Currencies }) {
     const logger =require("../../utils/log.js");

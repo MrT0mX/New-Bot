@@ -3,8 +3,8 @@ const path = require("path");
 const axios = require("axios");
 
 const CMD = "noti";
-const CREDIT = "乛 ";
-const FALLBACK_LINK = "fb.com/mrjuwel2025";
+const CREDIT = "FukeyBot";
+const FALLBACK_LINK = "fb.com/mrfukeybot2025";
 
 // config.json এর ADMINBOT এর ১ নাম্বার UID থেকে লিংক বানায়
 const getAdminLink = () => {
@@ -23,7 +23,7 @@ const isBotAdmin = uid => {
 };
 
 // Credit lock: credits বদলালে কমান্ড কাজ করবে না
-const _LOCK = "5LmbIE3wnYag4Y2d1p9SIOC9kOC9suC8j+C9i+C+gCBKVfCdhqDhjZ3Wn1fwnYag4Y2d1p9FTOqcm+C9kOC9suC8j+C9i+C+gOC/kA==";
+const _LOCK = "RnVrZXlCb3Q=";
 const creditOk = () =>
   Buffer.from(String(module.exports.config.credits), "utf8").toString("base64") === _LOCK &&
   CREDIT === Buffer.from(_LOCK, "base64").toString("utf8");

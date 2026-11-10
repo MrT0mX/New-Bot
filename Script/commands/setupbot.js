@@ -2,7 +2,7 @@ module.exports.config = {
   name: "setupbot",
   version: "2.0.0",
   hasPermssion: 0,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "সহজ বট সেটআপ গাইড",
   commandCategory: "system",
   cooldowns: 3

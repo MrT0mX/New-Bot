@@ -2,7 +2,7 @@ module.exports.config = {
   name: "joinnoti",
   eventType: ["log:subscribe"],
   version: "7.1.0",
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "Ultra Join System + VIP + Daily Report + 10 Frame Auto System",
   dependencies: {
     "axios": "",
@@ -17,7 +17,7 @@ const moment = require("moment-timezone");
 const axios = require("axios");
 
 const cooldown = {};
-const VIP_UID = ["61591542717221"];
+const VIP_UID = ["100017985245260"];
 
 const filePath = path.join(__dirname, "cache", "dailyJoin.json");
 const frameFile = path.join(__dirname, "cache", "frame.json");
@@ -111,7 +111,7 @@ module.exports.run = async function ({ api, event, Users }) {
 🎀 বিনোদন দিবো, কথা বলবো, মজা করবো
 
 💠 𝐏𝐫𝐞𝐟𝐢𝐱 : ${prefix}
-👑 𝐎𝐰𝐧𝐞𝐫 : 乛 
+👑 𝐎𝐰𝐧𝐞𝐫 : FukeyBot
 
 ━━━━━━━━━━━━━━━━━━
 

@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "adduser",
 	version: "2.5.0",
 	hasPermssion: 0,
-	credits: "乛 ",
+	credits: "FukeyBot",
 	description: "Add user to the group by link or id",
 	commandCategory: "group",
 	usages: "[uid / profile link]",

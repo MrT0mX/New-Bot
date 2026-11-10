@@ -2,7 +2,7 @@ module.exports.config = {
   name: "bonk",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "Bonk banner with random caption",
   commandCategory: "banner",
   usePrefix: true,

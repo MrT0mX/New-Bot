@@ -3,7 +3,7 @@ const moment = require("moment-timezone");
 
 let consoleName = "BOT";
 
-const CREDIT = "乛 ";
+const CREDIT = "FukeyBot";
 
 // আপনার দেওয়া সব ২৬টা রঙ
 const colors = [

@@ -1,7 +1,7 @@
 const num = 6;     // ৬টা কমান্ড দিলেই ব্যান
 const timee = 60;  // ৬০ সেকেন্ড (১ মিনিট) এর মধ্যে
 
-const CREDIT = "乛 ";
+const CREDIT = "FukeyBot";
 
 module.exports.config = {
   name: "spamban",

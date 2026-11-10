@@ -47,7 +47,7 @@
 - [công cụ](#công-cụ) (1)
 - [cover](#cover) (1)
 - [create a photo](#create-a-photo) (1)
-- [乛 M𝆠፝֟R ཐི༏ཋྀ](JU𝆠፝֟W𝆠፝֟ELꜛཐི༏ཋྀ࿐-) (1)
+- FukeyBot (1)
 - [doya](#doya) (1)
 - [editing](#editing) (1)
 - [facebook post](#facebook-post) (1)
@@ -59,7 +59,7 @@
 - [hình ảnh](#hình-ảnh) (1)
 - [image editing tools](#image-editing-tools) (1)
 - [𝗜𝗠𝗔𝗚𝗘 𝗚𝗘𝗡𝗘𝗥𝗔𝗧𝗢𝗥](#𝗜𝗠𝗔𝗚𝗘-𝗚𝗘𝗡𝗘𝗥𝗔𝗧𝗢𝗥) (1)
-- [juwel](#juwel) (1)
+- [fukeybot](#fukeybot) (1)
 - [m h bd](#m-h-bd) (1)
 - [no command marks needed](#no-command-marks-needed) (1)
 - [operator](#operator) (1)
@@ -90,7 +90,7 @@
 | `#help` | Shows all commands with details | - | সবাই | 5s |
 | `#helpall` | Premium all command list with modern UI | - | সবাই | 5s |
 | `#join` | Join one or all bot groups (with member count) or add another user by UID/reply | - | বট অ্যাডমিন | 5s |
-| `#juwelalert` | সেশন সতর্কতা ও বট চালু/বন্ধ নোটিশ | `jalert` | বট অ্যাডমিন | 5s |
+| `#fukeybotalert` | সেশন সতর্কতা ও বট চালু/বন্ধ নোটিশ | `jalert` | বট অ্যাডমিন | 5s |
 | `#kick` | the person you need to remove from the group by tag | - | সবাই | 0s |
 | `#listfriend` | View friends information/Delete friends by replying | - | বট অ্যাডমিন | 5s |
 | `#menu` | Pro control panel | - | গ্রুপ অ্যাডমিন | 2s |
@@ -233,7 +233,7 @@
 | `#autoreplybot` | Auto-response bot with specified triggers | - | সবাই | 3s |
 | `#autovoice` | Auto voice reply | - | সবাই | 0s |
 | `#gali` | Don't Change Credits | - | বট অ্যাডমিন | 5s |
-| `#jwl` | জুয়েল লিখলে ☠️ রিয়েক্ট দিবে | - | সবাই | 5s |
+| `#jwl` | FukeyBot লিখলে ☠️ রিয়েক্ট দিবে | - | সবাই | 5s |
 | `#night` | hihihihi | - | সবাই | 5s |
 | `#umma` | hihihihi | - | সবাই | 5s |
 | `#women` | hihihihi | - | সবাই | 5s |
@@ -565,7 +565,7 @@
 |:--|:--|:--|:--|:--|
 | `#flux` | Flux Image Generator | - | সবাই | 15s |
 
-## juwel
+## fukeybot
 
 | কমান্ড | বিবরণ | অ্যালিয়াস | কে ব্যবহার করবে | কুলডাউন |
 |:--|:--|:--|:--|:--|
@@ -663,4 +663,4 @@
 
 ---
 
-<p align="center">Made with ❤️ by <b>乛 </b></p>
+<p align="center">Made with ❤️ by <b>FukeyBot</b></p>

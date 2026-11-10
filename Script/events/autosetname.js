@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "autoSetName",
 	eventType: ["log:subscribe"],
 	version: "1.1.0",
-	credits: "乛 ",
+	credits: "FukeyBot",
 	description: "বট গ্রুপে অ্যাড হলে অটো নিকনেম সেট করবে"
 };
 

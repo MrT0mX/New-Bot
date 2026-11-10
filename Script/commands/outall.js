@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "outall",
 	version: "1.3.0",
 	hasPermssion: 2,
-	credits: "乛 ",
+	credits: "FukeyBot",
 	description: "সব গ্রুপে লিভ নোটিশ দিয়ে বট লিভ নেবে",
 	commandCategory: "Admin",
 	usages: "outall [নোটিশ টেক্সট (ঐচ্ছিক)]",
@@ -41,7 +41,7 @@ module.exports.run = async function ({ api, event, args, Threads }) {
 			`📢 ${noticeBody}\n\n` +
 			"👋 সবাইকে ধন্যবাদ, ভালো থাকবেন!\n" +
 			"━━━━━━━━━━━━━━━━━━━\n" +
-			"👑 কেডিট: 乛 ";
+			"👑 কেডিট: FukeyBot";
 
 		await say("⏳ গ্রুপ লিস্ট খোঁজা হচ্ছে...");
 

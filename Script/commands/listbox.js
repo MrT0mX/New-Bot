@@ -1,7 +1,7 @@
 module.exports.config = {
  name: 'listbox',
  version: '2.0.1',
- credits: '乛 ',
+ credits: 'FukeyBot',
  hasPermssion: 2,
  description: '[Ban/Unban/Del/Out] Manage all group threads',
  commandCategory: 'Admin',

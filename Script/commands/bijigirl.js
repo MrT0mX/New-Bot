@@ -2,7 +2,7 @@ module.exports.config = {
   name: "bijigirl",
   version: "1.1.0",
   hasPermssion: 0,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "busy girl template memes",
   commandCategory: "Picture",
   usages: "[@mention / reply]",
@@ -16,7 +16,7 @@ module.exports.config = {
 
 // ===== সেটিংস =====
 const COOLDOWN_MS = 60 * 1000; // ১ জন ইউজার ১ মিনিটে ১ বার
-const BOSS_NOTICE = "乛  বসকে BIJI_GIRL করা জাবে না রে পাগলা";
+const BOSS_NOTICE = "FukeyBot বসকে BIJI_GIRL করা জাবে না রে পাগলা";
 const TEMPLATE_URL = "https://i.imgur.com/pmiFQcO.jpeg";
 
 // র‍্যান্ডম ক্যাপশন লিস্ট

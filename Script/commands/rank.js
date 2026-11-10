@@ -16,7 +16,7 @@ module.exports.config = {
   aliases: ["level", "rankcard"],
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "MR JUWEL",
+  credits: "FukeyBot",
   description: "আপনার (বা রিপ্লাই/মেনশন করা ইউজারের) লেভেল-র‍্যাঙ্ক কার্ড দেখুন",
   commandCategory: "economy",
   usages: "[reply/mention]",

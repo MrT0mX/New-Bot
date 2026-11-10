@@ -1,5 +1,3 @@
-/**
-
 'use strict';
 // RFC 6238 TOTP — কোনো বাইরের প্যাকেজ ছাড়া। নিজের অ্যাকাউন্টের 2FA (authenticator app) কোডের জন্য।
 const crypto = require('crypto');

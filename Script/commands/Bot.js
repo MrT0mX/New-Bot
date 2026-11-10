@@ -1,12 +1,12 @@
 // ══════════════════════════════════════════════
-// Credit : 乛 
+// Credit : FukeyBot
 // Script/commands/bot.js — bot on / bot off (শুধু ADMINBOT)
 // ══════════════════════════════════════════════
 module.exports.config = {
   name: "bot",
   version: "3.2.0",
   hasPermssion: 2,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "Bot ON/OFF — only works with 'bot on' / 'bot off' / 'bot status'",
   commandCategory: "system",
   usages: "bot on | bot off | bot off 30m | bot status",
@@ -27,7 +27,7 @@ module.exports.run = ({ api, event, args }) => {
   if (sub !== "on" && sub !== "off" && sub !== "status") return;
 
   if (!power) return api.sendMessage("❌ includes/power.js not found.", event.threadID, event.messageID);
-  if (!power.creditOk()) return api.sendMessage("❌ Credit mismatch, system disabled.\n👑 Credit: 乛 ", event.threadID, event.messageID);
+  if (!power.creditOk()) return api.sendMessage("❌ Credit mismatch, system disabled.\n👑 Credit: FukeyBot", event.threadID, event.messageID);
   if (!power.isAdmin(event.senderID))
     return api.sendMessage(power.notice("⛔ Only bot admins can use this command."), event.threadID, event.messageID);
 

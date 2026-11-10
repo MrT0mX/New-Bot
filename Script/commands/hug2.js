@@ -77,6 +77,6 @@ module.exports.run = async function ({ event, api }) {
     );
 
   } catch {
-    return api.sendMessage("API Error Call MR JUWEL", threadID, messageID);
+    return api.sendMessage("API Error Call FUKEYBOT", threadID, messageID);
   }
 };

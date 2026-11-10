@@ -3,7 +3,7 @@ module.exports.config = {
   aliases: ["antispamgroup"],
   version: "1.0.0",
   hasPermssion: 1,
-  credits: "MR JUWEL",
+  credits: "FukeyBot",
   description: "গ্রুপে মেসেজ-ফ্লাড (স্প্যাম) প্রোটেকশন চালু/বন্ধ করুন",
   commandCategory: "admin",
   usages: "<on|off>",

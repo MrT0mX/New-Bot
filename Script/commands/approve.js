@@ -1,13 +1,13 @@
 // ══════════════════════════════════════════════
-// Credit : 乛 
+// Credit : FukeyBot
 // ══════════════════════════════════════════════
-const approval = require("../../includes/approval");
+const approval = require("../../includes/approve");
 
 module.exports.config = {
   name: "approve",
   version: "1.1.0",
   hasPermssion: 2,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "গ্রুপ অনুমোদন: approve | approve <গ্রুপ আইডি> | approve list | approve remove",
   commandCategory: "system",
   usages: "approve | approve <threadID> | approve list | approve remove",

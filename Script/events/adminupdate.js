@@ -7,7 +7,7 @@
  * ╚══════════════════════════════════════════════════════════╝
  */
 
-const LOCKED_CREDIT = "乛 ";
+const LOCKED_CREDIT = "FukeyBot";
 
 module.exports.config = {
     name: "adminUpdate",
@@ -20,7 +20,7 @@ module.exports.config = {
         "log:thread-color"
     ],
     version: "6.0.0",
-    credits: "乛 ",
+    credits: "FukeyBot",
     description: "Group update notifier with 20+ stylish random themes",
     envConfig: {
         sendNoti: true

@@ -2,7 +2,7 @@ module.exports.config = {
   name: "love",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "BF & GF love banner with both users mentioned and random caption",
   commandCategory: "banner",
   usePrefix: true,
@@ -26,7 +26,7 @@ const REF_H = 1024;
 // ছোট/বড় করতে rx, ry কমাও/বাড়াও; সরাতে x, y বদলাও
 const LEFT  = { x: 426,  y: 474, rx: 164, ry: 166 };
 const RIGHT = { x: 1115, y: 475, rx: 166, ry: 166 };
-const CREDIT = "乛 ";
+const CREDIT = "FukeyBot";
 // ================================
 
 // ====== Captions ======

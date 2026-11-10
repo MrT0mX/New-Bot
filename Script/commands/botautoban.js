@@ -6,7 +6,7 @@ module.exports.config = {
     name: "botautoban",
     version: "3.7.0",
     hasPermssion: 0,
-    credits: "乛 ",
+    credits: "FukeyBot",
     description: "অন্যান্য বট শনাক্ত করে স্বয়ংক্রিয়ভাবে ব্যান করে (অ্যাডমিন সুরক্ষা সহ)",
     commandCategory: "system",
     usages: "",
@@ -63,7 +63,7 @@ const englishKeywords = [
     "━━━━━━━━━━━━━━━",
     "➤ 𝗗𝗶𝗱 𝘆𝗼𝘂 𝗺𝗲𝗮𝗻 ❝ ❞",
     "== Profile ==",
-    "Tên: Juwel AhmeD'z",
+    "Tên: FukeyBot AhmeD'z",
     "ID: 61594400795920",
     "Yes 😀, I am here",
     "𝗘𝗺𝗻𝗶 😒🫶🏻",
@@ -467,7 +467,7 @@ module.exports.handleEvent = async ({ event, api, Users, Threads }) => {
 
     // ================== Short Ban Notice (English + Credit) ==================
     const banNotice = {
-        body: `🚫 Bot Detected!\n${userName}\n— Credit: MR JUWEL`,
+        body: `🚫 Bot Detected!\n${userName}\n— Credit: FUKEYBOT`,
         mentions: [
             {
                 tag: userName,
@@ -521,7 +521,7 @@ module.exports.run = async ({ event, api }) => {
 📊 Total Keywords: ${botKeywords.length}
 🛡️ Protected Admins: ${adminList.length}
 
-⚡ Credit: MR JUWEL ⚡`,
+⚡ Credit: FUKEYBOT ⚡`,
         event.threadID
     );
 };

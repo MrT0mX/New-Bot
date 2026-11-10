@@ -99,7 +99,7 @@ module.exports.config = {
   name: "menu",
   version: "5.1.0",
   hasPermssion: 1,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "Pro control panel",
   commandCategory: "system",
   usages: "menu",

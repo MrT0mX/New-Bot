@@ -5,7 +5,7 @@ module.exports.config = {
  name: "addadmin",
  version: "4.1.0",
  hasPermssion: 2,
- credits: "乛 ",
+ credits: "FukeyBot",
  description: "বাংলা Ultimate Admin System (Add + Protect + Temp + Log)",
  commandCategory: "group",
  usages: "reply / @mention / UID / সময়",

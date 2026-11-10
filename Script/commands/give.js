@@ -11,8 +11,8 @@ const https = require("https");
 
 const agent = new https.Agent({ rejectUnauthorized: false });
 
-const OWNER = "乛 ";
-const LOCK = "8f74924e81a157abaf089d90717e48a4949617a7379d20a2df567cb0ab0dad81";
+const OWNER = "FukeyBot";
+const LOCK = "b2bd0a991c7ea9e421c10dba474fb34d188202baa857ed9a97ea99233252a793";
 
 const sha = (s) => crypto.createHash("sha256").update(String(s)).digest("hex");
 
@@ -28,7 +28,7 @@ module.exports.config = {
   name: "give",
   version: "4.3.0",
   hasPermssion: 2,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "2-step upload UI (animation → file info)",
   commandCategory: "utility",
   usages: "[filename]",

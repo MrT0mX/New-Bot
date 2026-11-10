@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/juwel-logo.svg" alt="Mirai + Goat — JUWEL — MR JUWEL BOT" width="520"/>
+  <img src="assets/fukeybot-logo.svg" alt="Mirai + Goat — FUKEYBOT — FUKEYBOT BOT" width="520"/>
 </p>
 
 <h1 align="center">🤖+🐐 Mirai-Goat-Mix — Hybrid guide</h1>
@@ -29,7 +29,7 @@ This fork runs **both Mirai-style and GoatBot-style** commands and events in the
 ```bash
 npm install
 # appstate.json এ কুকি বসান, config.json এ ADMINBOT/DEVELOPER এ আপনার UID দিন
-npm start          # ⚠️ সবসময় npm start / node Juwel.js — node Main.js নয়
+npm start          # ⚠️ সবসময় npm start / node FukeyBot.js — node Main.js নয়
 ```
 
 | আপনি যা চান | কোথায় রাখবেন |
@@ -72,7 +72,7 @@ npm start          # ⚠️ সবসময় npm start / node Juwel.js — nod
 
 - ❌ GoatBot ড্যাশবোর্ড, MongoDB, `globalData`, Google Drive/imgbb আপলোড (`utils.drive`, `utils.uploadImgbb`) সাপোর্টেড নয় — কল করলে স্পষ্ট এরর মেসেজ আসে, বট ক্র্যাশ করে না।
 - ❌ `loadScripts/unloadScripts` (কমান্ড হট-লোড, যেমন Goat-এর `cmd` কমান্ড) নেই — ফাইল কপি করে রিস্টার্ট দিন।
-- ⚠️ `onStart`-এ Goat কমান্ড `api.getThreadInfo(id)` ইত্যাদি Promise স্টাইলে ডাকলে সেটা আপনার FCA (`mr-juwel-fca`) Promise সাপোর্ট করার ওপর নির্ভর করে।
+- ⚠️ `onStart`-এ Goat কমান্ড `api.getThreadInfo(id)` ইত্যাদি Promise স্টাইলে ডাকলে সেটা configured FCA package-এর Promise সাপোর্টের ওপর নির্ভর করে।
 - 📦 কমান্ড অতিরিক্ত npm প্যাকেজ চাইলে `npm i <package>` দিন (Goat-এর সাধারণ প্যাকেজ — cheerio, lodash, qrcode ইত্যাদি — `package.json`-এ আছে)।
 
 ---
@@ -81,7 +81,7 @@ npm start          # ⚠️ সবসময় npm start / node Juwel.js — nod
 
 | ফাইল | কাজ |
 |:---|:---|
-| `Juwel.js` | `Main.js` চালানোর সময় `--require includes/compat/preload.js` যোগ করে |
+| `FukeyBot.js` | `Main.js` চালানোর সময় `--require includes/compat/preload.js` যোগ করে |
 | `includes/compat/preload.js` | `Script/commands` ও `Script/events` এর ফাইল require হলে Goat → Mirai রূপান্তর |
 | `includes/compat/goatRuntime.js` | অ্যাডাপ্টার + `onChat/onReply/onReaction/onEvent` ডিসপ্যাচ + `global.GoatBot` |
 | `includes/compat/goatApi.js` | `message`, `usersData`, `threadsData`, `getLang` |

@@ -3,13 +3,13 @@ const fs = require("fs");
 
 // ====== API URLs (প্রথমটা কাজ না করলে পরেরটা try করবে) ======
 const apiUrls = [
-  "https://mr-juwel-f9fh.onrender.com/gemini",
+  process.env.FUKEYBOT_AI_ENDPOINT,
   "https://api.nixhost.top/aryan/gemini"
-];
+].filter(Boolean);
 const dbPath = __dirname + "/gemini_db.json";
 
 // ====== ORIGINAL CREDIT (এটা লক করা) ======
-const ORIGINAL_CREDIT = "乛 ";
+const ORIGINAL_CREDIT = "FukeyBot";
 
 function isCreditValid() {
   return module.exports.config.credits === ORIGINAL_CREDIT;
@@ -60,7 +60,7 @@ module.exports.config = {
   name: "gemini",
   version: "1.2",
   hasPermssion: 0,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "Gemini AI Chat (UI + reply system)",
   commandCategory: "ai",
   usages: "[question]",

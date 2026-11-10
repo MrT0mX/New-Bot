@@ -69,7 +69,7 @@ module.exports.run = async function ({ api, event, Currencies }) {
 
   } catch (e) {
     return api.sendMessage(
-      "API Error Call JUWEL",
+      "API Error Call FUKEYBOT",
       threadID,
       messageID
     );

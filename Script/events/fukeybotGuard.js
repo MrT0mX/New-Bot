@@ -1,6 +1,6 @@
 /**
  * ╔══════════════════════════════════════════════════════════╗
- * ║  JUWEL GUARD  —  Group Name / Photo / Theme / Emoji Lock ║
+ * ║  FUKEYBOT GUARD  —  Group Name / Photo / Theme / Emoji Lock ║
  * ╚══════════════════════════════════════════════════════════╝
  *
  *  কী করে:
@@ -26,13 +26,13 @@ const SETTINGS = {
   MAX_GROUPS_ON_LOAD: 100
 };
 
-const CREDIT = "乛 ";
+const CREDIT = "FukeyBot";
 // ──────────────────────────────────────────────────────────────────────────────────
 
 module.exports.config = {
-  name: "juwelGuard",
+  name: "fukeybotGuard",
   version: "1.0.0",
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "Auto backup & restore of group name, photo, theme and emoji",
   eventType: [
     "log:thread-name",
@@ -46,7 +46,7 @@ module.exports.config = {
 };
 
 // ───────────────────────── ফাইল / স্টোরেজ ─────────────────────────
-const CACHE_DIR = path.join(__dirname, "..", "..", "cache", "juwelGuard");
+const CACHE_DIR = path.join(__dirname, "..", "..", "cache", "fukeybotGuard");
 fs.ensureDirSync(CACHE_DIR);
 
 const jsonFile = (tid) => path.join(CACHE_DIR, `${tid}.json`);
@@ -199,9 +199,9 @@ module.exports.onLoad = async function ({ api }) {
         try { await takeFullSnapshot(api, tid); } catch (_) {}
         await new Promise((r) => setTimeout(r, SETTINGS.SNAPSHOT_DELAY_MS));
       }
-      console.log(`[juwelGuard] Backup ready for ${groups.length} group(s).`);
+      console.log(`[fukeybotGuard] Backup ready for ${groups.length} group(s).`);
     } catch (e) {
-      console.log("[juwelGuard] onLoad snapshot skipped:", e && e.message);
+      console.log("[fukeybotGuard] onLoad snapshot skipped:", e && e.message);
     }
   }, 15000);
 };
@@ -309,6 +309,6 @@ module.exports.run = async function ({ api, event }) {
       return api.sendMessage(noticeKicked(kind, who, kicked, botIsAdmin), threadID);
     }
   } catch (e) {
-    console.log("[juwelGuard] Error:", e && e.message ? e.message : e);
+    console.log("[fukeybotGuard] Error:", e && e.message ? e.message : e);
   }
 };

@@ -3,7 +3,7 @@ module.exports.config = {
   aliases: ["bonus", "checkin"],
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "MR JUWEL",
+  credits: "FukeyBot",
   description: "প্রতিদিন ফ্রি কয়েন বোনাস সংগ্রহ করুন, স্ট্রিক বাড়ালে বেশি বোনাস",
   commandCategory: "economy",
   usages: "",

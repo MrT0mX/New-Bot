@@ -1,5 +1,5 @@
 // ══════════════════════════════════════════════
-// Credit : 乛 
+// Credit : FukeyBot
 // includes/power.js — Bot ON/OFF (Standby) engine
 //
 //  • bot off → bot goes on standby: no replies, commands, events or auto messages
@@ -14,8 +14,8 @@ const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
 
-const CREDIT = "乛 ";
-const CREDIT_HASH = "8f74924e81a157abaf089d90717e48a4949617a7379d20a2df567cb0ab0dad81";
+const CREDIT = "FukeyBot";
+const CREDIT_HASH = "b2bd0a991c7ea9e421c10dba474fb34d188202baa857ed9a97ea99233252a793";
 const sha = s => crypto.createHash("sha256").update(String(s == null ? "" : s).normalize("NFC")).digest("hex");
 
 /* ───────────── Credit check ───────────── */

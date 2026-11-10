@@ -5,7 +5,7 @@
  * বট + গার্ডিয়ান একসাথে।  চালান:  node guardian/start.js   (npm start-এর বদলে)
  *
  *  1. বট চালুর আগে একবার কুকি চেক/রিফ্রেশ (ফেল করলেও বট চালু হয়)
- *  2. Juwel.js চালায় — বটের আউটপুট হুবহু আগের মতোই দেখায়
+ *  2. FukeyBot.js চালায় — বটের আউটপুট হুবহু আগের মতোই দেখায়
  *  3. পিছনে প্রতি ~15 মিনিটে ব্রাউজার থেকে কুকি সিঙ্ক
  *  4. বটের লগে "সেশন মৃত" ধরা পড়লে সাথে সাথে রিফ্রেশ; তারপরও বট লগইন না করলে বট রিস্টার্ট
  */
@@ -73,7 +73,7 @@ function pipeLines(stream, sink) {
 }
 
 function startBot() {
-  bot = spawn(process.execPath, [path.join(ROOT, 'Juwel.js')], {
+  bot = spawn(process.execPath, [path.join(ROOT, 'FukeyBot.js')], {
     cwd: ROOT,
     stdio: ['inherit', 'pipe', 'pipe'],
     env: { ...process.env, ...(process.stdout.isTTY ? { FORCE_COLOR: '1' } : {}) }

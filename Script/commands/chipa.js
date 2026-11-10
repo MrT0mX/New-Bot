@@ -2,7 +2,7 @@ module.exports.config = {
   name: "chipa",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "Chipa banner with fixed text",
   commandCategory: "banner",
   usePrefix: true,

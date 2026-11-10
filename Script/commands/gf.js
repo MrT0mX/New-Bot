@@ -2,7 +2,7 @@ module.exports.config = {
   name: "gf",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "BF & GF love banner with both users mentioned and random caption",
   commandCategory: "banner",
   usePrefix: true,

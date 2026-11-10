@@ -2,7 +2,7 @@
   name: "bijiboy",
   version: "1.1.0",
   hasPermssion: 0,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "busy boy template memes",
   commandCategory: "Picture",
   usages: "[@mention / reply]",
@@ -16,7 +16,7 @@
 
 // ===== সেটিংস =====
 const COOLDOWN_MS = 60 * 1000; // ১ জন ইউজার ১ মিনিটে ১ বার
-const BOSS_NOTICE = "乛  বসকে BIJO_BOY করা জাবে না রে পাগলা";
+const BOSS_NOTICE = "FukeyBot বসকে BIJO_BOY করা জাবে না রে পাগলা";
 const TEMPLATE_URL = "https://i.imgur.com/Yh10DDM.jpeg";
 
 // র‍্যান্ডম ক্যাপশন লিস্ট

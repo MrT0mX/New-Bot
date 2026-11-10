@@ -2,7 +2,7 @@ module.exports.config = {
   name: "rules",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "MR JUWEL",
+  credits: "FukeyBot",
   description: "Send group rules",
   commandCategory: "information",
   usages: "rules2",
@@ -59,8 +59,7 @@ module.exports.run = async ({ api, event }) => {
 ❖ রুলস ভাঙলে আগে ওয়ার্নিং, পরে অ্যাকশন 😈
 
 𝙱𝙾𝚃 𝙰𝙳𝙼𝙸𝙽:
-⎯꯭𓆩꯭𝆺𝅥😻⃞𝐌⃞𝆠፝֟𝐑᭄ღ倫 𝐉⃞𝐔⃞𝐖⃞𝐄⃞𝐋༢࿐  
-FB: https://www.facebook.com/mrjuwel2025
+FukeyBot
 
 _সাথেই থাকুন 🌺_
 ⎯꯭𓆩꯭𝆺𝅥😻⃞𝐑⃞𝐈⃞𝐘⃞𝐀⃞༢࿐

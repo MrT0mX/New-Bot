@@ -1,3 +1,14 @@
+module["exports"]["config"] = {
+  name: "inbox",
+  version: "1.0.0",
+  hasPermission: 0,
+  credits: "Shaon",
+  description: "Send a random sad video",
+  commandCategory: "media",
+  usages: "",
+  cooldowns: 5
+};
+
 module["exports"]["run"] = async function ({
   api: _0xb5e05c,
   event: _0x21cca6,

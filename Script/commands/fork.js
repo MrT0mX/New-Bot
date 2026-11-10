@@ -1,4 +1,4 @@
-const CREDITS = "乛 ";
+const CREDITS = "FukeyBot";
 
 module.exports.config = {
   name: "fork",
@@ -11,20 +11,11 @@ module.exports.config = {
   cooldowns: 3,
 };
 
-const OWNER = "MIX-GOAT-MIRAI";
-const REPO = "MR-JUWEL";
-const repoLink = `https://github.com/${OWNER}/${REPO}`;
-
-// সুরক্ষা: ক্রেডিট বা রিপো লিংক বদলালে কমান্ড কাজ করবে না
-const LOCK = {
-  credits: CREDITS,
-  repo: "https://github.com/mix-goat-mirai/MR-JUWEL",
-};
+const repoLink = String(process.env.FUKEYBOT_REPOSITORY_URL || "").trim();
 
 module.exports.run = async function ({ api, event }) {
   if (
-    module.exports.config.credits !== LOCK.credits ||
-    repoLink.toLowerCase() !== LOCK.repo.toLowerCase()
+    module.exports.config.credits !== CREDITS
   ) {
     return api.sendMessage(
       "⚠️ ক্রেডিট অথবা রিপো লিংক চেঞ্জ করা হয়েছে, তাই এই কমান্ড কাজ করছে না।",
@@ -43,7 +34,8 @@ module.exports.run = async function ({ api, event }) {
 `;
 
   const setupVideo = "https://youtu.be/kNHDYw8GoQg";
-  const linkMsg = `📌 𝗥𝗘𝗣𝗢 𝗟𝗜𝗡𝗞:\n${repoLink}\n\n🎬 𝗦𝗘𝗧-𝗨𝗣 𝗩𝗜𝗗𝗘𝗢:\n${setupVideo}\n\n⚡ Powered By Juwel`;
+  const repoNotice = repoLink ? `📌 𝗥𝗘𝗣𝗢 𝗟𝗜𝗡𝗞:\n${repoLink}` : "📌 Repository link is not configured.";
+  const linkMsg = `${repoNotice}\n\n🎬 𝗦𝗘𝗧-𝗨𝗣 𝗩𝗜𝗗𝗘𝗢:\n${setupVideo}\n\n⚡ Powered By FukeyBot`;
 
   return api.sendMessage(msg + "\n" + linkMsg, event.threadID, event.messageID);
 };

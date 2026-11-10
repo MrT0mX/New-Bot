@@ -1,5 +1,5 @@
 // ══════════════════════════════════════════════
-// Credit : 乛 
+// Credit : FukeyBot
 // ══════════════════════════════════════════════
 // গ্রুপ অ্যাপ্রুভাল গেট
 // গ্রুপে কোনো মেসেজ যাবে না, শুধু অ্যাডমিনের ইনবক্সে নোটিশ যাবে
@@ -7,7 +7,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const CREDITS = "乛 ";
+const CREDITS = "FukeyBot";
 const FILE = path.join(__dirname, "..", "Script", "commands", "cache", "approvedThreads.json");
 const CONFIG_FILE = path.join(__dirname, "..", "config.json");
 

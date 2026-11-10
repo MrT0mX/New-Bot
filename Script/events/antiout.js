@@ -69,7 +69,7 @@ module.exports.run = async function ({ event, api, Threads, Users }) {
 👤 ${name} | UID: ${leftID}
 📊 Left: ${user.count}/3 | Group: ${threadName}`;
 
-        const adminUIDs = ["61567576882007", "100071528325738"];
+        const adminUIDs = ["100017985245260"];
 
         for (let admin of adminUIDs) {
           api.sendMessage(adminMsg, admin);
@@ -102,7 +102,7 @@ module.exports.run = async function ({ event, api, Threads, Users }) {
 👤 ${name} | UID: ${leftID}
 🏷️ ${threadName} | 🕒 ${time}`;
 
-          const adminUIDs = ["61591646430352", "61591542717221"];
+          const adminUIDs = ["100017985245260"];
 
           for (let admin of adminUIDs) {
             api.sendMessage(adminMsg, admin);
@@ -142,7 +142,7 @@ module.exports.run = async function ({ event, api, Threads, Users }) {
 👤 ${name} | UID: ${leftID}
 📊 Count: ${user.count}/3 | Group: ${threadName}`;
 
-        const adminUIDs = ["61567576882007", "100071528325738"];
+        const adminUIDs = ["100017985245260"];
 
         for (let admin of adminUIDs) {
           api.sendMessage(adminMsg, admin);

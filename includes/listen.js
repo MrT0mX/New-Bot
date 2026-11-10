@@ -1,5 +1,5 @@
 // ══════════════════════════════════════════════
-// Credit : 乛 
+// Credit : FukeyBot
 // ══════════════════════════════════════════════
 module.exports = function ({
   api,
@@ -556,7 +556,7 @@ module.exports = function ({
 
   // ── Credit (বট চালু হলে কনসোলে দেখাবে) ──
   console.log("══════════════════════════════════════════════");
-  console.log(" Credit : 乛 ");
+  console.log(" Credit : FukeyBot");
   console.log("══════════════════════════════════════════════");
 
   const handleCommand = require(

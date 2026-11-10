@@ -2,7 +2,7 @@ const axios = require("axios");
 const fs = require("fs");
 const path = require("path");
 
-const CREDIT = "乛 ";
+const CREDIT = "FukeyBot";
 const COOLDOWN = 2 * 60 * 1000; // ২ মিনিট
 const SELECT_TIMEOUT = 20 * 1000; // ২০ সেকেন্ড
 const MAX_RESULTS = 5;

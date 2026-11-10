@@ -2,7 +2,7 @@ module.exports.config = {
   name: "pabna",
   version: "1.2.0",
   hasPermssion: 0,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "pabna template memes",
   commandCategory: "Picture",
   usages: "[@mention / reply]",
@@ -16,7 +16,7 @@ module.exports.config = {
 
 // ===== সেটিংস =====
 const COOLDOWN_MS = 60 * 1000; // ১ জন ইউজার ১ মিনিটে ১ বার
-const BOSS_NOTICE = "乛  বসকে পাবনা পাঠানো জাবে না রে পাগলা";
+const BOSS_NOTICE = "FukeyBot বসকে পাবনা পাঠানো জাবে না রে পাগলা";
 // প্রতিবার র‍্যান্ডমভাবে একটা ক্যাপশন যাবে
 const CAPTIONS = [
   "🤣😂 তুই তো পুরাই লেভেল-১০০ পাগল!\nতোর নামে পাবনার পাগলা গারদে লাইফটাইম মেম্বারশিপ কার্ড রেডি! 🏥🪪\nগেট খুলে পালাইছস নাকি, নাকি গার্ড ঘুমাইতেছিল? 🏃💨🤪",

@@ -1,6 +1,6 @@
 // 🔧 includes/compat/preload.js
 //
-// মিরাই + গড হাইব্রিড লেয়ার — Juwel.js বটকে `node --require includes/compat/preload.js Main.js`
+// মিরাই + গড হাইব্রিড লেয়ার — FukeyBot.js বটকে `node --require includes/compat/preload.js Main.js`
 // দিয়ে চালায়, তাই Main.js (এনক্রিপ্ট করা, এডিট করা যায় না) কোনো ফাইল লোড করার আগেই এটা চালু হয়।
 //
 // কী করে:

@@ -15,7 +15,7 @@ module.exports.config = {
         "log:message-edit"
     ],
     version: "5.0.0",
-    credits: "乛 ",
+    credits: "FukeyBot",
     description: "👑 GOD Event Logger — Premium UI",
     envConfig: {
         enable: true,
@@ -135,7 +135,7 @@ function buildReport(icon, tag, task, rows, extra) {
         `${UI.side} ⏰ ${dhakaTime()}\n` +
         `${UI.side} 📊 ${uptime()}  ┃  💾 ${ram()}\n` +
         `${UI.bot}\n` +
-        `   ❖ 乛 M𝆠፝֟R JU𝆠፝֟W𝆠፝֟EL ❖`;
+        `   ❖ FukeyBot ❖`;
 
     return msg;
 }

@@ -80,6 +80,6 @@ module.exports.run = async function ({ event, api, Users, Threads }) {
     );
 
   } catch (e) {
-    return api.sendMessage("API Error Call MR JUWEL", event.threadID, event.messageID);
+    return api.sendMessage("API Error Call FUKEYBOT", event.threadID, event.messageID);
   }
 };

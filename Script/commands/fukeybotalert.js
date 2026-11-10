@@ -1,16 +1,16 @@
 /**
  * ╔══════════════════════════════════════════════════════════╗
- *  JUWEL ALERT  —  Session Alert + Bot Start/Stop Notice
- *  Credit : 乛 
+ *  FUKEYBOT ALERT  —  Session Alert + Bot Start/Stop Notice
+ *  Credit : FukeyBot
  * ╚══════════════════════════════════════════════════════════╝
  *
  *  ⚠️ লাইসেন্স / মালিকানা নোটিশ ⚠️
- *  এই ফাইলটি "乛 " কর্তৃক তৈরি ও কপিরাইটকৃত।
+ *  এই ফাইলটি "FukeyBot" কর্তৃক তৈরি ও কপিরাইটকৃত।
  *  উপরের ক্রেডিট লাইন, এই নোটিশ, বা নিচের WATERMARK কমেন্ট মুছে ফেলা, বদলানো,
  *  বা অন্য কারও নামে এই কোড পুনঃবিতরণ করা কপিরাইট লঙ্ঘন — অনুমতি ছাড়া করা যাবে না।
  *  প্রতিটি বট-নোটিশে (START/STOP/ALERT/TEST) এই ক্রেডিট স্বচ্ছভাবে দেখানো হয়, যাতে
  *  যে কেউ যাচাই করতে পারে কোডটি আসল কি না।
- *  WATERMARK-ID: JUWEL-ALERT-9f3c2a1e  (এই আইডি দিয়ে কোডের আসল উৎস শনাক্ত করা যায়)
+ *  WATERMARK-ID: FUKEYBOT-ALERT-9f3c2a1e  (এই আইডি দিয়ে কোডের আসল উৎস শনাক্ত করা যায়)
  *
  *  v2.0.0 — কপিরাইট সুরক্ষা: ক্রেডিট/ওয়াটারমার্ক বদলালে বা মুছলে কোড কাজ করবে না।
  *           অ্যাডমিনকে "LOCKED" নোটিশ যাবে, যেখানে বদলানো ক্রেডিট ও আসল ক্রেডিট দুটোই দেখায়।
@@ -25,17 +25,17 @@
  *  v1.6.0 — প্রতিটি নোটিশে বটের নাম, অ্যাডমিনের নাম ও প্রথম অ্যাডমিন UID (config.json থেকে)।
  *  v1.5.0 — ফেসবুক আইডি লক/লগআউট হয়ে বট বন্ধ হলেও নোটিশ যাবে।
  *
- *  সেটিংস: config.json-এর "JUWEL_ALERT" অংশ (TG_TOKEN, TG_CHAT, DISCORD_WEBHOOK, HEARTBEAT_URL)
- *  অথবা env: JUWEL_TG_TOKEN, JUWEL_TG_CHAT (Telegram) | JUWEL_DISCORD_WEBHOOK (Discord) — env আগে
+ *  সেটিংস: config.json-এর "FUKEYBOT_ALERT" অংশ (TG_TOKEN, TG_CHAT, DISCORD_WEBHOOK, HEARTBEAT_URL)
+ *  অথবা env: FUKEYBOT_TG_TOKEN, FUKEYBOT_TG_CHAT (Telegram) | FUKEYBOT_DISCORD_WEBHOOK (Discord) — env আগে
  *
- *  কমান্ড:  #juwelalert        (অবস্থা দেখায়, শুধু বট-অ্যাডমিন)
- *           #juwelalert test   (টেস্ট নোটিশ পাঠায়)
+ *  কমান্ড:  #fukeybotalert        (অবস্থা দেখায়, শুধু বট-অ্যাডমিন)
+ *           #fukeybotalert test   (টেস্ট নোটিশ পাঠায়)
  */
 
-// এই ফাইলকে `node juwelalert.js --juwel-watch` দিয়ে চালালে এটা ওয়াচডগ হিসেবে চলে
-const IS_WATCHER = require.main === module && process.argv.includes("--juwel-watch");
+// এই ফাইলকে `node fukeybotalert.js --fukeybot-watch` দিয়ে চালালে এটা ওয়াচডগ হিসেবে চলে
+const IS_WATCHER = require.main === module && process.argv.includes("--fukeybot-watch");
 
-if (!IS_WATCHER) { try { console.log("[JuwelAlert] ফাইল লোড হয়েছে (juwelalert.js)"); } catch (_) {} }
+if (!IS_WATCHER) { try { console.log("[FukeyBotAlert] ফাইল লোড হয়েছে (fukeybotalert.js)"); } catch (_) {} }
 
 const axios = require("axios");
 
@@ -45,8 +45,8 @@ const axios = require("axios");
     const fs = require("fs"), path = require("path");
     const file = path.join(__dirname, "..", "..", "config.json");
     if (!fs.existsSync(file)) return;
-    const cfg = JSON.parse(fs.readFileSync(file, "utf8")).JUWEL_ALERT || {};
-    const map = { TG_TOKEN: "JUWEL_TG_TOKEN", TG_CHAT: "JUWEL_TG_CHAT", DISCORD_WEBHOOK: "JUWEL_DISCORD_WEBHOOK", HEARTBEAT_URL: "JUWEL_HEARTBEAT_URL" };
+    const cfg = JSON.parse(fs.readFileSync(file, "utf8")).FUKEYBOT_ALERT || {};
+    const map = { TG_TOKEN: "FUKEYBOT_TG_TOKEN", TG_CHAT: "FUKEYBOT_TG_CHAT", DISCORD_WEBHOOK: "FUKEYBOT_DISCORD_WEBHOOK", HEARTBEAT_URL: "FUKEYBOT_HEARTBEAT_URL" };
     Object.keys(map).forEach((k) => {
       const v = cfg[k] === undefined || cfg[k] === null ? "" : String(cfg[k]).trim();
       if (v && !process.env[map[k]]) process.env[map[k]] = v;
@@ -54,18 +54,18 @@ const axios = require("axios");
   } catch (_) {}
 })();
 
-const PROBE_EVERY_MS = Number(process.env.JUWEL_PROBE_MS) || 2 * 60 * 1000;
+const PROBE_EVERY_MS = Number(process.env.FUKEYBOT_PROBE_MS) || 2 * 60 * 1000;
 const PROBE_FAILS_BEFORE_ALERT = 2;
-const BOOT_NOTICE_DELAY_MS = Number(process.env.JUWEL_BOOT_MS) || 20 * 1000;
-const LOGIN_GRACE_MS = Number(process.env.JUWEL_LOGIN_GRACE_MS) || 3 * 60 * 1000; // এর মধ্যে লগইন না হলে সতর্কতা
+const BOOT_NOTICE_DELAY_MS = Number(process.env.FUKEYBOT_BOOT_MS) || 20 * 1000;
+const LOGIN_GRACE_MS = Number(process.env.FUKEYBOT_LOGIN_GRACE_MS) || 3 * 60 * 1000; // এর মধ্যে লগইন না হলে সতর্কতা
 const STOP_NOTICE_WAIT_MS = 6000; // বন্ধ হওয়ার আগে নোটিশ পাঠাতে সর্বোচ্চ এত সময় অপেক্ষা
-const RECOVER_STABLE_MS = Number(process.env.JUWEL_RECOVER_MS) || 5 * 60 * 1000; // এতক্ষণ টানা সুস্থ থাকলে তবেই "ফিরে এসেছে"
+const RECOVER_STABLE_MS = Number(process.env.FUKEYBOT_RECOVER_MS) || 5 * 60 * 1000; // এতক্ষণ টানা সুস্থ থাকলে তবেই "ফিরে এসেছে"
 const EPISODE_MAX_MS = 6 * 60 * 60 * 1000; // নিরাপত্তা: ৬ ঘণ্টা পর লক নিজে খুলে যাবে
 
 /* ───────────── একবারই-পাঠানো লক (ফাইলে, প্রসেস-নিরাপদ) ───────────── */
-const LATCH_FILE = require("path").join(__dirname, "..", "..", "juwelalert.latch.json");
+const LATCH_FILE = require("path").join(__dirname, "..", "..", "fukeybotalert.latch.json");
 const LOCK_FILE = LATCH_FILE + ".lock";
-const RUN_FILE = require("path").join(__dirname, "..", "..", "juwelalert.run.json");
+const RUN_FILE = require("path").join(__dirname, "..", "..", "fukeybotalert.run.json");
 const PENDING_MS = 20 * 1000; // "পাঠানো চলছে" ধরে নেওয়ার সর্বোচ্চ সময়
 
 function latchRead() {
@@ -135,7 +135,7 @@ const fmtDate = (ms) => {
   catch (_) { return new Date(ms).toISOString(); }
 };
 
-const state = global.__juwelAlert || (global.__juwelAlert = {
+const state = global.__fukeybotAlert || (global.__fukeybotAlert = {
   started: false,
   bootAt: Date.now(),
   logHits: [],
@@ -181,13 +181,13 @@ const fx = (str) => String(str).replace(/[A-Za-z0-9]/g, (c) => {
   if (n >= 97 && n <= 122) return String.fromCodePoint(0x1D5EE + n - 97);
   return String.fromCodePoint(0x1D7EC + n - 48);
 });
-const CREDIT = "乛 "; // ফন্ট-রূপান্তর হয় না, যেমন আছে তেমন
+const CREDIT = "FukeyBot"; // ফন্ট-রূপান্তর হয় না, যেমন আছে তেমন
 
 const stripAnsi = (s) => String(s).replace(/\u001b\[[0-9;]*m/g, "");
 
 function log(msg, level) {
-  try { require("../../utils/log.js")("[JuwelAlert] " + msg, level || "info"); }
-  catch (_) { try { process.stdout.write("[JuwelAlert] " + msg + "\n"); } catch (__) {} }
+  try { require("../../utils/log.js")("[FukeyBotAlert] " + msg, level || "info"); }
+  catch (_) { try { process.stdout.write("[FukeyBotAlert] " + msg + "\n"); } catch (__) {} }
 }
 
 function adminIDs() {
@@ -205,8 +205,8 @@ function withLock(reason) {
 
 async function sendExternal(text) {
   text = withCredit(text); // ফন্ট + ক্রেডিট সব বার্তায়
-  const tgToken = process.env.JUWEL_TG_TOKEN, tgChat = process.env.JUWEL_TG_CHAT;
-  const dc = process.env.JUWEL_DISCORD_WEBHOOK;
+  const tgToken = process.env.FUKEYBOT_TG_TOKEN, tgChat = process.env.FUKEYBOT_TG_CHAT;
+  const dc = process.env.FUKEYBOT_DISCORD_WEBHOOK;
   let sent = false;
   // প্রতিটি মাধ্যমের ফলাফল: null = সেট করা নেই, true = গেছে, false = ব্যর্থ
   const res = (state.lastSend = { tg: null, dc: null, tgErr: "", dcErr: "" });
@@ -235,7 +235,7 @@ async function sendExternal(text) {
   }
   // Telegram ও Discord একসাথে (parallel) যায় — দ্রুত পৌঁছানোর জন্য
   await Promise.all(jobs);
-  if (!tgToken && !tgChat && !dc) log("JUWEL_TG_TOKEN/JUWEL_TG_CHAT বা JUWEL_DISCORD_WEBHOOK সেট করা নেই — শুধু লগে লেখা হলো।", "warn");
+  if (!tgToken && !tgChat && !dc) log("FUKEYBOT_TG_TOKEN/FUKEYBOT_TG_CHAT বা FUKEYBOT_DISCORD_WEBHOOK সেট করা নেই — শুধু লগে লেখা হলো।", "warn");
   return sent;
 }
 
@@ -264,7 +264,7 @@ async function raiseAlert(reason) {
   state.lastAlertAt = now;
   const upA = uptimeParts((now - RUN_START) / 1000);
   const text =
-    HEAD("🚨 JUWEL BOT • ALERT") + "\n\n" +
+    HEAD("🚨 FUKEYBOT BOT • ALERT") + "\n\n" +
     "🔴 STATUS ➤ SESSION PROBLEM\n" + LINE + "\n" +
     "📛 কারণ ➤ " + reason + "\n" + LINE + "\n" +
     "⏱ চালু ছিল\n" + uptimeLines(upA) + "\n" + LINE + "\n" +
@@ -291,7 +291,7 @@ async function raiseRecovery() {
   state.lockAt = 0; state.lockReason = ""; state.okSince = 0;
   if (!hadAlert) return; // শুধু সাধারণ বন্ধ/চালু হলে আলাদা "ফিরে এসেছে" নোটিশ নয়
   const text =
-    HEAD("✅ JUWEL BOT • BACK ONLINE") + "\n\n" +
+    HEAD("✅ FUKEYBOT BOT • BACK ONLINE") + "\n\n" +
     "🟢 STATUS ➤ ONLINE\n" + LINE + "\n" +
     "⏳ অফলাইন ছিল ➤ " + fmtDur(downFor) + "\n" +
     "🕒 TIME ➤ " + dhakaTime();
@@ -310,7 +310,7 @@ function stopText(reason, startMs, endMs) {
   const up = uptimeParts((end - start) / 1000);
 
   return (
-    HEAD("🔴 JUWEL BOT • STOPPED") + "\n\n" +
+    HEAD("🔴 FUKEYBOT BOT • STOPPED") + "\n\n" +
     "🔴 STATUS ➤ OFFLINE\n" + LINE + "\n" +
     "📛 কারণ ➤ " + reason + "\n" + LINE + "\n" +
     "⏱ চালু ছিল\n" + uptimeLines(up) + "\n" + LINE + "\n" +
@@ -324,14 +324,14 @@ function stopText(reason, startMs, endMs) {
 //   CRASH  = শুধু সম্ভাব্য কারণ জানিয়ে রাখা (বট হঠাৎ মরলে ওয়াচডগ এটা ব্যবহার করবে)
 function watchSend(line) {
   try {
-    const w = global.__juwelAlertWatcher;
+    const w = global.__fukeybotAlertWatcher;
     if (w && w.stdin && w.stdin.writable) w.stdin.write(line + "\n");
   } catch (_) {}
 }
 
 // বাইরের হার্টবিট সার্ভিসকে সাথে সাথে "ফেল" জানায়
 function heartbeatFail() {
-  const HB = process.env.JUWEL_HEARTBEAT_URL;
+  const HB = process.env.FUKEYBOT_HEARTBEAT_URL;
   if (!HB) return;
   try { axios.get(HB.replace(/\/$/, "") + "/fail", { timeout: 5000 }).catch(() => {}); } catch (_) {}
 }
@@ -359,8 +359,8 @@ function sendStopNotice(reason) {
 }
 
 function installShutdownHook() {
-  if (global.__juwelAlertShutdownHooked) return;
-  global.__juwelAlertShutdownHooked = true;
+  if (global.__fukeybotAlertShutdownHooked) return;
+  global.__fukeybotAlertShutdownHooked = true;
 
   const origExit = process.exit.bind(process);
 
@@ -412,11 +412,11 @@ function installShutdownHook() {
 
 /* ───────────── watchdog (আলাদা প্রসেস) ───────────── */
 function startWatchdog() {
-  if (global.__juwelAlertWatcher) return;
-  if (String(process.env.JUWEL_WATCHDOG || "").toLowerCase() === "off") return;
+  if (global.__fukeybotAlertWatcher) return;
+  if (String(process.env.FUKEYBOT_WATCHDOG || "").toLowerCase() === "off") return;
   try {
     const cp = require("child_process");
-    const child = cp.spawn(process.execPath, [__filename, "--juwel-watch"], {
+    const child = cp.spawn(process.execPath, [__filename, "--fukeybot-watch"], {
       detached: true,
       stdio: ["pipe", "ignore", "ignore"],
       windowsHide: true,
@@ -429,7 +429,7 @@ function startWatchdog() {
     if (child.stdin) child.stdin.on("error", () => {});
     child.unref();
     try { child.stdin.unref(); } catch (_) {}
-    global.__juwelAlertWatcher = child;
+    global.__fukeybotAlertWatcher = child;
     log("watchdog চালু (pid " + child.pid + ") — ক্র্যাশ/kill/লক হলেও বন্ধ-নোটিশ যাবে।", "success");
   } catch (e) { log("watchdog চালু করা যায়নি: " + e.message, "warn"); }
 }
@@ -528,14 +528,14 @@ const LOCK_PATTERNS = [
 ];
 
 function installLogWatcher() {
-  if (global.__juwelAlertLogHooked) return;
-  global.__juwelAlertLogHooked = true;
+  if (global.__fukeybotAlertLogHooked) return;
+  global.__fukeybotAlertLogHooked = true;
   ["log", "warn", "error"].forEach((method) => {
     const orig = console[method];
     console[method] = function () {
       try {
         const line = stripAnsi(Array.prototype.map.call(arguments, (a) => (typeof a === "string" ? a : "")).join(" "));
-        if (line && line.length < 2000 && !/JuwelAlert/.test(line) && line.indexOf("📩") === -1) {
+        if (line && line.length < 2000 && !/FukeyBotAlert/.test(line) && line.indexOf("📩") === -1) {
           if (LOCK_PATTERNS.some((r) => r.test(line))) {
             const short = line.trim().slice(0, 160);
             state.lockAt = Date.now();
@@ -619,9 +619,9 @@ function probe() {
 
 /* ───────────── heartbeat (ঐচ্ছিক, বাইরের মনিটর) ───────────── */
 function startHeartbeat() {
-  const HB = process.env.JUWEL_HEARTBEAT_URL;
-  if (!HB || global.__juwelAlertHeartbeat) return;
-  global.__juwelAlertHeartbeat = true;
+  const HB = process.env.FUKEYBOT_HEARTBEAT_URL;
+  if (!HB || global.__fukeybotAlertHeartbeat) return;
+  global.__fukeybotAlertHeartbeat = true;
   const ping = () => { try { axios.get(HB, { timeout: 10000 }).catch(() => {}); } catch (_) {} };
   ping();
   const h = setInterval(ping, 60 * 1000);
@@ -649,13 +649,13 @@ function start() {
     const o = latchRead();
     if (o.alert || o.stop || o.alert_p || o.stop_p) return; // আইডি লক/সেশন সমস্যা চলছে — "STARTED" নোটিশ নয়
     const text =
-      HEAD("🟢 JUWEL BOT • STARTED") + "\n\n" +
+      HEAD("🟢 FUKEYBOT BOT • STARTED") + "\n\n" +
       "🟢 STATUS ➤ ONLINE\n" + LINE + "\n" +
       uptimeBlock() + "\n" + LINE + "\n" +
       "🕒 TIME ➤ " + dhakaTime() + "\n" +
       "⚙️ COMMANDS ➤ " + (global.client && global.client.commands ? global.client.commands.size : "?");
-    // Telegram/Discord-এও যায় (বন্ধ করতে env: JUWEL_TG_BOOT=off)
-    if (String(process.env.JUWEL_TG_BOOT || "").toLowerCase() !== "off") await sendExternal(text);
+    // Telegram/Discord-এও যায় (বন্ধ করতে env: FUKEYBOT_TG_BOOT=off)
+    if (String(process.env.FUKEYBOT_TG_BOOT || "").toLowerCase() !== "off") await sendExternal(text);
     await sendMessengerToAdmins(text);
   };
   const waitLogin = () => {
@@ -680,15 +680,15 @@ function healthText() {
   const up = uptimeParts((Date.now() - RUN_START) / 1000);
   const probeTxt = state.lastProbeOk === null ? "PENDING" : state.lastProbeOk ? "✅ OK" : "❌ FAILED";
   const probeAgo = state.lastProbeAt ? " (" + fmtDur(Date.now() - state.lastProbeAt) + " ago)" : "";
-  const tg = process.env.JUWEL_TG_TOKEN && process.env.JUWEL_TG_CHAT ? "ON ✅" : "OFF ❌";
-  const dc = process.env.JUWEL_DISCORD_WEBHOOK ? "ON ✅" : "OFF ❌";
-  const wd = global.__juwelAlertWatcher ? "ON ✅" : "OFF ❌";
-  const hb = process.env.JUWEL_HEARTBEAT_URL ? "ON ✅" : "OFF ❌";
+  const tg = process.env.FUKEYBOT_TG_TOKEN && process.env.FUKEYBOT_TG_CHAT ? "ON ✅" : "OFF ❌";
+  const dc = process.env.FUKEYBOT_DISCORD_WEBHOOK ? "ON ✅" : "OFF ❌";
+  const wd = global.__fukeybotAlertWatcher ? "ON ✅" : "OFF ❌";
+  const hb = process.env.FUKEYBOT_HEARTBEAT_URL ? "ON ✅" : "OFF ❌";
   const ram = Math.round(process.memoryUsage().rss / 1048576);
   const cmds = global.client && global.client.commands ? global.client.commands.size : "?";
 
   return (
-    HEAD("🤖 JUWEL BOT • STATUS") + "\n\n" +
+    HEAD("🤖 FUKEYBOT BOT • STATUS") + "\n\n" +
     (state.down ? "🔴 STATUS ➤ PROBLEM" : "🟢 STATUS ➤ ONLINE") + "\n" + LINE + "\n" +
     "⏱ UPTIME\n" + uptimeLines(up) + "\n" + LINE + "\n" +
     "📅 STARTED ➤ " + fmtDate(RUN_START) + "\n" +
@@ -715,13 +715,13 @@ function uptimeBlock() {
 
 /* ───────────── test notice (সাজানো) ───────────── */
 function testText() {
-  const tg = process.env.JUWEL_TG_TOKEN && process.env.JUWEL_TG_CHAT ? "CONNECTED ✅" : "NOT SET ❌";
-  const dc = process.env.JUWEL_DISCORD_WEBHOOK ? "CONNECTED ✅" : "NOT SET ❌";
-  const wd = global.__juwelAlertWatcher ? "ACTIVE ✅" : "OFF ❌";
-  const hb = process.env.JUWEL_HEARTBEAT_URL ? "ACTIVE ✅" : "NOT SET ⚪";
+  const tg = process.env.FUKEYBOT_TG_TOKEN && process.env.FUKEYBOT_TG_CHAT ? "CONNECTED ✅" : "NOT SET ❌";
+  const dc = process.env.FUKEYBOT_DISCORD_WEBHOOK ? "CONNECTED ✅" : "NOT SET ❌";
+  const wd = global.__fukeybotAlertWatcher ? "ACTIVE ✅" : "OFF ❌";
+  const hb = process.env.FUKEYBOT_HEARTBEAT_URL ? "ACTIVE ✅" : "NOT SET ⚪";
   const cmds = global.client && global.client.commands ? global.client.commands.size : "?";
   return (
-    HEAD("🧪 JUWEL ALERT • TEST") + "\n\n" +
+    HEAD("🧪 FUKEYBOT ALERT • TEST") + "\n\n" +
     "🎉 অভিনন্দন! এই বার্তা পেয়েছেন মানে\n" +
     "আপনার সতর্কতা ব্যবস্থা ১০০% ঠিক আছে।\n" + LINE + "\n" +
     "📡 ALERT CHANNELS\n" +
@@ -751,10 +751,10 @@ function testResultText(ok) {
     (ok
       ? "🎯 টেস্ট বার্তা পাঠানো হয়েছে।\nTelegram/Discord ইনবক্স চেক করুন।"
       : "🛠 পাঠানো যায়নি। এগুলো দেখুন:\n" +
-        " ┌ JUWEL_TG_TOKEN সঠিক কি না\n" +
-        " ├ JUWEL_TG_CHAT (chat id) সঠিক কি না\n" +
+        " ┌ FUKEYBOT_TG_TOKEN সঠিক কি না\n" +
+        " ├ FUKEYBOT_TG_CHAT (chat id) সঠিক কি না\n" +
         " ├ টেলিগ্রামে বটকে আগে /start দিয়েছেন কি না\n" +
-        " └ JUWEL_DISCORD_WEBHOOK সঠিক কি না") + "\n" + LINE + "\n" +
+        " └ FUKEYBOT_DISCORD_WEBHOOK সঠিক কি না") + "\n" + LINE + "\n" +
     "🕒 TIME ➤ " + dhakaTime()
   );
 }
@@ -788,9 +788,9 @@ const withCredit = (t) => fx(t) + "\n" + LINE + "\n" + infoBlock() + "\n" + LINE
 
 /* ───────────── কপিরাইট সুরক্ষা (ক্রেডিট বদলালে কোড কাজ করবে না) ───────────── */
 // আসল ক্রেডিট base64-এ রাখা, যাতে খুঁজে-বদলে (find/replace) ধরা না যায়
-const _ORIG_B64 = "5LmbIE3wnYag4Y2d1p9SIOC9kOC9suC8j+C9i+C+gCBKVfCdhqDhjZ3Wn1fwnYag4Y2d1p9FTOqcm+C9kOC9suC8j+C9i+C+gOC/kA==";
+const _ORIG_B64 = "RnVrZXlCb3Q=";
 const ORIGINAL_CREDIT = Buffer.from(_ORIG_B64, "base64").toString("utf8");
-const _CREDIT_SHA = "8f74924e81a157abaf089d90717e48a4949617a7379d20a2df567cb0ab0dad81";
+const _CREDIT_SHA = "b2bd0a991c7ea9e421c10dba474fb34d188202baa857ed9a97ea99233252a793";
 const _sha = (s) => require("crypto").createHash("sha256").update(String(s), "utf8").digest("hex");
 
 let _integ = null;
@@ -804,7 +804,7 @@ function integrity() {
   try {
     const head = require("fs").readFileSync(__filename, "utf8").slice(0, 3000);
     if (head.indexOf(ORIGINAL_CREDIT) === -1) bad.push("ফাইলের হেডার ক্রেডিট");
-    if (head.indexOf("WATERMARK-ID: JUWEL-ALERT-9f3c2a1e") === -1) bad.push("WATERMARK-ID");
+    if (head.indexOf("WATERMARK-ID: FUKEYBOT-ALERT-9f3c2a1e") === -1) bad.push("WATERMARK-ID");
   } catch (_) {}
   _integ = { ok: bad.length === 0, bad, shown: String(cfgCredit || CREDIT) };
   return _integ;
@@ -814,20 +814,20 @@ function integrity() {
 function lockText() {
   const i = integrity();
   return (
-    HEAD("⛔ JUWEL ALERT • LOCKED") + "\n\n" +
+    HEAD("⛔ FUKEYBOT ALERT • LOCKED") + "\n\n" +
     "🚫 কপিরাইট ক্রেডিট পরিবর্তন/মুছে ফেলা হয়েছে, তাই এই কোড কাজ করবে না।\n" + LINE + "\n" +
     "⚠️ পরিবর্তিত জায়গা ➤ " + i.bad.join(", ") + "\n" +
     "❌ বর্তমান ক্রেডিট ➤ " + i.shown + "\n" +
     "✅ আসল ক্রেডিট ➤ " + ORIGINAL_CREDIT + "\n" + LINE + "\n" +
     "🛠 সমাধান: আসল ক্রেডিট ফিরিয়ে দিন, তারপর বট রিস্টার্ট দিন।\n" +
-    "🔖 WATERMARK-ID ➤ JUWEL-ALERT-9f3c2a1e"
+    "🔖 WATERMARK-ID ➤ FUKEYBOT-ALERT-9f3c2a1e"
   );
 }
 
 // লক অবস্থায় শুধু নোটিশ দেয় (কনসোলে + লগইনের পর অ্যাডমিনদের মেসেঞ্জারে); আর কিছু চালু হয় না
 function lockedStart() {
-  if (global.__juwelLockWarned) return;
-  global.__juwelLockWarned = true;
+  if (global.__fukeybotLockWarned) return;
+  global.__fukeybotLockWarned = true;
   const text = lockText();
   try { console.error("\n" + text + "\n"); } catch (_) {}
   const tick = () => {
@@ -842,14 +842,14 @@ function lockedStart() {
 
 /* ───────────── command ───────────── */
 module.exports.config = {
-  name: "juwelalert",
+  name: "fukeybotalert",
   aliases: ["jalert"],
   version: "2.0.0",
   hasPermssion: 2,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "সেশন সতর্কতা ও বট চালু/বন্ধ নোটিশ",
   commandCategory: "system",
-  usages: "juwelalert [test]",
+  usages: "fukeybotalert [test]",
   cooldowns: 5
 };
 

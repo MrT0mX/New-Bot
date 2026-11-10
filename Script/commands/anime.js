@@ -2,7 +2,7 @@ const fs = require("fs-extra");
 const path = require("path");
 const axios = require("axios");
 
-const CREDIT = "乛 ";
+const CREDIT = "FukeyBot";
 
 module.exports.config = {
   name: "anime",

@@ -2,7 +2,7 @@ module.exports.config = {
   name: "besti",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "Besti & Bestu banner with both users mentioned and random caption",
   commandCategory: "banner",
   usePrefix: true,
@@ -33,7 +33,7 @@ const RIGHT = { x: 1387, y: 399, rx: 224, ry: 199, cut: 545 };
 // ছবির মুখ যাতে উপরের দিকে থাকে (0 = একদম উপর, 0.5 = মাঝখান)
 const FOCUS_Y = 0.35;
 
-const CREDIT = "乛 ";
+const CREDIT = "FukeyBot";
 // ================================
 
 // ====== Captions ======

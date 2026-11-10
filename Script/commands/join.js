@@ -4,14 +4,14 @@ module.exports.config = {
   name: "join",
   version: "4.0.0",
   hasPermssion: 2,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "Join one or all bot groups (with member count) or add another user by UID/reply",
   commandCategory: "system",
   usages: "[uid | reply a message]",
   cooldowns: 5
 };
 
-const CREDIT = "乛 ";
+const CREDIT = "FukeyBot";
 const TOP = "╔═════════════════════╗";
 const BOT = "╚═════════════════════╝";
 const DIV = "┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈";

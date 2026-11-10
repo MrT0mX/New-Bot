@@ -75,7 +75,7 @@ const LEVELS = {
 
 const LOG_TO_FILE = true;
 const LOG_DIR = path.join(process.cwd(), "logs");
-const CREDIT = "乛 ";
+const CREDIT = "FukeyBot";
 
 // ───────── হেল্পার ─────────
 function frame(t) {

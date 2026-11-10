@@ -7,7 +7,7 @@ appstate*.json.*
 appstate.json.bak
 appstate.json.tmp
 *.appstate.json
-mrjuwelFcaConfig.json
+mr*FcaConfig.json
 config.json.temp
 config.temp
 .env

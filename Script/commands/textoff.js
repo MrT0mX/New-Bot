@@ -2,7 +2,7 @@ module.exports.config = {
 name: "textoff",
 version: "3.2.1",
 hasPermssion: 1,
-credits: "乛 ",
+credits: "FukeyBot",
 description: "গ্রুপ টেক্সট অফ সিস্টেম",
 commandCategory: "group",
 usages: "textoff | textoff 30m | textoff 2h",

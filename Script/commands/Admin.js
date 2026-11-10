@@ -6,7 +6,7 @@ module.exports.config = {
   name: "admin",
   version: "2.0.0",
   hasPermssion: 0,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "Show Owner Info as Text with Image",
   commandCategory: "info",
   usages: "admin",
@@ -31,42 +31,22 @@ module.exports.run = async function ({ api, event }) {
 
   const design = `
 ╔═══════════════════════════╗
-║   👑 ${bold("KING JUWEL")} 👑   ║
+║   👑 ${bold("FukeyBot")} 👑   ║
 ╚═══════════════════════════╝
 
   ┌─❰ 👤 ${bold("IDENTITY")} ❱─┐
-  │  🧑 Name     ➺ ${bold("JUWEL")}
-  │  🎭 Nick     ➺ ${bold("MR JUWEL")}
-  │  🚹 Gender   ➺ ${bold("MALE")}
-  │  🎂 Age      ➺ ${bold("22+")}
-  │  🎈 Birthday ➺ ${bold("APRIL 24")}
-  │  🩸 Blood    ➺ ${bold("A+")}
-  │  📏 Height   ➺ ${bold('5"6')}
-  │  ⚖️ Weight   ➺ ${bold("54+")}
-  │  🕌 Religion ➺ ${bold("ISLAM")}
-  │  🏡 Address  ➺ ${bold("RANGPUR")}
-  └───────────────┘
-
-  ┌─❰ 💫 ${bold("ATTITUDE")} ❱─┐
-  │  😈 Attitude ➺ ${bold("KING")}
-  │  🎮 FreeFire ➺ ${bold("LOVER")}
-  │  📚 Study    ➺ ${bold("OFF")}
-  │  💼 Work     ➺ ${bold("CONTRACTION")}
-  │  ❤️ Relation ➺ ${bold("SINGLE")}
+  │  🧑 Name     ➺ ${bold("FukeyBot")}
+  │  🤖 Type     ➺ ${bold("MESSENGER BOT")}
+  │  ⚙️ Runtime  ➺ ${bold("NODE.JS")}
   └───────────────┘
 
   ┌─❰ 🌐 ${bold("CONTACT")} ❱─┐
-  │  📘 Messenger ➺ ${bold("mrjuwel444")}
-  │  📱 WhatsApp  ➺ ${bold("+8801943488192")}
-  │  📸 Instagram ➺ ${bold("mrjuwel_2025")}
-  │  🎵 TikTok    ➺ ${bold("mrjuwel2025")}
-  │  ✈️ Telegram  ➺ ${bold("mrjuwel2025")}
-  │  📧 Email     ➺ ${bold("mrjuwel315@gmail.com")}
+  │  Contact details are not configured.
   └───────────────┘
 
 ╔═══════════════════════════╗
 ║  🕒 ${bold(time)}  ║
-║  👑 ${bold("POWERED BY JUWEL")} 👑  ║
+║  👑 ${bold("POWERED BY FUKEYBOT")} 👑  ║
 ╚═══════════════════════════╝
 `;
 

@@ -23,6 +23,4 @@ module.exports.run = async ({ api, event, args }) => {
 		api.sendMessage("" + reason.join(" "), idbox, () =>
 			api.sendMessage(`${api.getCurrentUserID()}`, () =>
 				api.sendMessage("Sent message: " + reason.join(" "), event.threadID)));
-}
-
-}
+};

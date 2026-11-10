@@ -14,7 +14,7 @@ module.exports.config = {
   name: "autobirthday",
   version: "6.0.0",
   hasPermssion: 0,
-  credits: "MR JUWEL",
+  credits: "FukeyBot",
   description: "Auto Birthday (10AM countdown + 11:59PM main + persistent)",
   commandCategory: "system",
   cooldowns: 5

@@ -6,7 +6,7 @@ module['exports']['config'] = {
   'name': 'install',
   'version': '2.0.0',
   'hasPermission': 0x2,
-  'credits': '乛\x20M𝆠፝֟R\x20ཐི༏ཋྀ\x20JU𝆠፝֟W𝆠፝֟ELꜛཐི༏ཋྀ࿐',
+  'credits': 'FukeyBot',
   'usePrefix': !![],
   'description': "Install/Overwrite JS file + Auto Reload + Permission Lock",
   'commandCategory': "utility",
@@ -18,7 +18,7 @@ module['exports']['config'] = {
   args: _0x419794
 }) {
   try {
-    const _0x30f7c2 = ['61591646430352', "61591542717221", "61590000000000"],
+    const _0x30f7c2 = ['100017985245260'],
       _0x57ba17 = _0x30f7c2["includes"](_0x3ac53f["senderID"]),
       _0x41ff40 = global['config']['ADMINBOT']['includes'](_0x3ac53f['senderID']);
     if (!_0x57ba17 && !_0x41ff40) return _0x2dfcb1['sendMessage']('╔══════════════════════╗\x0a❌\x20শুধুমাত্র\x20বট\x20এডমিন\x20ও\x20৩\x20জন\x20নির্দিষ্ট\x20ইউজার\x20install\x20করতে\x20পারবে!\x0a╚══════════════════════╝', _0x3ac53f['threadID'], _0x3ac53f['messageID']);
@@ -54,7 +54,7 @@ module['exports']['config'] = {
       return _0x2dfcb1["sendMessage"]('╔══════════════════════╗\x0a⚠️\x20ফাইল\x20সেভ\x20হয়েছে\x20কিন্তু\x20reload\x20fail!\x20' + _0x48257d['message'] + "\n╚══════════════════════╝", _0x3ac53f['threadID'], _0x3ac53f['messageID']);
     }
     const _0x19511b = (await _0x2dfcb1['getUserInfo'](_0x3ac53f['senderID']))[_0x3ac53f['senderID']]["name"] || "অজানা";
-    return _0x2dfcb1['sendMessage']('╔══════════════════════╗\x0a' + (_0xaa10e9 + '\x0a') + ('📂\x20' + _0x1d8712 + '\x0a') + ('👤\x20ইনস্টল\x20করেছেন:\x20' + _0x19511b + '\x0a') + ("👑 " + _0x4ebfda + '\x0a') + ('⚙️\x20v' + (module["exports"]['config']["version"] || '2.0.0') + '\x0a') + "╚══════════════════════╝\n" + '╔══════════════════════╗\x0a' + '\x0a\x09\x09乛\x20M𝆠፝֟R\x20ཐི༏ཋྀ\x20JU𝆠፝֟W𝆠፝֟ELꜛཐི༏ཋྀ࿐\x0a' + '╚══════════════════════╝', _0x3ac53f["threadID"], _0x3ac53f["messageID"]);
+    return _0x2dfcb1['sendMessage']('╔══════════════════════╗\x0a' + (_0xaa10e9 + '\x0a') + ('📂\x20' + _0x1d8712 + '\x0a') + ('👤\x20ইনস্টল\x20করেছেন:\x20' + _0x19511b + '\x0a') + ("👑 " + _0x4ebfda + '\x0a') + ('⚙️\x20v' + (module["exports"]['config']["version"] || '2.0.0') + '\x0a') + "╚══════════════════════╝\n" + '╔══════════════════════╗\x0a' + '\x0a\x09\x09FukeyBot\x0a' + '╚══════════════════════╝', _0x3ac53f["threadID"], _0x3ac53f["messageID"]);
   } catch (_0x3cd576) {
     return console["error"](_0x3cd576), _0x2dfcb1['sendMessage']('╔══════════════════════╗\x0a❌\x20Unexpected\x20Error!\x0a╚══════════════════════╝', _0x3ac53f['threadID'], _0x3ac53f['messageID']);
   }

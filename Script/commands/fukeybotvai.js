@@ -1,12 +1,12 @@
 const fs = require('fs');
 module['exports']["config"] = {
-  'name': 'juwelvai',
+  'name': 'fukeybotvai',
   'version': "1.0.1",
   'hasPermssion': 0x0,
   'credits': '𝙋𝙧𝙞𝙮𝙖𝙣𝙨𝙝\x20𝙍𝙖𝙟𝙥𝙪𝙩',
   'description': "hihihihi",
   'commandCategory': "no prefix",
-  'usages': 'Juwel',
+  'usages': 'FukeyBot',
   'cooldowns': 0x5
 }, module['exports']["handleEvent"] = function ({
   api: _0x323a0b,
@@ -19,10 +19,10 @@ module['exports']["config"] = {
     threadID: _0x19b7ba,
     messageID: _0x5310ff
   } = _0x577304;
-  if (_0x577304["body"]['indexOf']('乛\x20M𝆠፝֟R\x20ཐི༏ཋྀ\x20JU𝆠፝֟W𝆠፝֟ELꜛཐི༏ཋྀ࿐') == 0x0 || _0x577304["body"]['indexOf']("জুয়েল") == 0x0 || _0x577304['body']['indexOf']("Juwel") == 0x0 || _0x577304['body']["indexOf"]('juwel\x20vai') == 0x0) {
+  if (_0x577304["body"]['indexOf']('FukeyBot') == 0x0 || _0x577304["body"]['indexOf']("FukeyBot") == 0x0 || _0x577304['body']['indexOf']("FukeyBot") == 0x0 || _0x577304['body']["indexOf"]('fukeybot\x20vai') == 0x0) {
     var _0x10fe59 = {
-      'body': 'Juwel',
-      'attachment': fs['createReadStream'](__dirname + '/noprefix/Juwel.png')
+      'body': 'FukeyBot',
+      'attachment': fs['createReadStream'](__dirname + '/noprefix/FukeyBot.png')
     };
     _0x323a0b['sendMessage'](_0x10fe59, _0x19b7ba, _0x5310ff), _0x323a0b["setMessageReaction"]('☠️', _0x577304["messageID"], _0x4d7183 => {}, !![]);
   }

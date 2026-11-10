@@ -6,7 +6,7 @@ module.exports.config = {
   name: "birthdayAuto",
   version: "3.0.1",
   hasPermssion: 0,
-  credits: "MR JUWEL",
+  credits: "FukeyBot",
   description: "Fixed auto birthday system",
   commandCategory: "system",
   cooldowns: 5
@@ -77,7 +77,7 @@ module.exports.run = async function ({ api, event, args }) {
 
   let msg = "";
   let attachment = null;
-  const link = "fb.com/mrjuwel2025";
+  const link = "fb.com/mrfukeybot2025";
 
 
   // 1–12 days before birthday

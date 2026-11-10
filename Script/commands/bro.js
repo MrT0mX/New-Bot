@@ -2,7 +2,7 @@ module.exports.config = {
   name: "bro",
   version: "11.0.0",
   hasPermssion: 0,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "Friendship Forever banner with target mention and random brotherhood caption",
   commandCategory: "banner",
   usePrefix: true,
@@ -24,7 +24,7 @@ const REF_H = 887;
 const LEFT = { x: 452, y: 388, r: 192 };
 const RIGHT = { x: 1315, y: 390, r: 190 };
 
-const CREDIT = "乛 ";
+const CREDIT = "FukeyBot";
 // ================================
 
 // ====== Random captions ======

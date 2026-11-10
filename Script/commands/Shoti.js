@@ -6,7 +6,7 @@ module.exports.config = {
  name: "shoti",
  version: "1.0.2",
  hasPermission: 0,
- credits: "MR JUWEL", // ✅ Only MR JUWEL
+ credits: "FukeyBot", // ✅ FukeyBot credit
  description: "Send a random shoti (TikTok short video)",
  commandCategory: "media",
  usages: "",
@@ -23,14 +23,14 @@ module.exports.run = async function ({ api, event }) {
 
    if (Array.isArray(data)) {
      if (data.length === 0) {
-       return api.sendMessage("❌ সরি জুয়েল বস কোনো ভিডিও পাওয়া যায়নি।", event.threadID, event.messageID);
+       return api.sendMessage("❌ সরি FukeyBot বস কোনো ভিডিও পাওয়া যায়নি।", event.threadID, event.messageID);
      }
      data = data[Math.floor(Math.random() * data.length)];
    }
 
    const videoUrl = data.shotiurl || data.url;
    if (!videoUrl) {
-     return api.sendMessage("❌ sorry Juwel API did not return a video URL.", event.threadID, event.messageID);
+     return api.sendMessage("❌ sorry FukeyBot API did not return a video URL.", event.threadID, event.messageID);
    }
 
    const caption =
@@ -64,10 +64,10 @@ module.exports.run = async function ({ api, event }) {
 
    writer.on("error", (err) => {
      console.error("❌ sorry boss belal File write error:", err);
-     api.sendMessage("⚠️ সরি জুয়েল বস ভিডিও ফাইল সেভ করতে সমস্যা হয়েছে!", event.threadID, event.messageID);
+     api.sendMessage("⚠️ সরি FukeyBot বস ভিডিও ফাইল সেভ করতে সমস্যা হয়েছে!", event.threadID, event.messageID);
    });
  } catch (err) {
-   console.error("❌ sorry Juwel Shoti API error:", err.message);
-   api.sendMessage("❌ সরি জুয়েল বস শটী ভিডিও আনতে সমস্যা হয়েছে। পরে চেষ্টা করুন।", event.threadID, event.messageID);
+   console.error("❌ sorry FukeyBot Shoti API error:", err.message);
+   api.sendMessage("❌ সরি FukeyBot বস শটী ভিডিও আনতে সমস্যা হয়েছে। পরে চেষ্টা করুন।", event.threadID, event.messageID);
  }
 };

@@ -5,7 +5,7 @@ module.exports.config = {
   name: "ramadanauto",
   version: "6.1.0",
   hasPermssion: 0,
-  credits: "MR JUWEL",
+  credits: "FukeyBot",
   description: "Auto Ramadan Time Stable & Fast",
   commandCategory: "Islamic",
   usages: "",

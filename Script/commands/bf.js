@@ -2,7 +2,7 @@ module.exports.config = {
   name: "bf",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "BF & GF love banner with both users mentioned and random caption",
   commandCategory: "banner",
   usePrefix: true,
@@ -27,7 +27,7 @@ const REF_H = 941;
 const LEFT = { x: 493, y: 322, rx: 192, ry: 182 };
 const RIGHT = { x: 1182, y: 322, rx: 188, ry: 180 };
 
-const CREDIT = "乛 ";
+const CREDIT = "FukeyBot";
 // ================================
 
 // ====== Captions ======
@@ -95,7 +95,7 @@ module.exports.run = async function ({ event, api }) {
 
   if (!targetID) {
     return api.sendMessage(
-      "⚠️ কাউকে মেনশন করো বা রিপ্লাই দাও!\n\nউদাহরণ: bf @乛 ",
+      "⚠️ কাউকে মেনশন করো বা রিপ্লাই দাও!\n\nউদাহরণ: bf @FukeyBot",
       threadID,
       messageID
     );

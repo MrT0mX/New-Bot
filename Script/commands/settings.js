@@ -2,7 +2,7 @@ module.exports.config = {
   name: "settings",
   version: "2.0.0",
   hasPermssion: 2,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "Bot settings panel",
   commandCategory: "admin",
   usages: "",
@@ -18,7 +18,7 @@ const _24hours = 86400000;
 
 // ================== CONFIG ==================
 const TIMEZONE = "Asia/Dhaka";
-const CREDIT = "乛 ";
+const CREDIT = "FukeyBot";
 const URLS = {
   profile: (id) => `https://www.facebook.com/${id}`,
   messenger: (id) => `https://m.me/${id}`

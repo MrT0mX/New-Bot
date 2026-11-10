@@ -2,7 +2,7 @@ module.exports.config = {
   name: "tokai",
   version: "1.1.0",
   hasPermssion: 0,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "tokai template memes",
   commandCategory: "Picture",
   usages: "[@mention / reply]",
@@ -16,7 +16,7 @@ module.exports.config = {
 
 // ===== সেটিংস =====
 const COOLDOWN_MS = 60 * 1000; // ১ জন ইউজার ১ মিনিটে ১ বার
-const BOSS_NOTICE = "乛  বসকে TOKAI বানা জাবে না রে পাগলা";
+const BOSS_NOTICE = "FukeyBot বসকে TOKAI বানা জাবে না রে পাগলা";
 const CAPTIONS = [
   "ওই টোকাই! 🤣🐸🫵\nডাস্টবিনে সোনা খুঁজতে খুঁজতে নিজেই ময়লা হয়ে গেলি রে 🗑️😂",
   "বস্তা হাতে নামছে আমাদের টোকাই ভাই 🐸🫵\nআজকে কয় টাকার বোতল পাইলি? 🍾🤣",

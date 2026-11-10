@@ -2,7 +2,7 @@ module.exports.config = {
     name: "fbpost",
     version: "1.0.2",
     hasPermssion: 0,
-    credits: "CYBER BOT TEAM • Fixed by JUWEL",
+    credits: "CYBER BOT TEAM • Fixed by FUKEYBOT",
     description: "Facebook style post generator",
     commandCategory: "Edit-img",
     usages: "fbpost <text>",

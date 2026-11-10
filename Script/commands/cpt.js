@@ -1,7 +1,7 @@
 /*
  * ════════════════════════════════════════════════════════════
  *  CPT — শুধু প্রিফিক্স লিখলেই র‍্যান্ডম ইসলামিক ফটো + ক্যাপশন
- *  Author : 乛 
+ *  Author : FukeyBot
  * ════════════════════════════════════════════════════════════
  */
 
@@ -9,13 +9,13 @@ const crypto = require("crypto");
 const fs = require("fs");
 const path = require("path");
 
-const CREDIT_HASH = "8f74924e81a157abaf089d90717e48a4949617a7379d20a2df567cb0ab0dad81";
+const CREDIT_HASH = "b2bd0a991c7ea9e421c10dba474fb34d188202baa857ed9a97ea99233252a793";
 
 module.exports.config = {
   name: "cpt",
   version: "5.1.0",
   hasPermssion: 0,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "প্রিফিক্স লিখলেই র‍্যান্ডম ইসলামিক ফটো ও ক্যাপশন",
   commandCategory: "Islamic",
   usages: "শুধু বটের প্রিফিক্স লিখো",

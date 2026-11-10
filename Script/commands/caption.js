@@ -4,7 +4,7 @@ module.exports.config = {
   name: "caption",
   version: "8.0.0",
   hasPermssion: 0,
-  credits: "乛 ",
+  credits: "FukeyBot",
   description: "random caption with hourly limit",
   commandCategory: "caption",
   usages: "caption",
