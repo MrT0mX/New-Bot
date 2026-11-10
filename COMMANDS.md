@@ -233,7 +233,7 @@
 | `#autoreplybot` | Auto-response bot with specified triggers | - | সবাই | 3s |
 | `#autovoice` | Auto voice reply | - | সবাই | 0s |
 | `#gali` | Don't Change Credits | - | বট অ্যাডমিন | 5s |
-| `#jwl` | FukeyBot লিখলে ☠️ রিয়েক্ট দিবে | - | সবাই | 5s |
+| `#mtx` | FukeyBot লিখলে ☠️ রিয়েক্ট দিবে | - | সবাই | 5s |
 | `#night` | hihihihi | - | সবাই | 5s |
 | `#umma` | hihihihi | - | সবাই | 5s |
 | `#women` | hihihihi | - | সবাই | 5s |

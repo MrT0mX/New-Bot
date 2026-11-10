@@ -257,8 +257,8 @@ module.exports.run = function({ api, event, client, __GLOBAL }) { }b nhi kruga �
      return api.sendMessage("Yes <3", threadID);
    };
 
-   if ((event.body.toLowerCase() == "ami juwel") || (event.body.toLowerCase() == "does the bot fall")) {
-     return api.sendMessage("হ্যা জুয়েল ভালো আছো?", threadID);
+   if (event.body.toLowerCase() == "does the bot fall") {
+     return api.sendMessage("হ্যাঁ, ভালো আছো?", threadID);
    };
    mess = "{name}"
   

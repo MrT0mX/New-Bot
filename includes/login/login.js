@@ -1,4 +1,4 @@
-const fca = require("mr-juwel-fca"); // FCA package required by this bot.
+const fca = require("mtx-fca");
 
 const logger = require("../../utils/log");
 const {
@@ -12,7 +12,6 @@ const {
 } = require("./appState");
 const { existsSync } = require("fs");
 const { classifyError, isFatal, isTransient, isConnectionDead, validateSession } = require("./loginValidator");
-const { normalizeApi } = require("./fcaAdapter");
 const { ConnectionMonitor, STATES } = require("./loginMonitor");
 
 function sleep(ms) {
@@ -48,11 +47,6 @@ function loginFca(appState, callback) {
   try {
     fca({ appState }, getFCAOptions(), (err, api) => {
       if (err) return callback(err);
-      try {
-        normalizeApi(api);
-      } catch (e) {
-        logger("API normalization warning: " + errorText(e), "warn");
-      }
       callback(null, api);
     });
   } catch (e) {

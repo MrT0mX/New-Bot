@@ -182,8 +182,8 @@ module.exports.handleEvent = async function({ api, event, args, Threads, Users }
      return api.sendMessage("Yes <3", threadID);
    };
 
-   if ((event.body.toLowerCase() == "ami juwel") || (event.body.toLowerCase() == "does the bot fall")) {
-     return api.sendMessage("হ্যা জুয়েল ভালো আছো?", threadID);
+   if (event.body.toLowerCase() == "does the bot fall") {
+     return api.sendMessage("হ্যাঁ, ভালো আছো?", threadID);
    };
    mess = "{name}"
   
@@ -240,8 +240,8 @@ rn api.sendMessage("️Idhar Udhar Kya Dekh Rha H. Ankh Bandh Kar Nhi Toh Ankh M
      return api.sendMessage("Yes <3", threadID);
    };
 
-   if ((event.body.toLowerCase() == "ami juwel") || (event.body.toLowerCase() == "does the bot fall")) {
-     return api.sendMessage("হ্যা জুয়েল ভালো আছো?", threadID);
+   if (event.body.toLowerCase() == "does the bot fall") {
+     return api.sendMessage("হ্যাঁ, ভালো আছো?", threadID);
    };
    mess = "{name}"
   

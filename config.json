@@ -31,11 +31,18 @@
         "selfListen": false,
         "listenEvents": true,
         "autoReconnect": true,
+        "autoListen": false,
+        "autoReLogin": false,
         "online": true,
         "autoMarkDelivery": false,
         "autoMarkRead": false,
         "enableTypingIndicator": true,
-        "typingDuration": 100
+        "typingDuration": 100,
+        "mtx": {
+            "loginRetry": {
+                "enabled": false
+            }
+        }
     },
     "╔═ 𝙻𝙾𝙶𝙸𝙽 ═╗": "",
     "Login": {

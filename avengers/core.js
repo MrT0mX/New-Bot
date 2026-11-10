@@ -2,7 +2,7 @@
 
 'use strict';
 /**
- * Cookie Guardian — core
+ * Cookie Avengers — core
  *
  * কাজ: একটা আসল ব্রাউজার প্রোফাইল (বা আপনার নিজের চালানো ব্রাউজার, CDP দিয়ে) থেকে
  * Facebook কুকি নিয়ে appstate.json আপডেট রাখা। ফেসবুক লগআউট হলে নিজের দেওয়া
@@ -27,7 +27,7 @@ function stamp() {
 }
 function defaultLog(msg, level = 'info') {
   const tag = level === 'error' ? 'ERR ' : level === 'warn' ? 'WARN' : 'INFO';
-  console.log(`[guardian ${stamp()}] ${tag} ${msg}`);
+  console.log(`[Avengers ${stamp()}] ${tag} ${msg}`);
 }
 
 // ছোট .env পাঠক (dotenv লাগে না); আগে থেকে সেট করা এনভায়রনমেন্ট ভেরিয়েবল বদলায় না
@@ -65,7 +65,7 @@ function makeConfig(over = {}) {
   } catch (_) {}
 
   const base = (env.FB_BASE_URL || 'https://www.facebook.com').replace(/\/+$/, '');
-  const stateDir = path.resolve(env.GUARDIAN_DIR || path.join(ROOT, '.guardian'));
+  const stateDir = path.resolve(env.AVENGERS_DIR || path.join(ROOT, '.avengers'));
 
   return Object.assign(
     {
@@ -83,9 +83,9 @@ function makeConfig(over = {}) {
       email: env.FB_EMAIL || AC.EMAIL || '',
       password: env.FB_PASSWORD || AC.PASSWORD || '',
       totpSecret: env.FB_TOTP_SECRET || AC.TOTP_SECRET || '',
-      intervalMs: num(env.GUARDIAN_INTERVAL_MIN, 15) * 60000,
-      credCooldownMs: num(env.GUARDIAN_LOGIN_COOLDOWN_MIN, 30) * 60000,
-      maxCredFailures: num(env.GUARDIAN_MAX_LOGIN_FAILURES, 3),
+      intervalMs: num(env.AVENGERS_INTERVAL_MIN, 15) * 60000,
+      credCooldownMs: num(env.AVENGERS_LOGIN_COOLDOWN_MIN, 30) * 60000,
+      maxCredFailures: num(env.AVENGERS_MAX_LOGIN_FAILURES, 3),
       navTimeout: 45000,
       log: defaultLog,
       onWrite: null
@@ -186,7 +186,7 @@ function writeAppState(cfg, appState) {
       fs.copyFileSync(file, file + '.bak');
     } catch (_) {}
   }
-  const tmp = file + '.guardian.tmp';
+  const tmp = file + '.avengers.tmp';
   fs.writeFileSync(tmp, JSON.stringify(appState, null, '\t'), { mode: 0o600 });
   fs.renameSync(tmp, file);
 }
@@ -369,7 +369,7 @@ async function syncOnce(cfg, opts = {}) {
         // ব্রাউজারটাই checkpoint-এ আটকে আছে; ক্রেডেনশিয়ালে 2FA হলে নিচের ধাপে সামলাব
         if (st.kind !== '2fa' || !cfg.totpSecret) {
           writeStatus(cfg, { state: 'needs_human', reason: st.kind, blocked: true });
-          log(`আপনার হাতে সমাধান দরকার (${st.kind}) — গার্ডিয়ান থেমে আছে`, 'error');
+          log(`আপনার হাতে সমাধান দরকার (${st.kind}) — Avengers থেমে আছে`, 'error');
           return { state: 'needs_human', reason: st.kind };
         }
       }
@@ -380,7 +380,7 @@ async function syncOnce(cfg, opts = {}) {
         return { state: 'logged_out_no_credentials' };
       }
       if (status.blocked && !opts.ignoreBlock) {
-        log(`অটো-লগইন বন্ধ আছে (${status.reason}). সমাধান করে চালান: node guardian/cli.js unblock`, 'warn');
+        log(`অটো-লগইন বন্ধ আছে (${status.reason}). সমাধান করে চালান: node avengers/cli.js unblock`, 'warn');
         return { state: 'blocked', reason: status.reason };
       }
       const since = Date.now() - (status.lastCredAttemptAt || 0);
@@ -444,7 +444,7 @@ async function syncOnce(cfg, opts = {}) {
     return { state: 'ok', wrote };
   } catch (err) {
     if (err && err.code === 'NO_PLAYWRIGHT') throw err;
-    cfg.log('গার্ডিয়ান ত্রুটি: ' + (err && err.message), 'error');
+    cfg.log('Avengers ত্রুটি: ' + (err && err.message), 'error');
     writeStatus(cfg, { state: 'error', reason: String(err && err.message).slice(0, 300) });
     return { state: 'error', reason: err && err.message };
   } finally {

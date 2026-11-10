@@ -73,13 +73,13 @@
 <h1 align="center">🍪 AUTO COOKIE &amp; AUTO LOGIN</h1>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=20&duration=2600&pause=800&color=FFD200&center=true&vCenter=true&width=820&lines=%F0%9F%8D%AA+Auto+Cookie+%E2%80%94+Session+Always+Fresh;%F0%9F%94%90+Auto+Facebook+Login+When+Logged+Out;%F0%9F%9B%A1%EF%B8%8F+Cookie+Guardian+%E2%80%94+Zero+Downtime" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=20&duration=2600&pause=800&color=FFD200&center=true&vCenter=true&width=820&lines=%F0%9F%8D%AA+Auto+Cookie+%E2%80%94+Session+Always+Fresh;%F0%9F%94%90+Auto+Facebook+Login+When+Logged+Out;%F0%9F%9B%A1%EF%B8%8F+Cookie+Avengers+%E2%80%94+Zero+Downtime" />
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/🍪_AUTO_COOKIE-ENABLED-ffb300?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/🔐_AUTO_LOGIN-READY-00e676?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/🛡️_COOKIE-GUARDIAN-7c4dff?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/🛡️_COOKIE-AVENGERS-7c4dff?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/♻️_AUTO-REFRESH-00b2ff?style=for-the-badge"/>
 </p>
 
@@ -116,12 +116,12 @@ Authenticator সিক্রেট কী দিলে 2FA কোডও নি�
 
 | ধাপ | কাজ |
 |:---|:---|
-| 1️⃣ | `guardian/` ফোল্ডারের ৫টা ফাইল রিপোতে থাকতে হবে |
+| 1️⃣ | `avengers/` ফোল্ডারের ৫টা ফাইল রিপোতে থাকতে হবে |
 | 2️⃣ | হোস্টের **Environment Variables**-এ দিন: `FB_EMAIL`, `FB_PASSWORD`, `FB_TOTP_SECRET` *(2FA থাকলে)* |
 | 3️⃣ | হোস্টে একবার চালান: `npm i --no-save playwright && npx playwright install chromium` |
-| 4️⃣ | Start Command দিন: `node guardian/start.js` |
+| 4️⃣ | Start Command দিন: `node avengers/start.js` |
 
-> ⚠️ **নিরাপত্তা:** পাসওয়ার্ড কখনো `guardian/AUTO_COOKIE.js`-এ লিখে GitHub-এ কমিট করবেন না। হোস্টের Variables-এ দিন।
+> ⚠️ **নিরাপত্তা:** পাসওয়ার্ড কখনো `avengers/AUTO_COOKIE.js`-এ লিখে GitHub-এ কমিট করবেন না। হোস্টের Variables-এ দিন।
 >
 > 🧠 ফেসবুক ক্যাপচা বা পরিচয় যাচাই চাইলে অটো-লগইন থেমে যায়, তখন নিজে যাচাই শেষ করতে হবে।
 
@@ -186,7 +186,7 @@ Render নিজে যে লিংক দেয় (`RENDER_EXTERNAL_URL`) ব
 | 4️⃣ | **Save Changes** → **Manual Deploy → Deploy latest commit** |
 | 5️⃣ | লগে `[KEEPALIVE] ... (200)` দেখলেই কাজ হচ্ছে ✅ — UptimeRobot-এ আর কিছু করতে হবে না |
 
-> 🍪 **Auto Cookie (Guardian) ও চালাতে চাইলে:** Start Command একই থাকবে (`node FukeyBotKeepalive.js`), শুধু Render-এর **Environment Variables**-এ `USE_GUARDIAN` = `1` দিন। তাহলে Keep-Alive + Auto Cookie দুটোই একসাথে চলবে।
+> 🍪 **Auto Cookie (Avengers) ও চালাতে চাইলে:** Start Command একই থাকবে (`node FukeyBotKeepalive.js`), শুধু Render-এর **Environment Variables**-এ `USE_AVENGERS` = `1` দিন। তাহলে Keep-Alive + Auto Cookie দুটোই একসাথে চলবে।
 >
 > ℹ️ Render ফ্রি প্ল্যানে মাসে ৭৫০ ঘণ্টা পাওয়া যায় — একটা বট ২৪/৭ চালানোর জন্য এটাই যথেষ্ট, তাই একই অ্যাকাউন্টে একটার বেশি সার্ভিস চালাবেন না।
 
@@ -197,7 +197,7 @@ Render নিজে যে লিংক দেয় (`RENDER_EXTERNAL_URL`) ব
 |:---|:---|
 | `KEEPALIVE_URL` | অটো লিংক না পেলে নিজের Render লিংক দিন |
 | `KEEPALIVE_INTERVAL_MS` | পিংয়ের সময় (ডিফল্ট `240000` = ৪ মিনিট) |
-| `USE_GUARDIAN` | `1` দিলে Auto Cookie Guardian-সহ চালু হয় |
+| `USE_AVENGERS` | `1` দিলে Auto Cookie Avengers-সহ চালু হয় |
 
 </details>
 
@@ -368,7 +368,7 @@ Slap, hug, pet, jail, meme template — **শত শত** ফান কমান
 <td align="center">
 
 ### 🛡️ Security Shield
-Anti-flood, anti-spam ban, anti-out, anti-join, Guardian।
+Anti-flood, anti-spam ban, anti-out, anti-join, Avengers।
 
 </td>
 </tr>
@@ -415,7 +415,7 @@ Render-এ Self Keep-Alive — UptimeRobot ছাড়াই সারাক্
 
 | Trigger / Command | কাজ |
 |:---:|:---|
-| `jwl` | "জুয়েল" লিখলে ☠️ রিয়েক্ট দেয় |
+| `mtx` | "FukeyBot" লিখলে ☠️ রিয়েক্ট দেয় |
 | `autoreplybot` | নির্দিষ্ট ট্রিগার শব্দে অটো-রিপ্লাই |
 | `autovoice` | অটো ভয়েস রিপ্লাই |
 | `baby` | AI auto-teach চ্যাট + typing effect |
@@ -481,7 +481,7 @@ Render-এ Self Keep-Alive — UptimeRobot ছাড়াই সারাক্
 | 🚪 **antiout** | কেউ লিভ নিলে ফান লিমিটসহ আটকানো |
 | 🚷 **antijoin** | নতুন মেম্বার জয়েন কন্ট্রোল |
 | 🔒 **antiProtect / protect** | গ্রুপের নাম, ছবি, নিকনেম, ইমোজি, থিম লক |
-| 👑 **guardian** | Owner Protection System (অ্যাডমিন/নাম পরিবর্তনে সুরক্ষা) |
+| 👑 **Avengers** | Owner Protection System (অ্যাডমিন/নাম পরিবর্তনে সুরক্ষা) |
 | ⛔ **blacklistuser** | ব্ল্যাকলিস্ট ইউজার অটো কিক (JSON + 20 slot) |
 | 🚪 **bossleave** | বস কিক হলে বট গ্রুপ ছেড়ে দেয় |
 | 🎉 **joinNoti** | Ultra Join System + VIP + Daily Report + 10 Frame Auto |

@@ -49,7 +49,7 @@
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.43",
     "morse-decoder": "^4.0.1",
-    "mr-juwel-fca": "latest",
+    "mtx-fca": "^1.0.10",
     "node-cmd": "^6.0.1",
     "node-schedule": "^2.1.1",
     "node-superfetch": "^0.3.5",

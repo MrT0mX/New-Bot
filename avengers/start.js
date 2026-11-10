@@ -2,7 +2,7 @@
 
 'use strict';
 /**
- * বট + গার্ডিয়ান একসাথে।  চালান:  node guardian/start.js   (npm start-এর বদলে)
+ * বট + Avengers একসাথে।  চালান:  node avengers/start.js   (npm start-এর বদলে)
  *
  *  1. বট চালুর আগে একবার কুকি চেক/রিফ্রেশ (ফেল করলেও বট চালু হয়)
  *  2. FukeyBot.js চালায় — বটের আউটপুট হুবহু আগের মতোই দেখায়
@@ -23,7 +23,7 @@ const OK_RE = /Login complete|Session validated|Fresh login OK/i;
 // eslint-disable-next-line no-control-regex
 const ANSI_RE = /\x1b\[[0-9;]*m/g;
 
-const DISABLED = process.env.GUARDIAN_DISABLE === '1';
+const DISABLED = process.env.AVENGERS_DISABLE === '1';
 const RESTART_AFTER_MS = 180000; // কুকি লেখার পর এত সময়ে বট লগইন না করলে রিস্টার্ট
 const SYNC_DEBOUNCE_MS = 120000;
 
@@ -128,7 +128,7 @@ process.on('SIGTERM', () => shutdown('SIGTERM'));
       log(`চালুর আগের কুকি চেক: ${res.state}${res.reason ? ' (' + res.reason + ')' : ''}`);
       stopLoop = core.runForever(cfg, { skipFirst: true });
     } catch (e) {
-      log('গার্ডিয়ান বন্ধ রেখে বট চালু হচ্ছে: ' + e.message, 'warn');
+      log('Avengers বন্ধ রেখে বট চালু হচ্ছে: ' + e.message, 'warn');
     }
   }
   startBot();
