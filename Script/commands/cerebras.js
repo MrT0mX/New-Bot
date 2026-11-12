@@ -1,5 +1,6 @@
 require("dotenv").config({ path: require("path").resolve(__dirname, "../../.env") });
 const generateCerebrasAnswer = require("../../utils/cerebrasApi");
+const getAiProviderError = require("../../utils/aiProviderError");
 const splitAiMessage = require("../../utils/splitAiMessage");
 
 const API_KEY = (process.env.CEREBRAS_API_KEY || "").trim();
@@ -35,14 +36,10 @@ module.exports.run = async function ({ api, event, args }) {
       else api.sendMessage(chunk, event.threadID);
     });
   } catch (error) {
-    const status = error.response?.status;
-    const message = status === 401
-      ? "Cerebras rejected the API key. Check CEREBRAS_API_KEY."
-      : status === 429
-        ? "Cerebras free-trial limit reached. Try again later."
-        : status
-          ? `Cerebras request failed (HTTP ${status}).`
-          : "Could not reach Cerebras. Check the connection and try again.";
-    return api.sendMessage(message, event.threadID, event.messageID);
+    return api.sendMessage(
+      getAiProviderError(error, "Cerebras"),
+      event.threadID,
+      event.messageID
+    );
   }
 };

@@ -1,5 +1,6 @@
 require("dotenv").config({ path: require("path").resolve(__dirname, "../../.env") });
 const generateGroqAnswer = require("../../utils/groqApi");
+const getAiProviderError = require("../../utils/aiProviderError");
 const splitAiMessage = require("../../utils/splitAiMessage");
 
 const API_KEY = (process.env.GROQ_API_KEY || "").trim();
@@ -35,14 +36,10 @@ module.exports.run = async function ({ api, event, args }) {
       else api.sendMessage(chunk, event.threadID);
     });
   } catch (error) {
-    const status = error.response?.status;
-    const message = status === 401
-      ? "Groq rejected the API key. Check GROQ_API_KEY."
-      : status === 429
-        ? "Groq free-tier limit reached. Try again later."
-        : status
-          ? `Groq request failed (HTTP ${status}).`
-          : "Could not reach Groq. Check the connection and try again.";
-    return api.sendMessage(message, event.threadID, event.messageID);
+    return api.sendMessage(
+      getAiProviderError(error, "Groq"),
+      event.threadID,
+      event.messageID
+    );
   }
 };

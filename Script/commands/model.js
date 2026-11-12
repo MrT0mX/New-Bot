@@ -1,5 +1,6 @@
 require("dotenv").config({ path: require("path").resolve(__dirname, "../../.env") });
 const generateOpenRouterAnswer = require("../../utils/openRouterApi");
+const getAiProviderError = require("../../utils/aiProviderError");
 const getFreeOpenRouterModels = require("../../utils/openRouterModels");
 const splitAiMessage = require("../../utils/splitAiMessage");
 
@@ -49,14 +50,10 @@ module.exports.run = async function ({ api, event, args }) {
       else api.sendMessage(chunk, event.threadID);
     });
   } catch (error) {
-    const status = error.response?.status;
-    const message = status === 401
-      ? "OpenRouter rejected the API key. Check OPENROUTER_API_KEY."
-      : status === 429
-        ? "OpenRouter free-model rate limit reached. Try again later."
-        : status
-          ? `OpenRouter request failed (HTTP ${status}).`
-          : "Could not reach OpenRouter. Check the connection and try again.";
-    return api.sendMessage(message, event.threadID, event.messageID);
+    return api.sendMessage(
+      getAiProviderError(error, "OpenRouter"),
+      event.threadID,
+      event.messageID
+    );
   }
 };

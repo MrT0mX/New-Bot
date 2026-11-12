@@ -1,9 +1,11 @@
 require("dotenv").config({ path: require("path").resolve(__dirname, "../.env") });
 const generateOpenRouterAnswer = require("./openRouterApi");
+const getAiProviderError = require("./aiProviderError");
 const getFreeOpenRouterModels = require("./openRouterModels");
 const splitAiMessage = require("./splitAiMessage");
 
 const MAX_PROMPT_LENGTH = 12000;
+const FREE_MODEL_RETRIES = 3;
 
 module.exports = function createOpenRouterProviderCommand({
   name,
@@ -61,13 +63,27 @@ module.exports = function createOpenRouterProviderCommand({
           );
         }
 
-        const model = matchingModels[Math.floor(Math.random() * matchingModels.length)];
-        const answer = await generateOpenRouterAnswer(
-          prompt,
-          apiKey,
-          25000,
-          model.id
-        );
+        const startIndex = Math.floor(Math.random() * matchingModels.length);
+        const candidates = matchingModels
+          .slice(startIndex)
+          .concat(matchingModels.slice(0, startIndex))
+          .slice(0, FREE_MODEL_RETRIES);
+        let answer;
+        let lastError;
+
+        for (const model of candidates) {
+          try {
+            answer = await generateOpenRouterAnswer(prompt, apiKey, 25000, model.id);
+            break;
+          } catch (error) {
+            lastError = error;
+            if (![404, 429].includes(error.response?.status)) {
+              throw error;
+            }
+          }
+        }
+        if (!answer) throw lastError;
+
         splitAiMessage(answer).forEach((chunk, index) => {
           if (index === 0) {
             api.sendMessage(chunk, event.threadID, event.messageID);
@@ -76,15 +92,11 @@ module.exports = function createOpenRouterProviderCommand({
           }
         });
       } catch (error) {
-        const status = error.response?.status;
-        const message = status === 401
-          ? "OpenRouter rejected the API key. Check OPENROUTER_API_KEY."
-          : status === 429
-            ? "OpenRouter free-model rate limit reached. Try again later."
-            : status
-              ? `OpenRouter request failed (HTTP ${status}). Try again later.`
-              : "Could not reach OpenRouter. Check the connection and try again.";
-        return api.sendMessage(message, event.threadID, event.messageID);
+        return api.sendMessage(
+          getAiProviderError(error, "OpenRouter"),
+          event.threadID,
+          event.messageID
+        );
       }
     }
   };

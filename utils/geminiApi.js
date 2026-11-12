@@ -1,4 +1,5 @@
 const axios = require("axios");
+const getAiProviderError = require("./aiProviderError");
 const getAiLanguageInstruction = require("./aiLanguage");
 
 const GEMINI_API_BASE_URL =
@@ -18,34 +19,35 @@ module.exports = async function generateGeminiAnswer(
   try {
     response = await generateWithModel(PREFERRED_MODEL, prompt, instruction, apiKey, timeout);
   } catch (error) {
-    if (!isModelUnavailable(error)) {
-      throw formatGeminiError(error);
+    if (!shouldTryAnotherModel(error)) {
+      throw error;
     }
 
     let models;
     try {
       models = await getAvailableFlashModels(apiKey, timeout);
     } catch (modelListError) {
-      throw formatGeminiError(modelListError);
+      throw error.response?.status === 429
+        ? formatGeminiError(error)
+        : formatGeminiError(modelListError);
     }
     let lastError = error;
+    let attempts = 0;
     for (const model of models) {
-      if (model === PREFERRED_MODEL) continue;
+      if (model === PREFERRED_MODEL || attempts >= 3) continue;
+      attempts += 1;
       try {
         response = await generateWithModel(model, prompt, instruction, apiKey, timeout);
         break;
       } catch (retryError) {
         lastError = retryError;
-        if (!isModelUnavailable(retryError)) {
+        if (!shouldTryAnotherModel(retryError)) {
           throw formatGeminiError(retryError);
         }
       }
     }
     if (!response) {
-      throw new Error(
-        "Gemini did not return an available Flash model for this API key.",
-        { cause: lastError }
-      );
+      throw formatGeminiError(lastError);
     }
   }
 
@@ -118,22 +120,10 @@ function isModelUnavailable(error) {
   return status === 404 || (status === 400 && /model.*(not found|not supported|unavailable)/i.test(message));
 }
 
+function shouldTryAnotherModel(error) {
+  return error.response?.status === 429 || isModelUnavailable(error);
+}
+
 function formatGeminiError(error) {
-  const status = error.response?.status;
-  if (status === 400) {
-    return new Error("Gemini rejected the request. Check the question or the selected model.");
-  }
-  if (status === 401 || status === 403) {
-    return new Error("Gemini rejected the API key or access. Check GEMINI_API_KEY and enable the Gemini API.");
-  }
-  if (status === 429) {
-    return new Error("Gemini free-tier quota/rate limit reached. Try again later.");
-  }
-  if (status >= 500) {
-    return new Error("Gemini is temporarily unavailable. Try again later.");
-  }
-  if (error.code === "ECONNABORTED") {
-    return new Error("Gemini request timed out. Try again shortly.");
-  }
-  return error;
+  return new Error(getAiProviderError(error, "Gemini"), { cause: error });
 }

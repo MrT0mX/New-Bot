@@ -3,6 +3,7 @@ const generateGeminiAnswer = require("../../utils/geminiApi");
 const generateOpenRouterAnswer = require("../../utils/openRouterApi");
 const generateGroqAnswer = require("../../utils/groqApi");
 const generateCerebrasAnswer = require("../../utils/cerebrasApi");
+const getAiProviderError = require("../../utils/aiProviderError");
 const splitAiMessage = require("../../utils/splitAiMessage");
 
 const MAX_PROMPT_LENGTH = 12000;
@@ -72,13 +73,13 @@ async function answerQuestion(api, event, rawPrompt) {
       });
       return;
     } catch (error) {
-      failures.push(`${provider.name}: ${error.response?.status || error.code || "unavailable"}`);
+      failures.push(getAiProviderError(error, provider.name));
     }
   }
 
   console.warn(`[allai] All configured free providers failed (${failures.join(", ")}).`);
   return api.sendMessage(
-    "সব configured free AI provider এই মুহূর্তে ব্যস্ত বা unavailable। একটু পরে আবার চেষ্টা করুন। কোনো paid model ব্যবহার করা হয়নি।",
+    `সব configured free AI provider ব্যর্থ হয়েছে। কোনো paid model ব্যবহার করা হয়নি।\n${failures.join("\n")}`,
     event.threadID,
     event.messageID
   );
