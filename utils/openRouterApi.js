@@ -1,5 +1,5 @@
 const axios = require("axios");
-const languageInstruction = require("./aiLanguage");
+const getAiLanguageInstruction = require("./aiLanguage");
 
 const OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions";
 
@@ -14,7 +14,7 @@ module.exports = async function generateOpenRouterAnswer(
     {
       model,
       messages: [
-        { role: "system", content: languageInstruction },
+        { role: "system", content: getAiLanguageInstruction(prompt) },
         { role: "user", content: prompt }
       ],
       max_tokens: 1000

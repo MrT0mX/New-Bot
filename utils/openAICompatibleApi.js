@@ -1,5 +1,5 @@
 const axios = require("axios");
-const languageInstruction = require("./aiLanguage");
+const getAiLanguageInstruction = require("./aiLanguage");
 
 module.exports = async function generateCompatibleAnswer(
   prompt,
@@ -13,7 +13,7 @@ module.exports = async function generateCompatibleAnswer(
     {
       model,
       messages: [
-        { role: "system", content: languageInstruction },
+        { role: "system", content: getAiLanguageInstruction(prompt) },
         { role: "user", content: prompt }
       ],
       max_completion_tokens: 1000
