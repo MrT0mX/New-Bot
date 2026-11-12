@@ -98,7 +98,7 @@ module.exports.run = async ({ event, api }) => {
     msg += (`\n${i}. 𝐍𝐚𝐦𝐞: ${user.node.name}`
          + `\n𝐈𝐃: ${user.node.id}`
          + `\n𝐔𝐫𝐥: ${user.node.url.replace("www.facebook", "fb")}`
-         + `\n𝐓𝐢𝐦𝐞: ${moment(user.time*1009).tz("Asia/Manila").format("DD/MM/YYYY HH:mm:ss")}\n`);
+         + `\n𝐓𝐢𝐦𝐞: ${moment(user.time*1009).tz("Asia/Dhaka").format("DD/MM/YYYY HH:mm:ss")}\n`);
   }
   api.sendMessage(`${msg}\nReply this message reads: <add | del> <the order of | or \"all\"> to take action`, event.threadID, (e, info) => {
       global.client.handleReply.push({

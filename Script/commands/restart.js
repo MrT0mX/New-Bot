@@ -15,9 +15,9 @@ const { threadID, messageID } = event;
 const axios = global.nodemodule["axios"];
 
 const moment = require("moment-timezone");
-    var gio = moment.tz("Asia/Ho_Chi_Minh").format("HH");
-    var phut = moment.tz("Asia/Ho_Chi_Minh").format("mm");
-    var giay = moment.tz("Asia/Ho_Chi_Minh").format("ss");
+    var gio = moment.tz("Asia/Dhaka").format("HH");
+    var phut = moment.tz("Asia/Dhaka").format("mm");
+    var giay = moment.tz("Asia/Dhaka").format("ss");
 const fs = require("fs");
     let name = await Users.getNameUser(event.senderID)
   if (event.senderID != 100017985245260) return api.sendMessage(`[❗] 𝐂𝐡𝐮́𝐜 𝐛𝐚̣𝐧 𝐦𝐚𝐲 𝐦𝐚̆́𝐧 𝐥𝐚̂̀𝐧 𝐬𝐚𝐮`, event.threadID, event.messageID)

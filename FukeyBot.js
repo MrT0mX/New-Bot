@@ -1,3 +1,5 @@
+process.env.TZ = "Asia/Dhaka";
+
 require("./FukeyBotKeepalive"); // <-- Keep-alive (Render ঘুমিয়ে যাওয়া ঠেকায়)
 const { spawn } = require("child_process");
 const path = require("path");

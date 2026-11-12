@@ -26,8 +26,8 @@ const request = require("request")
       request('https://i.imgur.com/kzdInvi.png').pipe(fs.createWriteStream(__dirname + '/cache/clmm.png'));
     }
   const moment = require("moment-timezone");
-  var time = moment.tz("Asia/Ho_Chi_Minh").format("HH:mm");
-  var day = moment.tz("Asia/Ho_Chi_Minh").format("DD/MM/YYYY");
+  var time = moment.tz("Asia/Dhaka").format("HH:mm");
+  var day = moment.tz("Asia/Dhaka").format("DD/MM/YYYY");
   var codeGD = String(Math.floor(Math.random() * (90000000000 - 1)) + 10000000000)
   var lastNumber = parseInt(codeGD.slice(-1))
   const { loadImage, createCanvas } = require("canvas");

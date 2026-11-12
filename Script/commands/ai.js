@@ -1,13 +1,7 @@
-const axios = require("axios");
 const fs = require("fs");
 require("dotenv").config({ path: require("path").resolve(__dirname, "../../.env") });
 const generateGeminiAnswer = require("../../utils/geminiApi");
 
-// ====== API URLs (প্রথমটা কাজ না করলে পরেরটা try করবে) ======
-const apiUrls = [
-  process.env.FUKEYBOT_AI_ENDPOINT,
-  "https://api.nixhost.top/aryan/gemini"
-].filter(Boolean);
 const dbPath = __dirname + "/gemini_db.json";
 
 // ====== ORIGINAL CREDIT (এটা লক করা) ======
@@ -37,35 +31,11 @@ function saveDB(data) {
 
 // ====== API কল (fallback সহ) ======
 async function fetchAnswer(content) {
-  let lastError;
   const geminiApiKey = (process.env.GEMINI_API_KEY || "").trim();
-
-  if (geminiApiKey) {
-    try {
-      return await generateGeminiAnswer(content, geminiApiKey);
-    } catch (e) {
-      lastError = e;
-    }
+  if (!geminiApiKey) {
+    throw new Error("Set GEMINI_API_KEY in the .env file to use #gemini.");
   }
-
-  for (const url of apiUrls) {
-    try {
-      const res = await axios.get(url, {
-        params: { prompt: content, q: content },
-        timeout: 60000 // Render ফ্রি সার্ভার ঘুমিয়ে থাকলে দেরি হতে পারে
-      });
-      const answer =
-        res.data.answer ||
-        res.data.response ||
-        res.data.result ||
-        res.data.message ||
-        (typeof res.data === "string" ? res.data : JSON.stringify(res.data));
-      if (answer) return answer;
-    } catch (e) {
-      lastError = e;
-    }
-  }
-  throw lastError || new Error("সব API ব্যর্থ হয়েছে");
+  return generateGeminiAnswer(content, geminiApiKey);
 }
 
 module.exports.config = {
@@ -73,11 +43,11 @@ module.exports.config = {
   version: "1.2",
   hasPermssion: 0,
   credits: "FukeyBot",
-  description: "Gemini AI Chat (supports GEMINI_API_KEY and reply system)",
+  description: "Ask Gemini 2.5 Flash and reply to answers (free tier)",
   commandCategory: "ai",
   usages: "[question]",
   cooldowns: 5,
-  aliases: ["ai", "gem"]
+  aliases: ["gem"]
 };
 
 module.exports.run = async function ({ api, event, args }) {

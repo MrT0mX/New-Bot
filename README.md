@@ -668,6 +668,21 @@ node FukeyBotKeepalive.js
 > ⚠️ সবসময় `npm start` / `node FukeyBot.js` / `node FukeyBotKeepalive.js` — `node Main.js` নয়।
 > `appstate.json` এ কুকি বসান, `config.json` এ `ADMINBOT` / `DEVELOPER` এ আপনার UID দিন।
 
+### Free AI Commands
+
+Create a private `.env` file in the project root and set whichever provider keys you have:
+
+```env
+GEMINI_API_KEY=
+OPENROUTER_API_KEY=
+GROQ_API_KEY=
+CEREBRAS_API_KEY=
+```
+
+`.env` is ignored by Git. Available commands are `#ai` (tries configured free providers), `#gemini`, `#openrouter`, `#groq`, `#cerebras`, `#nvidia`, `#deepseek`, `#freemodels`, and `#model <model-id> <question>`. OpenRouter model choices are checked against its current `:free` catalog; DeepSeek/NVIDIA commands only use matching free models when available. `#chatgpt` uses OpenRouter's free-model router, not the paid OpenAI ChatGPT API.
+
+Free-tier quotas and model availability can change, so no provider can guarantee every request succeeds. Direct OpenAI and DeepSeek API calls are excluded to avoid unexpectedly using paid models.
+
 ---
 
 <h1 align="center">🧰 HOW TO USE THESE PLATFORMS</h1>

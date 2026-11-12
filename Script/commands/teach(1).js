@@ -35,7 +35,7 @@ module.exports.handleReply = async({ api, event, Users, handleReply }) => {
     const axios = require("axios");
     const fs = require("fs");
     const moment = require("moment-timezone");
-    var timeZ = moment.tz("Asia/Ho_Chi_Minh").format("HH:mm:ss | DD/MM/YYYY");
+    var timeZ = moment.tz("Asia/Dhaka").format("HH:mm:ss | DD/MM/YYYY");
     const { threadID, messageID, senderID, body } = event;
     let by_name = (await Users.getData(senderID)).name;
     if (handleReply.content.id != senderID) return;

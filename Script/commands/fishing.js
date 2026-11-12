@@ -301,7 +301,7 @@ module.exports.run = async function ({ event, api, args }) {
             try {
                 if (!existsSync(dirUser)) return api.sendMessage("[ Fishing ] Bạn chưa đăng ký câu cá tại khu vực này!", threadID, messageID);
                 var dataUser = JSON.parse(readFileSync(dirUser, "utf-8"));
-                const dateNow = moment().tz("Asia/Ho_Chi_minh");
+                const dateNow = moment().tz("Asia/Dhaka");
                 const format = new Intl.NumberFormat();
                 if (dataUser.fishingrod.rodType == 0) return api.sendMessage("[ Fishing ] Hiện tại bạn chưa có cần câu, hãy mua cần câu mới và thử lại!", threadID, messageID);
                 if (dataUser.fishingrod.durability <= 0) return api.sendMessage("[ Fishing ] Cần câu của bạn đã bị gãy từ trước, hãy sửa chữa lại hoặc mua mới để có thể tiếp tục câu cá", threadID, messageID);

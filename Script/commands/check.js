@@ -17,7 +17,7 @@ module.exports.config = {
 module.exports.run = async ({ args, api, event, Currencies, client }) => {
    const { threadID, senderID, messageID, type, mentions } = event;
    const moment = require("moment-timezone");
-    var timeNow = moment.tz("Asia/Ho_Chi_Minh").format("HH:mm:ss")
+    var timeNow = moment.tz("Asia/Dhaka").format("HH:mm:ss")
    if (args.length == 0) return api.sendMessage(`     🔰===[ 𝐃𝐚𝐧𝐡 𝐒𝐚́𝐜𝐡 𝐂𝐡𝐞𝐜𝐤 ]===🔰 \n\n------------------------------\n[🌸] => 𝗖𝗵𝗲𝗰𝗸 𝗼𝗻𝗹 => 𝗫𝗲𝗺 𝘁𝗵𝗼̛̀𝗶 𝗴𝗶𝗮𝗻 𝗯𝗼𝘁 𝗰𝗵𝗮̣𝘆\n------------------------------\n[🌸] => 𝗖𝗵𝗲𝗰𝗸 𝘁𝘁 => 𝗖𝗵𝗲𝗰𝗸 𝘁𝗶̉ 𝗹𝗲̣̂ 𝘁𝘂̛𝗼̛𝗻𝗴 𝘁𝗮́𝗰 𝗰𝘂̉𝗮 𝗯𝗮̣𝗻\n------------------------------\n[🌸] => 𝗖𝗵𝗲𝗰𝗸 𝘁𝘁𝗮𝗹𝗹 => 𝗖𝗵𝗲𝗰𝗸 𝘁𝗶̉ 𝗹𝗲̣̂ 𝘁𝘂̛𝗼̛𝗻𝗴 𝘁𝗮́𝘁 𝘁𝗮̂́𝘁 𝗰𝗮̉ 𝘁𝗵𝗮̀𝗻𝗵 𝘃𝗶𝗲̂𝗻 𝗯𝗼𝘅\n------------------------------\n[🌸] => 𝗖𝗵𝗲𝗰𝗸 𝗯𝗼𝘅 => 𝗟𝗼̣𝗰 𝗻𝗵𝗼́𝗺 𝗱𝘂̛𝗼̛́𝗶 𝟰 𝘁𝗵𝗮̀𝗻𝗵 𝘃𝗶𝗲̂𝗻\n------------------------------\n[🌸] => 𝗖𝗵𝗲𝗰𝗸 𝗰𝗼𝘃𝗶𝗱 => 𝗫𝗲𝗺 𝘁𝗵𝗼̂𝗻𝗴 𝘁𝗶𝗻 𝗰𝗼𝘃𝗶𝗱\n------------------------------\n[🌸] => 𝗖𝗵𝗲𝗰𝗸 𝗺𝗮𝘆𝗺𝗮𝗻 => 𝗫𝗲𝗺 𝘁𝗶̉ 𝗹𝗲̣̂ % 𝗺𝗮𝘆 𝗺𝗮̆́𝗻 𝗰𝘂̉𝗮 𝗯𝗮̣𝗻 ?\n------------------------------\n[🌸] => 𝗖𝗵𝗲𝗰𝗸 𝗰𝗼𝗻𝘆 => 𝗫𝗲𝗺 𝘁𝗶̉ 𝗹𝗲̣̂ % 𝗰𝗼́ 𝗻𝗴𝘂̛𝗼̛̀𝗶 𝘆𝗲̂𝘂\n------------------------------\n[🌸] => 𝗰𝗵𝗲𝗰𝗸 𝟮𝗳𝗮 => 𝗫𝗲𝗺 𝗺𝗮̃ 𝗯𝗮̉𝗼 𝗺𝗮̣̂𝘁 𝟮 𝗹𝗼̛́𝗽\n------------------------------\n[🌸] => 𝗰𝗵𝗲𝗰𝗸 𝘀𝗼𝗱𝗼𝘁𝘁 => 𝗫𝗲𝗺 𝗯𝗶𝗲𝘂𝗱𝗼𝘁𝘁\n        === 「${timeNow}」 ===`, event.threadID, event.messageID);
     var { userInfo, adminIDs } = await api.getThreadInfo(event.threadID);    
     var success = 0, fail = 0;
@@ -47,7 +47,7 @@ module.exports.run = async ({ args, api, event, Currencies, client }) => {
     }else if (args[0] == "covid") {
       const axios_1 = require("axios");
   const moment = require("moment-timezone");
-  var time = moment.tz("Asia/Ho_Chi_Minh").format("YYYY");
+  var time = moment.tz("Asia/Dhaka").format("YYYY");
    let fetchdata = await axios_1.get("https://static.pipezero.com/covid/data.json");
   var jsondata = (await fetchdata.data).total;
   var vn = (await fetchdata.data).overview[6];

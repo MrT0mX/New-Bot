@@ -14,8 +14,8 @@ module.exports.run = async function({ api, event, args, Threads }) {
 	const request = require('request');
 	const fs = require("fs");
   const moment = require("moment-timezone");
-    var gio = moment.tz("Asia/Ho_Chi_Minh").format("D/MM/YYYY || HH:mm:ss");
-    var thu = moment.tz('Asia/Ho_Chi_Minh').format('dddd');
+    var gio = moment.tz("Asia/Dhaka").format("D/MM/YYYY || HH:mm:ss");
+    var thu = moment.tz('Asia/Dhaka').format('dddd');
   if (thu == 'Sunday') thu = '𝗖𝗵𝘂̉ 𝗡𝗵𝗮̣̂𝘁'
   if (thu == 'Monday') thu = '𝗧𝗵𝘂̛́ 𝟮'
   if (thu == 'Tuesday') thu = '𝗧𝗵𝘂̛́ 𝟯'

@@ -34,7 +34,7 @@ module.exports.handleReaction = async function({ api, event, handleReaction, Use
         ID_two: change.ID,
         status: true,
         data: {
-            days: moment.tz("Asia/Ho_Chi_minh").format("hh:mm:ss DD/MM/YYYY"),
+            days: moment.tz("Asia/Dhaka").format("hh:mm:ss DD/MM/YYYY"),
             countDays: 0,
             point: 0,
             daily: null,

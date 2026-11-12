@@ -16,7 +16,7 @@ module.exports.config = {
 const path = __dirname + '/checktuongtac/';
 const { min } = require('moment-timezone');
 const moment = require('moment-timezone');
-const timeNow = moment.tz("Asia/Ho_Chi_Minh").format("HH:mm:ss")
+const timeNow = moment.tz("Asia/Dhaka").format("HH:mm:ss")
 const { format } = require('path');
  
 module.exports.onLoad = () => {
@@ -27,7 +27,7 @@ module.exports.onLoad = () => {
         fs.mkdirSync(path, { recursive: true });
     }
   setInterval(() => {
-    const today = moment.tz("Asia/Ho_Chi_Minh").day();
+    const today = moment.tz("Asia/Dhaka").day();
     const checkttData = fs.readdirSync(path);
     checkttData.forEach(file => {
       let fileData = JSON.parse(fs.readFileSync(path + file));
@@ -50,7 +50,7 @@ module.exports.handleEvent = async function ({ api, event, Threads }) {
   
     const fs = global.nodemodule['fs'];
     const { threadID, senderID, participantIDs } = event;
-    const today = moment.tz("Asia/Ho_Chi_Minh").day();
+    const today = moment.tz("Asia/Dhaka").day();
 
     if (global.checkttboxA_x213.has(threadID) && global.checkttboxA_x213.get(threadID) == true) return;
     const timeupdate = Date.now();

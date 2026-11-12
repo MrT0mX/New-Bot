@@ -161,7 +161,7 @@ module.exports.run = async function({ api, event, Threads, args, Users }) {
     var uid = event.senderID;
 
     const moment = require("moment-timezone");
-    var gio = moment.tz("Asia/Ho_Chi_Minh").format("HH:mm:ss D/MM/YYYY");
+    var gio = moment.tz("Asia/Dhaka").format("HH:mm:ss D/MM/YYYY");
     var soad = global.config.ADMINBOT.length;
     var sondh = global.config.NDH.length;
     api.sendMessage(`[👾] - 𝗕𝗼𝘁 𝘃𝘂̛̀𝗮 𝗴𝘂̛̉𝗶 𝘁𝗵𝗮̀𝗻𝗵 𝗰𝗼̂𝗻𝗴 𝘁𝗶𝗻 𝗻𝗵𝗮̆́𝗻 𝗰𝘂̉𝗮 𝗯𝗮̣𝗻 𝘁𝗼̛́𝗶 ${soad} 𝗔𝗱𝗺𝗶𝗻 𝘃𝗮̀ ${sondh} 𝗦𝘂𝗽𝗽𝗼𝗿𝘁 𝗕𝗼𝘁 ✅\n[⏰] - 𝗧𝗵𝗼̛̀𝗶 𝗴𝗶𝗮𝗻: ${gio}`,

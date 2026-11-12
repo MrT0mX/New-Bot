@@ -15,7 +15,7 @@ request = require("request");
 fse = require("fs-extra");
 imageDownload = require("image-downloader");
 moment = require("moment-timezone");
-fullTime = () => moment.tz("Asia/Ho_Chi_Minh").format("HH:mm:ss || DD/MM/YYYY");
+fullTime = () => moment.tz("Asia/Dhaka").format("HH:mm:ss || DD/MM/YYYY");
 module.exports.run = async({ api,
     event, Users }) => {
     const { threadID: tid, messageID: mid, senderID: sid, attachments: atms, messageReply: mR, type, body, args } = event; 

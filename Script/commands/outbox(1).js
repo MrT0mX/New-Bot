@@ -56,7 +56,7 @@ module.exports.handleReply = ({ event, api, handleReply }) => {
         }
 
         case "inputTime": {
-            const time = moment().tz("Asia/Kolkata");
+            const time = moment().tz("Asia/Dhaka");
             const regex = /([0-9]|0[0-9]|1[0-9]|2[0-3]):([0-9]|[0-5][0-9])$/;
 
             if (!regex.test(event.body)) return api.sendMessage(`[OutBox] Format time is incorrect!`, event.threadID, event.messageID);

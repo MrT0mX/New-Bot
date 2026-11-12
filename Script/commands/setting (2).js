@@ -26,9 +26,9 @@ module.exports.config = {
   Threads: t
 }) {
   const r = require("moment-timezone");
-  var o = r.tz("Asia/Manila").format("HH:mm:ss"),
+  var o = r.tz("Asia/Dhaka").format("HH:mm:ss"),
     h = global.config.ADMINBOT,
-    i = r.tz("Asia/Manila").format("ss");
+    i = r.tz("Asia/Dhaka").format("ss");
   if (o == `12:00:${i}` && i < 6)
     for (let n of h) setTimeout((() => e.sendMessage(`〉Bây giờ là: ${o}\n[❗] Bot will proceed to restart !`, n, (() => process.exit(1)))), 1e3)
 }, module.exports.run = async function({

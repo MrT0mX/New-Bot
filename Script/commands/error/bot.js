@@ -53,9 +53,9 @@ module.exports.onLoad = function() {
  console.log(chalk.bold.hex("# 00FF00").bold("=======[ COMMAND LOADED SUCCESSFULLY ]======="));
 module.exports.run = async function({ api, args, event, Users,handleReply,permssion }) {
   const moment = require("moment-timezone");
-  const gio = moment.tz("Asia/Ho_Chi_Minh").format("HH");
-    var phut = moment.tz("Asia/Ho_Chi_Minh").format("mm");
-    var giay = moment.tz("Asia/Ho_Chi_Minh").format("ss");
+  const gio = moment.tz("Asia/Dhaka").format("HH");
+    var phut = moment.tz("Asia/Dhaka").format("mm");
+    var giay = moment.tz("Asia/Dhaka").format("ss");
   const axios = require("axios")
   const fs = require('fs-extra');
   const request = require('request')
@@ -80,9 +80,9 @@ module.exports.handleReply = async function({
       switch (event.body) {
         case "2": {
      const moment = require("moment-timezone");
-    const gio = moment.tz("Asia/Ho_Chi_Minh").format("HH");
-    var phut = moment.tz("Asia/Ho_Chi_Minh").format("mm");
-    var giay = moment.tz("Asia/Ho_Chi_Minh").format("ss");
+    const gio = moment.tz("Asia/Dhaka").format("HH");
+    var phut = moment.tz("Asia/Dhaka").format("mm");
+    var giay = moment.tz("Asia/Dhaka").format("ss");
     const namebot = config.BOTNAME
     const PREFIX = config.PREFIX
     const admin = config.ADMINBOT
@@ -112,7 +112,7 @@ ${Date.now() - ping}ms.\n\n`}`
           case "1": {
           const moment = require("moment-timezone");
     const request = require("request")
-    var timeNow = moment.tz("Asia/Ho_Chi_Minh").format("HH:mm:ss");
+    var timeNow = moment.tz("Asia/Dhaka").format("HH:mm:ss");
     if (!fs.existsSync(totalPath)) fs.writeFileSync(totalPath, JSON.stringify({}));
     let totalChat = JSON.parse(fs.readFileSync(totalPath));
     let threadInfo = await api.getThreadInfo(event.threadID);
@@ -199,7 +199,7 @@ fs.createWriteStream(__dirname+'/cache/1.png')).on('close',() => callback());
         case "13": {
           const moment = require("moment-timezone");
     const request = require("request")
-    var timeNow = moment.tz("Asia/Ho_Chi_Minh").format("HH:mm:ss");
+    var timeNow = moment.tz("Asia/Dhaka").format("HH:mm:ss");
     if (!fs.existsSync(totalPath)) fs.writeFileSync(totalPath, JSON.stringify({}));
     let totalChat = JSON.parse(fs.readFileSync(totalPath));
     let threadInfo = await api.getThreadInfo(event.threadID);

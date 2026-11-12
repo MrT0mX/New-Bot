@@ -21,8 +21,8 @@ module.exports.run = async ({ api, event }) => {
   var poem = res.data.data;
   const fs = require("fs");
   const moment = require("moment-timezone");
-  var gio = moment.tz("Asia/Ho_Chi_Minh").format("HH:mm:ss || D/MM/YYYY");
-  var thu = moment.tz('Asia/Ho_Chi_Minh').format('dddd');
+  var gio = moment.tz("Asia/Dhaka").format("HH:mm:ss || D/MM/YYYY");
+  var thu = moment.tz('Asia/Dhaka').format('dddd');
   if (thu == 'Sunday') thu = '𝐂𝐡𝐮̉ 𝐍𝐡𝐚̣̂𝐭'
   if (thu == 'Monday') thu = '𝐓𝐡𝐮̛́ 𝐇𝐚𝐢'
   if (thu == 'Tuesday') thu = '𝐓𝐡𝐮̛́ 𝐁𝐚'

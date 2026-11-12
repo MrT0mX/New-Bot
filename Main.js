@@ -1,3 +1,5 @@
+process.env.TZ = "Asia/Dhaka";
+
 // Deobfuscated from the original protected launcher; runtime behavior preserved.
 (function () {
   const h = require("moment-timezone"),

@@ -52,7 +52,7 @@ function getRATE(tong){
 module.exports.run = async function ({ event, api, Currencies, Users, args }) {
     try{
     const moment = require("moment-timezone");
-    const format_day = moment.tz("Asia/Ho_Chi_Minh").format("DD/MM/YYYY - HH:mm:ss");
+    const format_day = moment.tz("Asia/Dhaka").format("DD/MM/YYYY - HH:mm:ss");
     const { increaseMoney , decreaseMoney } = Currencies;
     const { threadID, messageID, senderID } = event;
     const { sendMessage: HakiraSEND } = api;

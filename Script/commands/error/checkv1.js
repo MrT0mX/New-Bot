@@ -61,7 +61,7 @@ module.exports.handleEvent = async ({ api, event, args, handleEvent }) => {
 	const path = __dirname + '/cache/checkttDay.json';
 	if(!fs.existsSync(path)) fs.writeFileSync(path, JSON.stringify({}));
 	let data = JSON.parse(fs.readFileSync(path));
-	var timeVN = moment().tz('Asia/Kolkata').format('DD_MM_YYYY_HH_mm_ss');
+	var timeVN = moment().tz('Asia/Dhaka').format('DD_MM_YYYY_HH_mm_ss');
 	var time = timeVN.split("_");
 	var time1 = await checkTime(time);
 	var time2 = await new Date(time1)
@@ -104,7 +104,7 @@ module.exports.run = async ({ api, event, args, Currencies, Users }) => {
 	const path = __dirname + '/cache/checkttDay.json';
 	if(!fs.existsSync(path)) fs.writeFileSync(path, JSON.stringify({}));
 	let data = JSON.parse(fs.readFileSync(path));
-	var timeVN = moment().tz('Asia/Kolkata').format('DD_MM_YYYY_HH_mm_ss');
+	var timeVN = moment().tz('Asia/Dhaka').format('DD_MM_YYYY_HH_mm_ss');
 	var time = timeVN.split("_");
 	var time1 = await checkTime(time);
 	var time2 = await new Date(time1)
@@ -210,7 +210,7 @@ module.exports.handleEvent = async ({ api, event, args, handleEvent }) => {
 	const path = __dirname + '/cache/checkttDay.json';
 	if(!fs.existsSync(path)) fs.writeFileSync(path, JSON.stringify({}));
 	let data = JSON.parse(fs.readFileSync(path));
-	var timeVN = moment().tz('Asia/Manila').format('DD_MM_YYYY_HH_mm_ss');
+	var timeVN = moment().tz('Asia/Dhaka').format('DD_MM_YYYY_HH_mm_ss');
 	var time = timeVN.split("_");
 	var time1 = await checkTime(time);
 	var time2 = await new Date(time1)
@@ -253,7 +253,7 @@ module.exports.run = async ({ api, event, args, Currencies, Users }) => {
 	const path = __dirname + '/cache/checkttDay.json';
 	if(!fs.existsSync(path)) fs.writeFileSync(path, JSON.stringify({}));
 	let data = JSON.parse(fs.readFileSync(path));
-	var timeVN = moment().tz('Asia/Manila').format('DD_MM_YYYY_HH_mm_ss');
+	var timeVN = moment().tz('Asia/Dhaka').format('DD_MM_YYYY_HH_mm_ss');
 	var time = timeVN.split("_");
 	var time1 = await checkTime(time);
 	var time2 = await new Date(time1)

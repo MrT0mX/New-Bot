@@ -72,7 +72,7 @@ module.exports.run = async function ({ api, event, args, Users, permssion, getTe
     var i = 1;
     var msg = [];
     const moment = require("moment-timezone");
-    const date = moment.tz("Asia/Ho_Chi_minh").format("HH:MM:ss L");
+    const date = moment.tz("Asia/Dhaka").format("HH:mm:ss L");
     for (const idAdmin of listAdmin) {
       if (parseInt(idAdmin)) {
         const name = await Users.getNameUser(idAdmin);

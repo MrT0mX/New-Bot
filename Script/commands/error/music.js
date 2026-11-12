@@ -2,7 +2,7 @@ const fs = require('fs');
 const ytdl = require('ytdl-core');
 const { resolve } = require('path');
 const moment = require("moment-timezone");
-  var gio = moment.tz("Asia/Ho_Chi_Minh").format("HH:mm:ss");
+  var gio = moment.tz("Asia/Dhaka").format("HH:mm:ss");
 async function downloadMusicFromYoutube(link, path) {
   var timestart = Date.now();
   if(!link) return 'Thiếu link'
@@ -45,7 +45,7 @@ module.exports.config = {
 
 module.exports.handleReply = async function ({ api, event, handleReply }) {
     const moment = require("moment-timezone");
-    const time = moment.tz("Asia/Ho_Chi_Minh").format("HH:mm:ss");
+    const time = moment.tz("Asia/Dhaka").format("HH:mm:ss");
     const axios = require('axios')
     const { createReadStream, unlinkSync, statSync } = require("fs-extra")
     try {

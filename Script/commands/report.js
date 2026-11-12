@@ -54,7 +54,7 @@ module.exports.run = async function({ api, event, args, Users }) {
   var namethread = datathread.name;
 
   const moment = require("moment-timezone");
-  var gio = moment.tz("Asia/Ho_Chi_Minh").format("HH:mm:ss D/MM/YYYY");
+  var gio = moment.tz("Asia/Dhaka").format("HH:mm:ss D/MM/YYYY");
   var soad = global.config.ADMINBOT.length;
   api.sendMessage(
     "sending to admin",

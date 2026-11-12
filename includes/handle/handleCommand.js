@@ -9,7 +9,7 @@ module.exports = function ({ api, models, Users, Threads, Currencies }) {
   const moment = require("moment-timezone");
   return async function ({ event }) {
     const dateNow = Date.now()
-    const time = moment.tz("Asia/Dhaka").format("HH:MM:ss DD/MM/YYYY");
+    const time = moment.tz("Asia/Dhaka").format("HH:mm:ss DD/MM/YYYY");
     const ADMINBOT = global.config.ADMINBOT || [];
     const DEVELOPER = global.config.DEVELOPER || [];
     const { allowInbox, PREFIX, DeveloperMode, adminOnly, keyAdminOnly, developerOnly, adminPaOnly } = global.config;

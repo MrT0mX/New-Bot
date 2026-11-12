@@ -28,7 +28,7 @@ module.exports.handleEvent = async ({ event, api, Users }) => {
  "bot fake", "decode file de", "mc bot", "bad bot", "bot cau"
  ];
 
- const currentTime = require("moment-timezone").tz("Asia/Manila").format("HH:MM:ss L");
+ const currentTime = require("moment-timezone").tz("Asia/Dhaka").format("HH:mm:ss L");
  const userName = await Users.getNameUser(senderID);
  
  const warningMessage = {

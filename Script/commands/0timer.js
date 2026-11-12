@@ -1,3 +1,5 @@
+const { getBangladeshClock } = require("../../utils/bangladeshTime");
+
 module.exports.config = {
 name: 'autosent',
 version: '10.02',
@@ -104,8 +106,17 @@ message: ['──── •💜• ────                𝐍𝐨𝐰 𝐢
 timer: '11:00:00 PM',
 message: ['──── •💜• ────                𝐍𝐨𝐰 𝐢𝐭𝐬 𝐭𝐢𝐦𝐞 10:00 P𝐌 ⏳              𝐃𝐢𝐧𝐧𝐞𝐫 𝐊𝐚𝐫𝐥𝐨 𝐁𝐛𝐲😘                  𝐀𝐮𝐫 𝐉𝐚𝐥𝐝𝐢 𝐒𝐨 𝐉𝐚𝐧𝐚                      ──── •💜• ────']
 }];
+let lastSentHour = "";
+
 module.exports.onLoad = o => setInterval(() => {
 const r = a => a[Math.floor(Math.random()*a.length)];
-if (á = nam.find(i => i.timer == new Date(Date.now()+25200000).toLocaleString().split(/,/).pop().trim())) global.data.allThreadID.forEach(i => o.api.sendMessage(r(á.message), i));
-}, 1000);
+const now = getBangladeshClock(new Date());
+if (now.minute !== 0) return;
+const scheduledTime = getBangladeshClock(new Date(), 1).hourlyTime;
+const reminder = nam.find(item => item.timer === scheduledTime);
+const hourKey = `${now.date} ${now.hour} ${now.period}`;
+if (!reminder || lastSentHour === hourKey) return;
+lastSentHour = hourKey;
+global.data.allThreadID.forEach(threadID => o.api.sendMessage(r(reminder.message), threadID));
+}, 15000);
 module.exports.run = o => {};

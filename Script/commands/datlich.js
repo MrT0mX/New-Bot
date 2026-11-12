@@ -75,7 +75,7 @@ module.exports.run = async function ({ api, event, args, Users }) {
 
 	var timeInput = [...date[0].split("/"), ...date[1].split(":")];
 	timeInput.forEach((e, i) => timeInput[i] = parseInt(e));
-	var timeVN = moment().tz('Asia/Ho_Chi_Minh').format('DD/MM/YYYY_HH:mm:ss');
+	var timeVN = moment().tz('Asia/Dhaka').format('DD/MM/YYYY_HH:mm:ss');
 	timeVN = timeVN.split("_");
 	timeVN = [...timeVN[0].split("/"), ...timeVN[1].split(":")];
 	//TO MS

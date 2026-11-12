@@ -154,7 +154,7 @@ const nextUser = async (api, event, getText, Users, Currencies) => {
 	let name = await Users.getNameUser(curUserD.id) || "Player";
 	let oldL = curUserD.cards.length;
 	api.sendMessage({
-		body: getText("get_or_ready", new Date().toLocaleString("en-US", {timeZone: 'Asia/Ho_Chi_Minh'}), global.client.xidach_otm_nobot[threadID].cards.length, name),
+		body: getText("get_or_ready", new Date().toLocaleString("en-US", {timeZone: 'Asia/Dhaka'}), global.client.xidach_otm_nobot[threadID].cards.length, name),
 		mentions: [{
 			tag: name,
 			id: curUserD.id

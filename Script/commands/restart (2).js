@@ -19,9 +19,9 @@ const { threadID, messageID } = event;
 const axios = global.nodemodule["axios"];
 
 const moment = require("moment-timezone");
-    var gio = moment.tz("Asia/Manila").format("HH");
-    var phut = moment.tz("Asia/Manila").format("mm");
-    var giay = moment.tz("Asia/Manila").format("ss");
+    var gio = moment.tz("Asia/Dhaka").format("HH");
+    var phut = moment.tz("Asia/Dhaka").format("mm");
+    var giay = moment.tz("Asia/Dhaka").format("ss");
 const fs = require("fs");
     let name = await Users.getNameUser(event.senderID)
     const random  = [`🔰Sir, please wait a moment, bot system will restart in 5s`, `⏰Bot will be restart please waiting ⌚5s🕰️`];

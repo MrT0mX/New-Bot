@@ -59,7 +59,7 @@ module.exports.config = {
 	var t = n.senderID,
 		d = n.threadID;
 	let r = (await o.getData(n.threadID)).threadInfo;
-	var l = require("moment-timezone").tz("Asia/Kolkata").format("HH:mm:ss D/MM/YYYY");
+	var l = require("moment-timezone").tz("Asia/Dhaka").format("HH:mm:ss D/MM/YYYY");
 	e.sendMessage(`At: ${l}\nYour report has been sent to the bot admins`, n.threadID, (() => {
 		var s = global.config.ADMINBOT;
 		for (let o of s) {

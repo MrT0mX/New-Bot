@@ -353,7 +353,7 @@ module.exports.run = async function ({ event, api, args }) {
             try {
                 if (!existsSync(dirUser)) return api.sendMessage("[🌸 𝐅𝐢𝐬𝐡𝐢𝐧𝐠 🌸] 𝗕𝗮̣𝗻 𝗰𝗵𝘂̛𝗮 𝘁𝗵𝘂𝗲̂ 𝗰𝗮̂𝘂 𝗰𝗮́ 𝘁𝗮̣𝗶 𝗸𝗵𝘂 𝘃𝘂̛̣𝗰 𝗻𝗮̀𝘆 !", threadID, messageID);
                 var dataUser = JSON.parse(readFileSync(dirUser, "utf-8"));
-                const dateNow = moment().tz("Asia/Ho_Chi_minh");
+                const dateNow = moment().tz("Asia/Dhaka");
                 const format = new Intl.NumberFormat();
                 if (dataUser.fishingrod.rodType == 0) return api.sendMessage("[🌸 𝐅𝐢𝐬𝐡𝐢𝐧𝐠 🌸] 𝗛𝗶𝗲̣̂𝗻 𝘁𝗮̣𝗶 𝗯𝗮̣𝗻 𝗰𝗵𝘂̛𝗮 𝗰𝗼́ 𝗰𝗮̂̀𝗻 𝗰𝗮̂𝘂, 𝗵𝗮̃𝘆 𝗺𝘂𝗮 𝗰𝗮̂̀𝗻 𝗰𝗮̂𝘂 𝗺𝗼̛́𝗶 𝘃𝗮̀ 𝘁𝗵𝘂̛̉ 𝗹𝗮̣𝗶 !", threadID, messageID);
                 if (dataUser.fishingrod.durability <= 0) return api.sendMessage("[🌸 𝐅𝐢𝐬𝐡𝐢𝐧𝐠 🌸] 𝗖𝗮̂̀𝗻 𝗰𝗮̂𝘂 𝗰𝘂̉𝗮 𝗯𝗮̣𝗻 𝗯𝗶̣ 𝗴𝗮̃𝘆 𝘁𝘂̛̀ 𝘁𝗿𝘂̛𝗼̛́𝗰, 𝗵𝗮̃𝘆 𝘀𝘂̛̉𝗮 𝗰𝗵𝘂̛̃𝗮 𝗹𝗮̣𝗶 𝗵𝗼𝗮̣̆𝗰 𝗺𝘂𝗮 𝗰𝗮̂̀𝗻 𝗰𝗮̂𝘂 𝗸𝗵𝗮́𝗰 𝗺𝗼̛́𝗶 𝗰𝗼́ 𝘁𝗵𝗲̂̉ 𝘁𝗶𝗲̂́𝗽 𝘁𝘂̣𝗰 𝗰𝗮̂𝘂 𝗰𝗮́", threadID, messageID);

@@ -113,7 +113,7 @@ module.exports.run = async ({ event, api, Currencies, args, Users }) => {
     const { join } = global.nodemodule['path'];
 
     try {
-        const timeNow = moment.tz("Asia/Ho_Chi_Minh").format("DD:MM:YYYY");
+        const timeNow = moment.tz("Asia/Dhaka").format("DD:MM:YYYY");
         const stk = String(Math.floor(Math.random() * (900000000)) + 1000000);
         const { threadID, messageID, senderID, mentions } = event;
         const username = (await Users.getData(senderID)).name;
@@ -331,8 +331,8 @@ module.exports.handleReaction = async function ({ event, api, handleReaction, Cu
 
     try {
         api.unsendMessage(handleReaction.messageID);
-        const timeNow = moment.tz("Asia/Ho_Chi_Minh").format("HH:mm - DD:MM:YYYY");
-        const timeva = moment.tz("Asia/Ho_Chi_Minh").format("DD:MM:YYYY");
+        const timeNow = moment.tz("Asia/Dhaka").format("HH:mm - DD:MM:YYYY");
+        const timeva = moment.tz("Asia/Dhaka").format("DD:MM:YYYY");
         const pathData = join(__dirname, "noprefix", "bank.json");
         const dataJson = JSON.parse(readFileSync(pathData, "utf-8"));
         const userDataIndex = dataJson.findIndex(item => item.senderID == handleReaction.author);

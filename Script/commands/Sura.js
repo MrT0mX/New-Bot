@@ -50,9 +50,9 @@ module.exports.onLoad = function() {
 }
 module.exports.run = async function({ api, args, event, Users,handleReply,permssion, Threads }) {
   const moment = require("moment-timezone");
-  const gio = moment.tz("Asia/Ho_Chi_Minh").format("HH");
-    var phut = moment.tz("Asia/Ho_Chi_Minh").format("mm");
-    var giay = moment.tz("Asia/Ho_Chi_Minh").format("ss");
+  const gio = moment.tz("Asia/Dhaka").format("HH");
+    var phut = moment.tz("Asia/Dhaka").format("mm");
+    var giay = moment.tz("Asia/Dhaka").format("ss");
   const axios = require("axios")
   const fs = require('fs-extra');
   const request = require('request')

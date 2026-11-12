@@ -18,7 +18,7 @@ module.exports.run = async function ({ event, api, args }) {
     if (!args[0]) {
         const DateAndTime = new Date().toLocaleString('en-US', {
 
-         timeZone: 'Asia/Kolkata'
+         timeZone: 'Asia/Dhaka'
  });      
     let { data } = await axios.get('https://disease.sh/v3/covid-19/countries/philippines')
     var nhiemvn = data.cases,
@@ -46,7 +46,7 @@ module.exports.run = async function ({ event, api, args }) {
     try {
         const DateAndTime = new Date().toLocaleString('en-US', {
 
-         timeZone: 'Asia/Kolkata'
+         timeZone: 'Asia/Dhaka'
  });      
         var location = args.join(" ")
         let { data } = await axios.get(`https://disease.sh/v3/covid-19/countries/${location}`)

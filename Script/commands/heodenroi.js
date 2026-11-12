@@ -56,7 +56,7 @@ module.exports.run = async function ({ api, event, args, Users, Currencies }) {
         case 'register':
         case 'r': {
             const nDate = new Date().toLocaleString('vi-VN', {
-                timeZone: 'Asia/Ho_Chi_Minh'
+                timeZone: 'Asia/Dhaka'
             });
             if (!existsSync(pathData)) {
                 var obj = {};

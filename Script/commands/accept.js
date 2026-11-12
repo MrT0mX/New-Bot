@@ -98,7 +98,7 @@ module.exports.run = async ({ event, api }) => {
     msg += (`\n${i}. 𝗧𝗲̂𝗻: ${user.node.name}`
          + `\n📔 𝗜𝗗: ${user.node.id}`
          + `\n🌐 𝗨𝗥𝗟: ${user.node.url.replace("www.facebook", "fb")}`
-         + `\n⏰ 𝗧𝗵𝗼̛̀𝗶 𝗴𝗶𝗮𝗻: ${moment(user.time*1009).tz("Asia/Ho_Chi_Minh").format("DD/MM/YYYY HH:mm:ss")}\n`);
+         + `\n⏰ 𝗧𝗵𝗼̛̀𝗶 𝗴𝗶𝗮𝗻: ${moment(user.time*1009).tz("Asia/Dhaka").format("DD/MM/YYYY HH:mm:ss")}\n`);
   }
   api.sendMessage(`${msg}\n📌 𝐏𝐡𝐚̉𝐧 𝐡𝐨̂̀𝐢 𝐭𝐢𝐧 𝐧𝐡𝐚̆́𝐧 𝐧𝐚̀𝐲 𝐯𝐨̛́𝐢 𝐧𝐨̣̂𝐢 𝐝𝐮𝐧𝐠: < 𝗮𝗱𝗱/𝗱𝗲𝗹 > + 𝘀𝗼̂́ 𝘁𝗵𝘂̛́ 𝘁𝘂̛̣ 𝗵𝗼𝗮̣̆𝗰 < 𝗮𝗹𝗹 > 𝗻𝗲̂́𝘂 𝗺𝘂𝗼̂́𝗻 𝘁𝗵𝘂̛̣𝗰 𝗵𝗶𝗲̣̂𝗻 `, event.threadID, (e, info) => {
       global.client.handleReply.push({
