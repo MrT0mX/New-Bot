@@ -16,7 +16,7 @@ module.exports.run = async ({ event, api, args }) => {
   const srod = global.nodemodule["srod-v2"];
   const Data = (await srod.GetAdvice()).embed.description;
   
-  return request(encodeURI(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=vi&dt=t&q=${Data}`), (err, response, body) => {
+  return request(encodeURI(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=bn&dt=t&q=${Data}`), (err, response, body) => {
 		if (err) return api.sendMessage("Đã có lỗi xảy ra!", event.threadID, event.messageID);
 		var retrieve = JSON.parse(body);
 		var text = '';

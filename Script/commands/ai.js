@@ -5,7 +5,7 @@ const generateGeminiAnswer = require("../../utils/geminiApi");
 const dbPath = __dirname + "/gemini_db.json";
 
 // ====== ORIGINAL CREDIT (এটা লক করা) ======
-const ORIGINAL_CREDIT = "FukeyBot";
+const ORIGINAL_CREDIT = "𝗖𝗿𝗲𝗮𝘁𝗲𝗱 𝗯𝘆: ─꯭─⃝‌‌𝐌𝐫𝐓𝐨𝐦𝐗𝐱𝐗";
 
 function isCreditValid() {
   return module.exports.config.credits === ORIGINAL_CREDIT;
@@ -15,7 +15,7 @@ function creditWarning() {
   return (
     "⚠️ 𝗖𝗥𝗘𝗗𝗜𝗧 𝗖𝗛𝗔𝗡𝗚𝗘𝗗!\n\n" +
     "❌ এই কোডের ক্রেডিট পরিবর্তন করা হয়েছে, তাই কমান্ড কাজ করবে না।\n\n" +
-    "👑 Original Credit:\n" + ORIGINAL_CREDIT + "\n\n" +
+    "👑 Required Credit:\n" + ORIGINAL_CREDIT + "\n\n" +
     "✅ ক্রেডিট ঠিক করলে কমান্ড আবার চলবে।"
   );
 }
@@ -42,7 +42,7 @@ module.exports.config = {
   name: "gemini",
   version: "1.2",
   hasPermssion: 0,
-  credits: "FukeyBot",
+  credits: "𝗖𝗿𝗲𝗮𝘁𝗲𝗱 𝗯𝘆: ─꯭─⃝‌‌𝐌𝐫𝐓𝐨𝐦𝐗𝐱𝐗",
   description: "Ask Gemini 2.5 Flash and reply to answers (free tier)",
   commandCategory: "ai",
   usages: "[question]",
@@ -108,7 +108,7 @@ ${answer}
 
 ╭─────────────
 │ ❤️ Gemini AI Chat
-│ 👑 Credits: ${ORIGINAL_CREDIT}
+│ ${ORIGINAL_CREDIT}
 ╰─────────────
 `;
 
