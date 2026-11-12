@@ -683,6 +683,10 @@ CEREBRAS_API_KEY=
 
 Free-tier quotas and model availability can change, so no provider can guarantee every request succeeds. Direct OpenAI and DeepSeek API calls are excluded to avoid unexpectedly using paid models.
 
+### Text-to-Speech Commands
+
+Use `#sayen <text>` for English, `#saybn <text>` for Bangla, or `#sayhi <text>` for Hindi voice. You can also reply to a text message with one of these commands to generate speech from the replied text. Text is limited to 180 characters per audio message.
+
 ---
 
 <h1 align="center">🧰 HOW TO USE THESE PLATFORMS</h1>
