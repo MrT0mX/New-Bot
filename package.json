@@ -33,6 +33,7 @@
     "cheerio": "^1.2.0",
     "discord-image-generation": "^1.4.25",
     "discord.js": "^14.28.1",
+    "dotenv": "^18.0.10",
     "eval": "^0.1.8",
     "express": "^4.19.2",
     "facebook-tools": "^2.0.7",

@@ -12,6 +12,7 @@ config.json.temp
 config.temp
 .env
 .env.*
+!.env.example
 
 .bot.pid
 *.log

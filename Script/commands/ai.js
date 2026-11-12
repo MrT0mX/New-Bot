@@ -1,5 +1,7 @@
 const axios = require("axios");
 const fs = require("fs");
+require("dotenv").config({ path: require("path").resolve(__dirname, "../../.env") });
+const generateGeminiAnswer = require("../../utils/geminiApi");
 
 // ====== API URLs (প্রথমটা কাজ না করলে পরেরটা try করবে) ======
 const apiUrls = [
@@ -36,6 +38,16 @@ function saveDB(data) {
 // ====== API কল (fallback সহ) ======
 async function fetchAnswer(content) {
   let lastError;
+  const geminiApiKey = (process.env.GEMINI_API_KEY || "").trim();
+
+  if (geminiApiKey) {
+    try {
+      return await generateGeminiAnswer(content, geminiApiKey);
+    } catch (e) {
+      lastError = e;
+    }
+  }
+
   for (const url of apiUrls) {
     try {
       const res = await axios.get(url, {
@@ -61,7 +73,7 @@ module.exports.config = {
   version: "1.2",
   hasPermssion: 0,
   credits: "FukeyBot",
-  description: "Gemini AI Chat (UI + reply system)",
+  description: "Gemini AI Chat (supports GEMINI_API_KEY and reply system)",
   commandCategory: "ai",
   usages: "[question]",
   cooldowns: 5,
