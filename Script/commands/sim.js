@@ -11,7 +11,7 @@ module.exports.config = {
         axios: ""
     },
     envConfig: {
-        APIKEY: "mzk_NZTUMEHKNZ2R0QVRCIU"
+        APIKEY: (process.env.FUKEYBOT_CFG_SIM_APIKEY || "")
     }
 }
 async function simsimi(a, b, c) {

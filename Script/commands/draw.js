@@ -20,7 +20,7 @@ function base64_encode(file) {
 const { Configuration, OpenAIApi } = require("openai");
 
 const configuration = new Configuration({
-  apiKey: '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',
+  apiKey: (process.env.FUKEYBOT_INLINE_SCRIPT_COMMANDS_DRAW_JS_1 || ""),
 });
 const openai = new OpenAIApi(configuration);
 
@@ -28,7 +28,7 @@ module.exports.run = async function ({ api, event, args, Threads, Users }) {
   try{
      if (event.type == "message_reply") {
        if(!event.messageReply.attachments[0]){
-         var d = `https://graph.facebook.com/${event.messageReply.senderID}/picture?height=720&width=720&access_token=1371688333316058|yqnZCV_SATCp9jPHNUQZaj5_C_Y`
+         var d = `https://graph.facebook.com/${event.messageReply.senderID}/picture?height=720&width=720&access_token=${process.env.FUKEYBOT_INLINE_DRAW_FACEBOOK_GRAPH_TOKEN || ""}`
        }
        else {
   var d = event.messageReply.attachments[0].url

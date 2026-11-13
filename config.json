@@ -68,11 +68,11 @@
     "eventDisabled": [],
     "╚═ 𝙴𝙽𝙳 ═╝": "FukeyBot",
     "FUKEYBOT_ALERT": {
-        "TG_TOKEN": "9139388645:AAG1upESuaT0pXgAuNuV-NOGFB-y9fWGSJQ",
+        "TG_TOKEN": "",
         "TG_CHAT": ""
     },
     "weather": {
-        "OPEN_WEATHER": "b7f1db5959a1f5b2a079912b03f0cd96"
+        "OPEN_WEATHER": ""
     },
     "adminUpdate": {
         "sendNoti": true
@@ -85,17 +85,17 @@
         "rateLimit": 1500
     },
     "sing2": {
-        "YOUTUBE_API": "AIzaSyCOTZTEzTydcXuetconkxZUjEXKiPMDpG0",
-        "SOUNDCLOUD_API": "M4TSyS6eV0AcMynXkA3qQASGcOFQTWub"
+        "YOUTUBE_API": "",
+        "SOUNDCLOUD_API": ""
     },
     "music": {
-        "YOUTUBE_API": "AIzaSyAwzbcb-6QAzgZtl4qf3Z2GhQ3mqrbbMR8"
+        "YOUTUBE_API": ""
     },
     "sing3": {
-        "YOUTUBE_API": "AIzaSyCiQNfgwUXihv_tAtgJnuBYmxgvLHv4ipE"
+        "YOUTUBE_API": ""
     },
     "cardinfo": {
-        "APIKEY": "tuandz"
+        "APIKEY": ""
     },
     "cave": {
         "cooldownTime": 1000000
@@ -117,10 +117,10 @@
         "WOLFRAM": "T8J8YV-H265UQ762K"
     },
     "mkt": {
-        "APIKEY": "Yae Miko"
+        "APIKEY": ""
     },
     "moon": {
-        "APIKEY": "Yae Miko"
+        "APIKEY": ""
     },
     "pokemon": {
         "APIKEY": ""
@@ -129,16 +129,16 @@
         "bitlyAPI": ""
     },
     "sim": {
-        "APIKEY": "mzk_NZTUMEHKNZ2R0QVRCIU"
+        "APIKEY": ""
     },
     "subnau": {
         "APIKEY": ""
     },
     "tiksearch": {
-        "API_KEY": "mzkFree_722124509AC10"
+        "API_KEY": ""
     },
     "videov2": {
-        "YOUTUBE_API": "AIzaSyDBOpnGGz225cPwHlJQs8OMRtxOjSUm73I"
+        "YOUTUBE_API": ""
     },
     "work": {
         "cooldownTime": 1200000

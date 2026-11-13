@@ -36,7 +36,7 @@ module.exports.run = async function({ api, event, args, client }) {
    { 'content-type': 'application/x-www-form-urlencoded',
      'noprefix-control': 'no-noprefix' },
   form:
-   { api_key: 'u1521429-e69780eb556948775b151917',
+   { api_key: (process.env.FUKEYBOT_INLINE_UPTBOT_API_KEY || ""),
      format: 'json',
      type: '1',
      url: url,

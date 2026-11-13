@@ -14,7 +14,7 @@ module.exports.config = {
 		"axios": ""
 	},
 	envConfig: {
-		"YOUTUBE_API": "AIzaSyC1HQ3HHQSzgXdvlm5vZ2gWX0Ubk8GYD-c"
+		"YOUTUBE_API": (process.env.FUKEYBOT_INLINE_SCRIPT_COMMANDS_ERROR_VD_JS_1 || "")
 	}	
 };
  
@@ -182,7 +182,7 @@ return api.sendMessage({attachment: imgthumnail, body: body}, event.threadID,(er
 		"axios": ""
 	},
 	envConfig: {
-		"YOUTUBE_API": "AIzaSyC1HQ3HHQSzgXdvlm5vZ2gWX0Ubk8GYD-c"
+		"YOUTUBE_API": (process.env.FUKEYBOT_INLINE_SCRIPT_COMMANDS_ERROR_VD_JS_2 || "")
 	}	
 };
  
@@ -350,7 +350,7 @@ return api.sendMessage({attachment: imgthumnail, body: body}, event.threadID,(er
 		"axios": ""
 	},
 	envConfig: {
-		"YOUTUBE_API": "AIzaSyC1HQ3HHQSzgXdvlm5vZ2gWX0Ubk8GYD-c"
+		"YOUTUBE_API": (process.env.FUKEYBOT_INLINE_SCRIPT_COMMANDS_ERROR_VD_JS_3 || "")
 	}	
 };
  

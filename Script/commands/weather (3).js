@@ -12,7 +12,7 @@ module.exports.config = {
 		"request": ""
 	},
 	envConfig: {
-		"OPEN_WEATHER": "b7f1db5959a1f5b2a079912b03f0cd96"
+		"OPEN_WEATHER": (process.env.FUKEYBOT_CFG_WEATHER_OPEN_WEATHER || "")
 	}
 };
 

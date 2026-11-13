@@ -122,7 +122,7 @@ module.exports = function fcaLogin(loginData, callback) {
   let isShuttingDown = false;
   let loginAttempt = 0;
 
-  const envOnlyCredentials = !existsSync(appStatePath) && !!loadAppStateFromEnv();
+  const envOnlyCredentials = !!loadAppStateFromEnv();
 
   let lastRecoveryAt = 0;
   let lastReloginAt = 0;
@@ -175,6 +175,7 @@ module.exports = function fcaLogin(loginData, callback) {
     } catch (_) {}
     return null;
   }
+  if (global.client) global.client.isMqttConnected = () => isSocketConnected() === true;
 
   async function waitForConnection(timeoutMs) {
     const deadline = Date.now() + Math.max(0, Number(timeoutMs) || 0);
@@ -405,7 +406,7 @@ module.exports = function fcaLogin(loginData, callback) {
         if (global.client) global.client.api = apiInstance;
 
         try {
-          if (typeof apiInstance.getAppState === "function") {
+          if (!envOnlyCredentials && typeof apiInstance.getAppState === "function") {
             saveAppState(appStatePath, apiInstance.getAppState(), { backup: cfg.backupAppState });
           }
         } catch (_) {}
@@ -609,7 +610,7 @@ module.exports = function fcaLogin(loginData, callback) {
       wireApi(api);
 
       try {
-        if (typeof api.getAppState === "function") {
+        if (!envOnlyCredentials && typeof api.getAppState === "function") {
           if (saveAppState(appStatePath, api.getAppState(), { backup: cfg.backupAppState })) {
             logger("AppState saved securely after login.", "[ LOGIN ]");
           }

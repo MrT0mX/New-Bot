@@ -1,3 +1,4 @@
+require("dotenv").config();
 process.env.TZ = "Asia/Dhaka";
 
 // Deobfuscated from the original protected launcher; runtime behavior preserved.
@@ -169,6 +170,41 @@ process.env.TZ = "Asia/Dhaka";
     return (global.config && Array.isArray(global.config.DEVELOPER) ? global.config.DEVELOPER.map(String) : []).includes(t) || global.developers.includes(t);
   }, typeof global.handleListen === "undefined" && (global.handleListen = null);
   var F;
+  const SECRET_ENV_PATHS = [
+    ["FUKEYBOT_CFG_FUKEYBOT_ALERT_TG_TOKEN", ["FUKEYBOT_ALERT", "TG_TOKEN"]],
+    ["FUKEYBOT_CFG_WEATHER_OPEN_WEATHER", ["weather", "OPEN_WEATHER"]],
+    ["FUKEYBOT_CFG_SING2_YOUTUBE_API", ["sing2", "YOUTUBE_API"]],
+    ["FUKEYBOT_CFG_SING2_SOUNDCLOUD_API", ["sing2", "SOUNDCLOUD_API"]],
+    ["FUKEYBOT_CFG_MUSIC_YOUTUBE_API", ["music", "YOUTUBE_API"]],
+    ["FUKEYBOT_CFG_SING3_YOUTUBE_API", ["sing3", "YOUTUBE_API"]],
+    ["FUKEYBOT_CFG_CARDINFO_APIKEY", ["cardinfo", "APIKEY"]],
+    ["FUKEYBOT_CFG_MKT_APIKEY", ["mkt", "APIKEY"]],
+    ["FUKEYBOT_CFG_MOON_APIKEY", ["moon", "APIKEY"]],
+    ["FUKEYBOT_CFG_SIM_APIKEY", ["sim", "APIKEY"]],
+    ["FUKEYBOT_CFG_TIKSEARCH_API_KEY", ["tiksearch", "API_KEY"]],
+    ["FUKEYBOT_CFG_VIDEOV2_YOUTUBE_API", ["videov2", "YOUTUBE_API"]]
+  ];
+  function applySecretEnv(config) {
+    for (const [envName, path] of SECRET_ENV_PATHS) {
+      if (typeof process.env[envName] === "undefined") continue;
+      let target = config;
+      for (const part of path.slice(0, -1)) {
+        if (!target[part] || typeof target[part] !== "object") target[part] = {};
+        target = target[part];
+      }
+      target[path[path.length - 1]] = process.env[envName];
+    }
+    return config;
+  }
+  function configForDisk(config) {
+    const copy = JSON.parse(JSON.stringify(config));
+    for (const [, path] of SECRET_ENV_PATHS) {
+      let target = copy;
+      for (const part of path.slice(0, -1)) target = target && target[part];
+      if (target) target[path[path.length - 1]] = "";
+    }
+    return copy;
+  }
   try {
     global.client.configPath = W(global.client.mainPath, "config.json"), F = require(global.client.configPath), a.loader("Found file config: config.json");
   } catch {
@@ -176,6 +212,7 @@ process.env.TZ = "Asia/Dhaka";
     if (U(n)) F = JSON.parse(R(n)), a.loader("Found: " + n);else return a.loader("config.json not found!", "error");
   }
   try {
+    applySecretEnv(F);
     for (const n in F) global.config[n] = F[n];
     a.loader("Config Loaded!");
   } catch {
@@ -185,7 +222,7 @@ process.env.TZ = "Asia/Dhaka";
     Sequelize: ie,
     sequelize: T
   } = require("./includes/database");
-  w(global.client.configPath + ".temp", JSON.stringify(global.config, null, 4), {
+  w(global.client.configPath + ".temp", JSON.stringify(configForDisk(global.config), null, 4), {
     encoding: "utf8",
     mode: 384
   });
@@ -420,7 +457,7 @@ process.env.TZ = "Asia/Dhaka";
           const p = r && r.config && r.config.name ? r.config.name : c;
           a.loader(global.getText("mtx", "failLoadModule", p, d), "error");
         }
-      }(), console.log(re), a.loader(global.getText("mtx", "finishLoadModule", global.client.commands.size, global.client.events.size)), a.loader("Startup Time: " + ((Date.now() - global.client.timeStart) / 1e3).toFixed() + "s"), a.loader("===== [ " + (Date.now() - global.client.timeStart) + "ms ] ====="), w(global.client.configPath, JSON.stringify(global.config, null, 4), "utf8"), U(global.client.configPath + ".temp") && C(global.client.configPath + ".temp");
+      }(), console.log(re), a.loader(global.getText("mtx", "finishLoadModule", global.client.commands.size, global.client.events.size)), a.loader("Startup Time: " + ((Date.now() - global.client.timeStart) / 1e3).toFixed() + "s"), a.loader("===== [ " + (Date.now() - global.client.timeStart) + "ms ] ====="), w(global.client.configPath, JSON.stringify(configForDisk(global.config), null, 4), "utf8"), U(global.client.configPath + ".temp") && C(global.client.configPath + ".temp");
       const i = require("./includes/listen")({
         api: o,
         models: n,

@@ -15,8 +15,8 @@ module.exports.config = {
 		"axios": ""
 	},
 	envConfig: {
-		"YOUTUBE_API": "AIzaSyCqox-KXEwDncsuo2HIpE0MF8J7ATln5Vc",
-		"SOUNDCLOUD_API": "M4TSyS6eV0AcMynXkA3qQASGcOFQTWub"
+		"YOUTUBE_API": (process.env.FUKEYBOT_INLINE_SCRIPT_COMMANDS_ERROR_SINGV2_JS_1 || ""),
+		"SOUNDCLOUD_API": (process.env.FUKEYBOT_CFG_SING2_SOUNDCLOUD_API || "")
 	}
 };
 

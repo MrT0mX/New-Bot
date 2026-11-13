@@ -106,7 +106,7 @@ module.exports.run = async function ({ api, event, args }) {
                 let getthumnail = (await axios.get(`${linkthumnail}`, {
                     responseType: 'arraybuffer'
                 })).data;
-                  let datac = (await axios.get(`https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${value.id}&key=AIzaSyANZ2iLlzjDztWXgbCgL8Oeimn3i3qd0bE`)).data;
+                  let datac = (await axios.get(`https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${value.id}&key=${process.env.FUKEYBOT_INLINE_SCRIPT_COMMANDS_ERROR_MUSIC_JS_1 || ""}`)).data;
                      fs.writeFileSync(folderthumnail, Buffer.from(getthumnail, 'utf-8'));
               imgthumnail.push(fs.createReadStream(__dirname + `/cache/${numb}.png`));
               let channel = datac.items[0].snippet.channelTitle;
