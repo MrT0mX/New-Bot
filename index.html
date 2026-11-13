@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#10111d">
+    <meta name="description" content="FukeyBot is a Facebook Messenger bot combining a Mirai core with support for Mirai- and GoatBot-style commands.">
+    <title>FukeyBot — Mirai + GoatBot Messenger Bot</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --background: #10111d;
+        --surface: #191b2b;
+        --surface-raised: #202338;
+        --text: #f5f4fb;
+        --muted: #b7b7c9;
+        --accent: #c4a7ff;
+        --accent-bright: #e2d5ff;
+        --border: rgb(255 255 255 / 11%);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-width: 320px;
+        margin: 0;
+        background:
+          radial-gradient(ellipse at 50% -18%, rgb(135 87 222 / 25%), transparent 58%),
+          var(--background);
+        color: var(--text);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.65;
+      }
+
+      a {
+        color: var(--accent-bright);
+        text-underline-offset: 0.2em;
+      }
+
+      a:hover {
+        color: #fff;
+      }
+
+      a:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 4px;
+        border-radius: 3px;
+      }
+
+      .container {
+        width: min(1080px, calc(100% - 40px));
+        margin-inline: auto;
+      }
+
+      .site-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding-block: 22px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .brand {
+        color: var(--text);
+        font-size: 1.05rem;
+        font-weight: 750;
+        letter-spacing: 0.02em;
+        text-decoration: none;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 22px;
+      }
+
+      nav a {
+        color: var(--muted);
+        font-size: 0.92rem;
+        text-decoration: none;
+      }
+
+      .hero {
+        max-width: 780px;
+        padding-block: clamp(72px, 12vw, 130px) 84px;
+        text-align: center;
+        margin-inline: auto;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        padding: 5px 12px;
+        border: 1px solid rgb(196 167 255 / 35%);
+        border-radius: 999px;
+        background: rgb(196 167 255 / 8%);
+        color: var(--accent-bright);
+        font-size: 0.82rem;
+        font-weight: 650;
+        letter-spacing: 0.04em;
+      }
+
+      h1 {
+        margin: 20px 0 14px;
+        font-size: clamp(2.6rem, 8vw, 5rem);
+        letter-spacing: -0.065em;
+        line-height: 1.05;
+      }
+
+      h1 span {
+        color: var(--accent);
+      }
+
+      .intro {
+        max-width: 650px;
+        margin: 0 auto;
+        color: var(--muted);
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 30px;
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 46px;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 18px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: var(--surface-raised);
+        color: var(--text);
+        font-weight: 650;
+        text-decoration: none;
+        transition: transform 160ms ease, background 160ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+        background: #2a2d43;
+        color: #fff;
+      }
+
+      .button-primary {
+        border-color: transparent;
+        background: var(--accent);
+        color: #171322;
+      }
+
+      .button-primary:hover {
+        background: var(--accent-bright);
+        color: #171322;
+      }
+
+      .section {
+        padding-block: 18px 78px;
+      }
+
+      .section-heading {
+        margin-bottom: 26px;
+        text-align: center;
+      }
+
+      h2 {
+        margin: 0 0 8px;
+        font-size: clamp(1.7rem, 4vw, 2.35rem);
+        letter-spacing: -0.035em;
+      }
+
+      .section-heading p {
+        max-width: 620px;
+        margin: 0 auto;
+        color: var(--muted);
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .card {
+        padding: 23px;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        background: linear-gradient(145deg, rgb(255 255 255 / 4%), transparent 65%), var(--surface);
+      }
+
+      .card-icon {
+        display: inline-grid;
+        width: 40px;
+        height: 40px;
+        place-items: center;
+        margin-bottom: 14px;
+        border-radius: 12px;
+        background: rgb(196 167 255 / 12%);
+        font-size: 1.2rem;
+      }
+
+      h3 {
+        margin: 0 0 8px;
+        font-size: 1.08rem;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.94rem;
+      }
+
+      .notice {
+        max-width: 820px;
+        margin: 0 auto 72px;
+        padding: 19px 22px;
+        border: 1px solid rgb(255 209 102 / 25%);
+        border-radius: 14px;
+        background: rgb(255 209 102 / 6%);
+        color: #f5e5bb;
+        font-size: 0.92rem;
+      }
+
+      .notice strong {
+        color: #ffe6a6;
+      }
+
+      footer {
+        padding-block: 24px;
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 0.88rem;
+        text-align: center;
+      }
+
+      @media (max-width: 700px) {
+        .cards {
+          grid-template-columns: 1fr;
+        }
+
+        .site-header {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="container site-header">
+      <a class="brand" href="#home">FukeyBot</a>
+      <nav aria-label="Main navigation">
+        <a href="#features">Features</a>
+        <a href="COMMANDS.md">Commands</a>
+        <a href="GOAT_COMPAT.md">Compatibility</a>
+        <a href="README.md">Setup</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="container hero" id="home">
+        <span class="eyebrow">Facebook Messenger bot · v3.0</span>
+        <h1>Mirai core.<br><span>GoatBot compatible.</span></h1>
+        <p class="intro">
+          FukeyBot brings two familiar command styles together in one Messenger bot,
+          with a broad command collection and a compatibility layer for existing handlers.
+        </p>
+        <div class="actions">
+          <a class="button button-primary" href="README.md">Get started</a>
+          <a class="button" href="https://github.com/MrT0mX/New-Bot">View source</a>
+        </div>
+      </section>
+
+      <section class="container section" id="features">
+        <div class="section-heading">
+          <h2>One bot, two command styles</h2>
+          <p>Keep using the Mirai core while running supported GoatBot-style commands and events.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <span class="card-icon" aria-hidden="true">🤖</span>
+            <h3>Mirai foundation</h3>
+            <p>A Node.js launcher starts the bot core and prepares the compatibility preload.</p>
+          </article>
+          <article class="card">
+            <span class="card-icon" aria-hidden="true">🔀</span>
+            <h3>Hybrid handlers</h3>
+            <p>Use Mirai-style commands alongside supported GoatBot handlers in the shared command and event folders.</p>
+          </article>
+          <article class="card">
+            <span class="card-icon" aria-hidden="true">🗃️</span>
+            <h3>Local data</h3>
+            <p>SQLite-backed bot data and a generated command reference help keep setup and discovery straightforward.</p>
+          </article>
+        </div>
+      </section>
+
+      <aside class="container notice">
+        <strong>Protect your account:</strong> FukeyBot uses Facebook app-state cookies to connect.
+        Only use an account you are authorized to manage, follow applicable platform rules,
+        and never publish or share your session cookies or API keys.
+      </aside>
+    </main>
+
+    <footer>
+      <div class="container">
+        FukeyBot · MIT License · <a href="LICENSE">License details</a>
+      </div>
+    </footer>
+  </body>
+</html>
