@@ -1,4 +1,3 @@
-require("dotenv").config();
 process.env.TZ = "Asia/Dhaka";
 
 require("./FukeyBotKeepalive"); // <-- Keep-alive (Render ঘুমিয়ে যাওয়া ঠেকায়)
@@ -93,27 +92,25 @@ function showBanner() {
 function checkCookie() {
   console.log(`${C.blue}${C.bold}── Cookie Check ──${C.reset}`);
   let file = null;
-  let raw = String(process.env.APPSTATE || process.env.APP_STATE || "").trim();
-  if (!raw) {
-    for (const f of COOKIE_FILES) {
-      const p = path.join(__dirname, f);
-      if (fs.existsSync(p)) { file = p; break; }
-    }
-    if (!file) {
-      fail(`Cookie not found. Set APPSTATE securely or provide one of: ${COOKIE_FILES.join(", ")}`);
-      lastCookieStatus = "MISSING (no private appstate)";
-      return false;
-    }
-    info(`Cookie file found: ${path.basename(file)}`);
-    try {
-      raw = fs.readFileSync(file, "utf8").trim();
-    } catch (e) {
-      fail(`Cannot read cookie file: ${e.message}`);
-      lastCookieStatus = "ERROR (cannot read file)";
-      return false;
-    }
-  } else {
-    info("Private appstate environment value found");
+  for (const f of COOKIE_FILES) {
+    const p = path.join(__dirname, f);
+    if (fs.existsSync(p)) { file = p; break; }
+  }
+
+  if (!file) {
+    fail(`Cookie file not found. Expected one of: ${COOKIE_FILES.join(", ")}`);
+    lastCookieStatus = "MISSING (file not found)";
+    return false;
+  }
+  info(`Cookie file found: ${path.basename(file)}`);
+
+  let raw;
+  try {
+    raw = fs.readFileSync(file, "utf8").trim();
+  } catch (e) {
+    fail(`Cannot read cookie file: ${e.message}`);
+    lastCookieStatus = "ERROR (cannot read file)";
+    return false;
   }
 
   if (!raw) {
@@ -125,14 +122,10 @@ function checkCookie() {
   let data;
   try {
     data = JSON.parse(raw);
-  } catch (_) {
-    try { data = JSON.parse(Buffer.from(raw, "base64").toString("utf8")); }
-    catch (__) {
-      data = raw.split(";").map((part) => part.trim()).filter(Boolean).map((pair) => {
-        const i = pair.indexOf("=");
-        return { key: (i < 0 ? pair : pair.slice(0, i)).trim(), value: (i < 0 ? "" : pair.slice(i + 1)).trim() };
-      });
-    }
+  } catch (e) {
+    fail(`Cookie file is not valid JSON (added incorrectly): ${e.message}`);
+    lastCookieStatus = "INVALID JSON (added incorrectly)";
+    return false;
   }
 
   if (data && !Array.isArray(data) && Array.isArray(data.cookies)) data = data.cookies;

@@ -25,8 +25,8 @@
  *  v1.6.0 — প্রতিটি নোটিশে বটের নাম, অ্যাডমিনের নাম ও প্রথম অ্যাডমিন UID (config.json থেকে)।
  *  v1.5.0 — ফেসবুক আইডি লক/লগআউট হয়ে বট বন্ধ হলেও নোটিশ যাবে।
  *
- *  সেটিংস: environment থেকে FUKEYBOT_TG_TOKEN, FUKEYBOT_TG_CHAT,
- *  FUKEYBOT_DISCORD_WEBHOOK, FUKEYBOT_HEARTBEAT_URL এবং FUKEYBOT_HEARTBEAT_TOKEN।
+ *  সেটিংস: config.json-এর "FUKEYBOT_ALERT" অংশ (TG_TOKEN, TG_CHAT, DISCORD_WEBHOOK, HEARTBEAT_URL)
+ *  অথবা env: FUKEYBOT_TG_TOKEN, FUKEYBOT_TG_CHAT (Telegram) | FUKEYBOT_DISCORD_WEBHOOK (Discord) — env আগে
  *
  *  কমান্ড:  #fukeybotalert        (অবস্থা দেখায়, শুধু বট-অ্যাডমিন)
  *           #fukeybotalert test   (টেস্ট নোটিশ পাঠায়)
@@ -42,9 +42,6 @@ const axios = require("axios");
 /* ───────────── config.json থেকে সেটিংস ───────────── */
 (function loadAlertSettings() {
   try {
-    if (!process.env.FUKEYBOT_TG_TOKEN && process.env.FUKEYBOT_CFG_FUKEYBOT_ALERT_TG_TOKEN) {
-      process.env.FUKEYBOT_TG_TOKEN = process.env.FUKEYBOT_CFG_FUKEYBOT_ALERT_TG_TOKEN;
-    }
     const fs = require("fs"), path = require("path");
     const file = path.join(__dirname, "..", "..", "config.json");
     if (!fs.existsSync(file)) return;
@@ -623,19 +620,13 @@ function probe() {
 /* ───────────── heartbeat (ঐচ্ছিক, বাইরের মনিটর) ───────────── */
 function startHeartbeat() {
   const HB = process.env.FUKEYBOT_HEARTBEAT_URL;
-  const token = process.env.FUKEYBOT_HEARTBEAT_TOKEN;
-  if (!HB || !token || global.__fukeybotAlertHeartbeat) return;
+  if (!HB || global.__fukeybotAlertHeartbeat) return;
   global.__fukeybotAlertHeartbeat = true;
-  const ping = () => {
-    if (!global.client || typeof global.client.isMqttConnected !== "function" || !global.client.isMqttConnected()) return;
-    try {
-      axios.post(HB, {}, { timeout: 10000, headers: { Authorization: `Bearer ${token}` } }).catch(() => {});
-    } catch (_) {}
-  };
+  const ping = () => { try { axios.get(HB, { timeout: 10000 }).catch(() => {}); } catch (_) {} };
   ping();
   const h = setInterval(ping, 60 * 1000);
   if (h.unref) h.unref();
-  log("authenticated heartbeat চালু — MQTT connected থাকলেই ping যাবে।", "success");
+  log("heartbeat চালু — বাইরের মনিটরে প্রতি ৬০ সেকেন্ডে ping যাবে।", "success");
 }
 
 /* ───────────── boot ───────────── */

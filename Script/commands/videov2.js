@@ -14,7 +14,7 @@ module.exports.config = {
 		"axios": ""
 	},
 	envConfig: {
-		"YOUTUBE_API":   (process.env.FUKEYBOT_INLINE_SCRIPT_COMMANDS_VIDEOV2_JS_1 || "")
+		"YOUTUBE_API":   "AIzaSyDBOpnGGz225cPwHlJQs8OMRtxOjSUm73I"
 	}	
 };
 

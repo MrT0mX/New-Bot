@@ -19,9 +19,9 @@ FukeyBot is a Facebook Messenger bot built around a Mirai-style core, with a com
    npm install
    ```
 
-2. Set up `config.json` for your bot. At minimum, review the bot name, command prefix, administrator/developer IDs, and the app-state path. Copy `.env.example` to `.env` (or add the same values to your host's private environment settings) for optional API credentials and monitoring settings. Secret values are loaded into runtime config without being written back to `config.json`.
+2. Set up `config.json` for your bot. At minimum, review the bot name, command prefix, administrator/developer IDs, and the app-state path.
 
-3. Add your authorized Facebook app state as a non-empty JSON cookie array in the configured app-state file. The default path is `appstate.json`. Alternatively, set `APPSTATE` to the JSON cookie array or a cookie header in your host's private environment settings. **Do not commit or share appstate**; it grants access to the associated account. When `APPSTATE` is used, the bot will not write refreshed cookies to disk.
+3. Add your authorized Facebook app state as a non-empty JSON cookie array in the configured app-state file. The default path is `appstate.json`. **Do not commit this file or share it**; it grants access to the associated account.
 
 4. Start the bot:
 
@@ -40,7 +40,7 @@ FukeyBot is a Facebook Messenger bot built around a Mirai-style core, with a com
 
 ## Deployment
 
-The repository includes a Railway start configuration that runs `npm start`. Attach a persistent Railway volume at `/app/data` so the SQLite database at `/app/data/data.sqlite` survives restarts and redeploys. Configure the app state and other private settings through your deployment's secure configuration facilities; never put session cookies or API keys in public source code or logs. For the external monitor, set `FUKEYBOT_HEARTBEAT_URL` to its bot heartbeat endpoint and `FUKEYBOT_HEARTBEAT_TOKEN` to the matching private bearer token. Authenticated heartbeats are sent only while the bot's MQTT socket is connected.
+The repository includes a Railway start configuration that runs `npm start`. Configure the app state and other private settings through your deployment's secure configuration facilities; never put session cookies or API keys in public source code or logs.
 
 ## Project files
 
