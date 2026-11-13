@@ -8,7 +8,5 @@ services:
     healthCheckPath: /
     autoDeploy: true
     envVars:
-      - key: NODE_VERSION
-        value: "22.22.0"
       - key: APPSTATE
         sync: false
