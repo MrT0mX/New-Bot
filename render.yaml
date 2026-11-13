@@ -7,6 +7,3 @@ services:
     startCommand: npm start
     healthCheckPath: /
     autoDeploy: true
-    envVars:
-      - key: APPSTATE
-        sync: false
