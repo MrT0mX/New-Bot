@@ -10,7 +10,7 @@ module.exports.config = {
   name: "groq",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "FukeyBot",
+  credits: "𝗖𝗿𝗲𝗮𝘁𝗲𝗱 𝗯𝘆: ─꯭─⃝‌‌𝐌𝐫𝐓𝐨𝐦𝐗𝐱𝐗",
   description: "Ask Groq's free-tier GPT-OSS-20B model",
   commandCategory: "ai",
   usages: "<your question>",

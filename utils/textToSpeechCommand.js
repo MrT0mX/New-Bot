@@ -13,7 +13,7 @@ module.exports = function createTextToSpeechCommand({ name, language, languageNa
       name,
       version: "1.0.0",
       hasPermssion: 0,
-      credits: "FukeyBot",
+      credits: "𝗖𝗿𝗲𝗮𝘁𝗲𝗱 𝗯𝘆: ─꯭─⃝‌‌𝐌𝐫𝐓𝐨𝐦𝐗𝐱𝐗",
       description: `Generate ${languageName} speech from command text or a replied message`,
       commandCategory: "media",
       usages: "<text> or reply to a text message",

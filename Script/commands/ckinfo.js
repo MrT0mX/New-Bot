@@ -1,5 +1,5 @@
 module.exports.config = {
-    name: "ckbot",
+    name: "ckinfo",
     version: "1.0.0",
     hasPermssion: 0,
     credits: "𝐒𝐇𝐀𝐇𝐀𝐃𝐀𝐓 𝐒𝐀𝐇𝐔",

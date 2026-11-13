@@ -10,7 +10,7 @@ module.exports.config = {
   name: "chatgpt",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "FukeyBot",
+  credits: "𝗖𝗿𝗲𝗮𝘁𝗲𝗱 𝗯𝘆: ─꯭─⃝‌‌𝐌𝐫𝐓𝐨𝐦𝐗𝐱𝐗",
   description: "Ask a free OpenRouter model (not the paid OpenAI ChatGPT API)",
   commandCategory: "ai",
   usages: "<your question>",

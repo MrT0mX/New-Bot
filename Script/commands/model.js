@@ -11,7 +11,7 @@ module.exports.config = {
   name: "model",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "FukeyBot",
+  credits: "𝗖𝗿𝗲𝗮𝘁𝗲𝗱 𝗯𝘆: ─꯭─⃝‌‌𝐌𝐫𝐓𝐨𝐦𝐗𝐱𝐗",
   description: "Choose an available free OpenRouter model",
   commandCategory: "ai",
   usages: "<model-id> <your question>",

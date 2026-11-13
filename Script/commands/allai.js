@@ -14,7 +14,7 @@ module.exports.config = {
   name: "ai",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "FukeyBot",
+  credits: "𝗖𝗿𝗲𝗮𝘁𝗲𝗱 𝗯𝘆: ─꯭─⃝‌‌𝐌𝐫𝐓𝐨𝐦𝐗𝐱𝐗",
   description: "Ask available free AI providers with automatic fallback",
   commandCategory: "ai",
   usages: "<your question>",

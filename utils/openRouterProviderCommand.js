@@ -19,7 +19,7 @@ module.exports = function createOpenRouterProviderCommand({
       name,
       version: "1.0.0",
       hasPermssion: 0,
-      credits: "FukeyBot",
+      credits: "𝗖𝗿𝗲𝗮𝘁𝗲𝗱 𝗯𝘆: ─꯭─⃝‌‌𝐌𝐫𝐓𝐨𝐦𝐗𝐱𝐗",
       description: `Use currently available free ${displayName} models via OpenRouter`,
       commandCategory: "ai",
       usages: "<your question>",

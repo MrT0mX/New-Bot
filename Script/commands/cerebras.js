@@ -10,7 +10,7 @@ module.exports.config = {
   name: "cerebras",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "FukeyBot",
+  credits: "𝗖𝗿𝗲𝗮𝘁𝗲𝗱 𝗯𝘆: ─꯭─⃝‌‌𝐌𝐫𝐓𝐨𝐦𝐗𝐱𝐗",
   description: "Ask Cerebras Free Trial's GPT-OSS-120B model",
   commandCategory: "ai",
   usages: "<your question>",

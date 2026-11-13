@@ -10,7 +10,7 @@ module.exports.config = {
   name: "openrouter",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "FukeyBot",
+  credits: "𝗖𝗿𝗲𝗮𝘁𝗲𝗱 𝗯𝘆: ─꯭─⃝‌‌𝐌𝐫𝐓𝐨𝐦𝐗𝐱𝐗",
   description: "Ask an AI using OpenRouter's free model router",
   commandCategory: "ai",
   usages: "<your question>",
