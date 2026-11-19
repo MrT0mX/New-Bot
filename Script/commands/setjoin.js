@@ -2,7 +2,7 @@ module.exports.config = {
     name: "setjoin",
     version: "1.0.4",
     hasPermssion: 1,
-    credits: "𝐂𝐘𝐁𝐄𝐑 ☢️_𖣘 -𝐁𝐎𝐓 ⚠️ 𝑻𝑬𝑨𝑴_ ☢️",
+    credits: "̷𝙁𝙪𝙠𝙚𝙮𝘽𝙤𝙩",
     description: "Edit text/animated images when new members join",
     commandCategory: "config",
     usages: "[gif/text] [Text or url to download gif image]",

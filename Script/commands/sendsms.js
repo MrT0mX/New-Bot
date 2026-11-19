@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "sendsms",
 	version: "1.0.1",
 	hasPermssion: 2,
-	credits: "𝐂𝐘𝐁𝐄𝐑 ☢️_𖣘 -𝐁𝐎𝐓 ⚠️ 𝑻𝑬𝑨𝑴_ ☢️",
+	credits: "̷𝙁𝙪𝙠𝙚𝙮𝘽𝙤𝙩",
 	description: "Send messages to groups!",
 	commandCategory: "system",
 	usages: "[Text]",

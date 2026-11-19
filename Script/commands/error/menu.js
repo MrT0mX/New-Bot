@@ -96,7 +96,7 @@ function statusLine(banned, count) {
 
 // ================= CONFIG =================
 module.exports.config = {
-  name: "menu",
+  name: "menue",
   version: "5.1.0",
   hasPermssion: 1,
   credits: "FukeyBot",

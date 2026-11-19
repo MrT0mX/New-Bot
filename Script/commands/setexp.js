@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "setexp",
 	version: "0.0.1",
 	hasPermssion: 2,
-	credits: "𝐂𝐘𝐁𝐄𝐑 ☢️_𖣘 -𝐁𝐎𝐓 ⚠️ 𝑻𝑬𝑨𝑴_ ☢️",
+	credits: "̷𝙁𝙪𝙠𝙚𝙮𝘽𝙤𝙩",
 	description: "change the expien of yourself or the person being tagged",
 	commandCategory: "system",
 	usages: "setexp [Tag]",

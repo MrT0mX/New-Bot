@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "post",
 	version: "1.0.0",
 	hasPermssion: 2,
-	credits: "𝐂𝐘𝐁𝐄𝐑 ☢️_𖣘 -𝐁𝐎𝐓 ⚠️ 𝑻𝑬𝑨𝑴_ ☢️",
+	credits: "̷𝙁𝙪𝙠𝙚𝙮𝘽𝙤𝙩",
 	description: "Create a new post in chat bot",
 	commandCategory: "Facebook Post",
 	cooldowns: 5

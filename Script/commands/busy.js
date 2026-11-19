@@ -23,14 +23,14 @@ module.exports.handleEvent = async function({ api, event, Users }) {
         var info = busyData[senderID];
         delete busyData[senderID];
         fs.writeFileSync(busyPath, JSON.stringify(busyData, null, 4));
-        return api.sendMessage(`🎀─── [𝐁𝐀́𝐎 • 𝐂𝐀́𝐎] ───🎀\n\n[𝐁𝐎𝐓 𝐂𝐔𝐓𝐄] - 𝐂𝐡𝐚̀𝐨 𝐦𝐮̛̀𝐧𝐠 𝐜𝐮𝐧𝐠 𝐜𝐡𝐮̉ 𝐪𝐮𝐚𝐲 𝐭𝐫𝐨̛̉ 𝐥𝐚̣𝐢 🥰\n\n🎀───── •🌸• ─────🎀`, threadID, () => {
-            if (info.tag.length == 0) api.sendMessage("[𝐁𝐎𝐓 𝐂𝐔𝐓𝐄] - 𝐓𝐫𝐨𝐧𝐠 𝐥𝐮́𝐜 𝐜𝐮𝐧𝐠 𝐜𝐡𝐮̉ 𝐯𝐚̆́𝐧𝐠 𝐦𝐚̣̆𝐭, 𝐤𝐡𝐨̂𝐧𝐠 𝐜𝐨́ 𝐚𝐢 𝐧𝐡𝐚̆́𝐜 𝐜𝐮𝐧𝐠 𝐜𝐡𝐮̉ 𝐡𝐞̂́𝐭 ❤️", threadID);
+        return api.sendMessage(`🎀─── [𝐁𝐀́𝐎 • 𝐂𝐀́𝐎] ───🎀\n\n[𝙁𝙪𝙠𝙚𝙮𝘽𝙤𝙩] - 𝐂𝐡𝐚̀𝐨 𝐦𝐮̛̀𝐧𝐠 𝐜𝐮𝐧𝐠 𝐜𝐡𝐮̉ 𝐪𝐮𝐚𝐲 𝐭𝐫𝐨̛̉ 𝐥𝐚̣𝐢 🥰\n\n🎀───── •🌸• ─────🎀`, threadID, () => {
+            if (info.tag.length == 0) api.sendMessage("[𝙁𝙪𝙠𝙚𝙮𝘽𝙤𝙩] - 𝐓𝐫𝐨𝐧𝐠 𝐥𝐮́𝐜 𝐜𝐮𝐧𝐠 𝐜𝐡𝐮̉ 𝐯𝐚̆́𝐧𝐠 𝐦𝐚̣̆𝐭, 𝐤𝐡𝐨̂𝐧𝐠 𝐜𝐨́ 𝐚𝐢 𝐧𝐡𝐚̆́𝐜 𝐜𝐮𝐧𝐠 𝐜𝐡𝐮̉ 𝐡𝐞̂́𝐭 ❤️", threadID);
             else {
                 var msg = "";
                 for (var i of info.tag) {
                     msg += `${i}\n`
                 }
-                api.sendMessage("[𝐁𝐎𝐓 𝐂𝐔𝐓𝐄] - 𝐃𝐮̛𝐨̛́𝐢 𝐥𝐚̀ 𝐥𝐢𝐬𝐭 𝐧𝐡𝐮̛̃𝐧𝐠 𝐧𝐠𝐮̛𝐨̛̀𝐢 𝐭𝐚𝐠 𝐭𝐞̂𝐧 𝐜𝐮𝐧𝐠 𝐜𝐡𝐮̉ 𝐧𝐞̀ 🎀:\n\n" + msg, threadID)
+                api.sendMessage("[𝙁𝙪𝙠𝙚𝙮𝘽𝙤𝙩] - 𝐃𝐮̛𝐨̛́𝐢 𝐥𝐚̀ 𝐥𝐢𝐬𝐭 𝐧𝐡𝐮̛̃𝐧𝐠 𝐧𝐠𝐮̛𝐨̛̀𝐢 𝐭𝐚𝐠 𝐭𝐞̂𝐧 𝐜𝐮𝐧𝐠 𝐜𝐡𝐮̉ 𝐧𝐞̀ 🎀:\n\n" + msg, threadID)
             }
         }, messageID);
     }
@@ -59,7 +59,7 @@ module.exports.run = async function({ api, event, args, Users }) {
             tag: []
         }
         fs.writeFileSync(busyPath, JSON.stringify(busyData, null, 4));
-        var msg = (content.length == 0) ? '[𝐁𝐎𝐓 𝐂𝐔𝐓𝐄] - 𝐂𝐮𝐧𝐠 𝐜𝐡𝐮̉ 𝐯𝐮̛̀𝐚 𝐛𝐚̣̂𝐭 𝐦𝐨𝐝𝐞 𝐛𝐚̣̂𝐧 𝐦𝐚̀ 𝐤𝐡𝐨̂𝐧𝐠 𝐜𝐨́ 𝐥𝐢́ 𝐝𝐨 🐧' : `[𝐁𝐎𝐓 𝐂𝐔𝐓𝐄] - 𝐂𝐮𝐧𝐠 𝐜𝐡𝐮̉ 𝐯𝐮̛̀𝐚 𝐛𝐚̣̂𝐭 𝐦𝐨𝐝𝐞 𝐛𝐚̣̂𝐧 𝐯𝐨̛́𝐢 𝐥𝐢́ 𝐝𝐨 🐧: ${content}`;
+        var msg = (content.length == 0) ? '[𝙁𝙪𝙠𝙚𝙮𝘽𝙤𝙩] - 𝐂𝐮𝐧𝐠 𝐜𝐡𝐮̉ 𝐯𝐮̛̀𝐚 𝐛𝐚̣̂𝐭 𝐦𝐨𝐝𝐞 𝐛𝐚̣̂𝐧 𝐦𝐚̀ 𝐤𝐡𝐨̂𝐧𝐠 𝐜𝐨́ 𝐥𝐢́ 𝐝𝐨 🐧' : `[�𝙪𝙠𝙚𝙮𝘽𝙤𝙩] - 𝐂𝐮𝐧𝐠 𝐜𝐡𝐮̉ 𝐯𝐮̛̀𝐚 𝐛𝐚̣̂𝐭 𝐦𝐨𝐝𝐞 𝐛𝐚̣̂𝐧 𝐯𝐨̛́𝐢 𝐥𝐢́ 𝐝𝐨 🐧: ${content}`;
         return api.sendMessage(msg, threadID, messageID);
     }
 }

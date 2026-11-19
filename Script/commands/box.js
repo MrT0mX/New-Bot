@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "box",
 	version: "1.0.0",
 	hasPermssion: 0,
-	credits: "𝐂𝐘𝐁𝐄𝐑 ☢️_𖣘 -𝐁𝐎𝐓 ⚠️ 𝑻𝑬𝑨𝑴_ ☢️",
+	credits: "̷𝙁𝙪𝙠𝙚𝙮𝘽𝙤𝙩",
     description: "Parent group settingst.",
 	commandCategory: "box",
 	usages: "[name/emoji/admin/image/info]",

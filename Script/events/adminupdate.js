@@ -48,7 +48,7 @@ const THEME_EMOJIS = [
     ["heart", "💖"], ["star", "⭐"]
 ];
 
-const POWERED_BY = "𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗕𝘆 𝗝𝘂𝘄𝗲𝗹";
+const POWERED_BY = "𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗕𝘆 ̷M̷̷T̷̷X̷";
 
 function getRandomTheme() {
     const [name, e] = THEME_EMOJIS[Math.floor(Math.random() * THEME_EMOJIS.length)];

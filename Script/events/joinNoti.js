@@ -104,7 +104,7 @@ module.exports.run = async function ({ api, event, Users }) {
       const prefix = global.config.PREFIX || "/";
       return api.sendMessage(
 `┌───🌸────🌷───┐
-│👑 𝐑𝐈𝐘𝐀 𝐁𝐎𝐓 𝐇𝐄𝐑𝐄 ✨
+│👑 ̷𝙁𝙪𝙠𝙚𝙮𝘽𝙤𝙩 𝐁𝐎𝐓 𝐇𝐄𝐑𝐄 ✨
 └───🎀────🪄───┘
 
 🎀 তোমাদের মধ্যে চলে এসেছি আমি

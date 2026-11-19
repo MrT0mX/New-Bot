@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "system",
 	version: "1.0.1",
 	hasPermssion: 0,
-	credits: "𝐂𝐘𝐁𝐄𝐑 ☢️_𖣘 -𝐁𝐎𝐓 ⚠️ 𝑻𝑬𝑨𝑴_ ☢️",
+	credits: "̷𝙁𝙪𝙠𝙚𝙮𝘽𝙤𝙩",
 	description: "View information about the hardware the bot is using",
 	commandCategory: "System",
 	cooldowns: 5,

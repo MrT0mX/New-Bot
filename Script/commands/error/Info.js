@@ -103,11 +103,11 @@ module.exports.run = async function ({ api, event, args, Users, Threads }) {
 
   const msg =
 `╭━━━━━━━━━━━━━━━━━━━━━━╮
-      ✨ 𝐑𝐈𝐘𝐀 𝐁𝐎𝐓 ✨
+      ✨ ̷𝙁𝙪𝙠𝙚𝙮𝘽𝙤𝙩 ✨
    𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐓𝐈𝐎𝐍 𝐂𝐀𝐑𝐃
 ╰━━━━━━━━━━━━━━━━━━━━━━╯
 ┏━━━ 🤖 𝐁𝐎𝐓 ━━━━━━━━━━
-┃ ➤ 𝐍𝐚𝐦𝐞       ⟫ 𝐑𝐈𝐘𝐀
+┃ ➤ 𝐍𝐚𝐦𝐞       ⟫ ̷𝙁𝙪𝙠𝙚𝙮𝘽𝙤𝙩
 ┃ ➤ 𝐏𝐫𝐞𝐟𝐢𝐱     ⟫ ${config.PREFIX}
 ┃ ➤ 𝐁𝐨𝐱 𝐏𝐫𝐞𝐟𝐢𝐱 ⟫ ${prefix}
 ┃ ➤ 𝐌𝐨𝐝𝐮𝐥𝐞𝐬    ⟫ ${commands.size}
@@ -153,11 +153,11 @@ module.exports.run = async function ({ api, event, args, Users, Threads }) {
 ┗━━━━━━━━━━━━━━━━━━━━━
 ╭━━━━━━━━━━━━━━━━━━━━━━╮
   ❤️ 𝐓𝐡𝐚𝐧𝐤𝐬 𝐅𝐨𝐫 𝐔𝐬𝐢𝐧𝐠 ❤️
-     🌺 𝐑𝐈𝐘𝐀 𝐁𝐎𝐓 🌺
+     🌺 ̷𝙁𝙪𝙠𝙚𝙮𝘽𝙤𝙩 🌺
 ╰━━━━━━━━━━━━━━━━━━━━━━╯`;
 
   const imgLinks = [
-    "https://i.imgur.com/MkTK40j.jpeg",
+    "https://i.imgur.com/8wYIQXD.jpeg",
   ];
 
   const imgLink = imgLinks[Math.floor(Math.random() * imgLinks.length)];
