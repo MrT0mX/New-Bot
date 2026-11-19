@@ -40,15 +40,6 @@ module.exports.run = async({api, event, args}) => {
 
 
 module.exports.handleReply = async function ({ args, event, Users, Currencies, api, handleReply }) {
- const axios = require("axios");
-  const fs = require("fs-extra");
-    const request = require("request");
-    let { author, video,mp3, title,authorvd, text  , messageID } = handleReply;
-    if (event.senderID != author) return api.sendMessage("Choose one or two, idiot.😠", event.threadID, event.messageID); 
-    switch(handleReply.type) {
-        case "reply": {
-        switch(event.body){
-          case"1":{
             var callback = () => api.sendMessage({body:`Video owner: ${authorvd}\nContent:${title}\n`,attachment: fs.createReadStream(__dirname + "/cache/toptop.mp4")}, event.threadID, () => fs.unlinkSync(__dirname + "/cache/toptop.mp4"),event.messageID);
 return request(encodeURI(`${video}`)).pipe(fs.createWriteStream(__dirname+'/cache/toptop.mp4')).on('close',() => callback());     
           }

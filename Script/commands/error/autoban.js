@@ -42,6 +42,6 @@ module.exports.handleEvent = async ({
 }, module.exports.run = async ({
 	event: o,
 	api: t
-}) => t.sendMessage("( \\_/)                                                                            ( •_•)                                                                            // >🧠                                                            Give me your brain and put it in your head.\nDo you know if it's the Noprefix command??", o.threadID);
+}) => t.sendMessage("brain", o.threadID);
 
 

@@ -84,4 +84,3 @@ module.exports.run = async function({ api, event, args }) {
 	fs.removeSync(avatar);
 	return api.sendMessage({ attachment: fs.createReadStream(pathImg) }, threadID, () => fs.unlinkSync(pathImg), messageID);        
 }
-  

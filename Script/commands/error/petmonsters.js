@@ -135,4 +135,3 @@ module.exports.handleReply = async function({ api, event, handleReply, client })
           return api.sendMessage("Name: Devil\nType: Darkness\nBlood: 120\nAttack: 120\nSpecial skill: Darkness covers, blind the opponent's eyes", event.threadID); break;
       }
   }
-}

@@ -57,6 +57,3 @@ else {
 	api.sendMessage("Wrong order. Take note `/fbbavt` to view module commands.",event.threadID,event.messageID);
 }
 }
-messageID);
-}
-}

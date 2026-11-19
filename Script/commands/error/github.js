@@ -34,8 +34,3 @@ module.exports.run = async ({ api, event, args }) => {
 
     });
     
-  };t.messageID);
-
-    });
-    
-  };

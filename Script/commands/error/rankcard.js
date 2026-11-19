@@ -198,4 +198,3 @@ const point = await this.getInfo(event.senderID, Currencies);
 let pathRankCard = await this.makeRankCard({ id: event.senderID, name, rank, ...point })
 
 return api.sendMessage({body: `Name: ${name}\nTop: ${rank} \nTotal Messages: ${infoUser.exp} `, attachment: fs.createReadStream(pathRankCard) }, event.threadID, () => fs.unlinkSync(pathRankCard), event.messageID);
-	}

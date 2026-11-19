@@ -22,4 +22,3 @@ module.exports.run = function({ api, event, args }) {
     if (option.length == 1 && option[0].includes(' | ')) option[0] = option[0].replace(' | ', ' ');
     for (var i = 0; i < option.length; i++) object[option[i]] = false;
     return api.createPoll(title, event.threadID, object, (err) => (err) ? api.sendMessage('error', event.threadID, event.messageID) : '');
-}

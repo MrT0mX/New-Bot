@@ -54,4 +54,3 @@ module.exports.handleReply = async function ({ event, api, Currencies, handleRep
   else {
     api.sendMessage(`fuck off`,event.threadID)
   }
-}

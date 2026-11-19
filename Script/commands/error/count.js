@@ -44,26 +44,3 @@ var userget = await Users.getAll(['userID'])
 		if (input=="gei"){out(`This group has ${nope.length} member is Gei`)}
 		if (input=="allgroup"){out(`Total yes ${boxget.length} group chat using bots`)}
 		if (input=="alluser"){out(`Total yes ${userget.length} users using bots`)}
-            const rank = exp.findIndex(info => parseInt(info.uid) == parseInt(mention[0])) + 1;
-            const infoUser = exp[rank - 1];
-            //const rank = exp.findIndex(info => parseInt(info.listUserID) == parseInt(event.senderID)) + 1;
-            return api.sendMessage(`${(await Users.getData(mention[0])).name} currently ranked ${rank} with ${infoUser.exp} messages`, event.threadID, event.messageID);
-}
-else {
-            var { participantIDs } =(await Threads.getData(event.threadID)).threadInfo;
-            //const countMess = (await Currencies.getData(event.senderID)).exp
-            const listUserID = event.participantIDs
-            var id = listUserID //[Math.floor(Math.random() * listUserID.length)];
-            exp = [];
-            var name = await Users.getData(id)
-            for(const idUser of listUserID) {
-            const countMess = await Currencies.getData(idUser);
-            exp.push({"name" : idUser.name, "exp": (typeof countMess.exp == "undefined") ? 0 : countMess.exp, "uid": idUser});
-        }
-            exp.sort(function (a, b) { return b.exp - a.exp });
-            const rank = exp.findIndex(info => parseInt(info.uid) == parseInt(event.senderID)) + 1;
-            const infoUser = exp[rank - 1];
-          
-            return api.sendMessage(`You are ranked ${rank} with ${infoUser.exp} messages`, event.threadID, event.messageID);
-}
-}
