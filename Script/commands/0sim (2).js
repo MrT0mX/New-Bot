@@ -46,6 +46,3 @@ module.exports.run = async function ({ api: b, event: a, args: c }) {
             return !0 == h ? void 0 : !1 == g.success ? f(g.error) : f(g.success);
     }
 };
-? f(g.error) : f(g.success);
-    }
-};
