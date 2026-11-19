@@ -8,7 +8,6 @@ module.exports.config = {
 	usages: "",
 	cooldowns: 1,
 dependencies: {"request": "","fs": "","tiktok-scraper": ""}
-};
 
 module.exports.run = async({api, event, args}) => {
   var fs = require("fs-extra");
@@ -40,16 +39,6 @@ module.exports.run = async({api, event, args}) => {
   }
 
 
-author: event.senderID,
-            messageID: info.messageID,
-            video: res.data_nowatermark[0].url,
-            mp3: res.data_music.url,
-            title: res.title,
-          authorvd: res.author_video,
-          text : res.data_music.title
-        })
-    }) 
-}
 module.exports.handleReply = async function ({ args, event, Users, Currencies, api, handleReply }) {
  const axios = require("axios");
   const fs = require("fs-extra");
@@ -71,3 +60,4 @@ return request(encodeURI(`${mp3}`)).pipe(fs.createWriteStream(__dirname+'/cache/
         }
     }
     }
+};

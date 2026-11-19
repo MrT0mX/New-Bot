@@ -34,5 +34,3 @@ module.exports.run = async function({ api, event, args, Currencies }) {
 				}
 				(win) ? api.sendMessage(`${slotItems[number[0]]} | ${slotItems[number[1]]} | ${slotItems[number[2]]}\nYou won\nReceive ${coin} dollar.`, threadID, () => Currencies.increaseMoney(senderID, parseInt(coin)), messageID) : api.sendMessage(`${slotItems[number[0]]} | ${slotItems[number[1]]} | ${slotItems[number[2]]}|\nYou lose\nAmount of money ${coin} dollars will lose!.`, threadID, () => Currencies.decreaseMoney(senderID, parseInt(coin)), messageID);
 }
-
-}

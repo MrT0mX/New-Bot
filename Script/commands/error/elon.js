@@ -75,5 +75,4 @@ module.exports.run = async function({ api, event, args }) {
 	const imageBuffer = canvas.toBuffer();
 	fs.writeFileSync(pathImg, imageBuffer);
 return api.sendMessage({ attachment: fs.createReadStream(pathImg) }, threadID, () => fs.unlinkSync(pathImg), messageID);        
-}hImg), messageID);        
 }

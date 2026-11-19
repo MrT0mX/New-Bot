@@ -115,4 +115,3 @@ module.exports.run = async ({  event, api, handleReply, Currencies, getText }) =
 @credit P-SeverTeam
 @Vui lòng không đổi credit!
 */
-*/

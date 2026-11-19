@@ -54,9 +54,4 @@ module.exports.handleReply = async function ({ event, api, Currencies, handleRep
   else {
     api.sendMessage(`fuck off`,event.threadID)
   }
-}eturn  api.sendMessage(`Deleted ${listFile.length} file with the extension ${handleReply.file_en}`,event.threadID)
-  }
-  else {
-    api.sendMessage(`fuck off`,event.threadID)
-  }
 }

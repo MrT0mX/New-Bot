@@ -44,7 +44,6 @@ var userget = await Users.getAll(['userID'])
 		if (input=="gei"){out(`This group has ${nope.length} member is Gei`)}
 		if (input=="allgroup"){out(`Total yes ${boxget.length} group chat using bots`)}
 		if (input=="alluser"){out(`Total yes ${userget.length} users using bots`)}
-  }.exp - a.exp });
             const rank = exp.findIndex(info => parseInt(info.uid) == parseInt(mention[0])) + 1;
             const infoUser = exp[rank - 1];
             //const rank = exp.findIndex(info => parseInt(info.listUserID) == parseInt(event.senderID)) + 1;
