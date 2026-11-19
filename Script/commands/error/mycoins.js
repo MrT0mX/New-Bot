@@ -43,4 +43,3 @@ module.exports.run = async function({ api, event, args, Currencies, getText }) {
 
 	else return global.utils.throwError(this.config.name, threadID, messageID);
 }
-}

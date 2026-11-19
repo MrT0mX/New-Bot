@@ -27,5 +27,4 @@ module.exports.run = async ({ api, event }) => {
                      api.sendMessage("there's something problem while generating photo, please try again!", event.threadID, event.messageID);
     api.setMessageReaction("☹️", event.messageID, (err) => {}, true);
                   })    
-}   
 }

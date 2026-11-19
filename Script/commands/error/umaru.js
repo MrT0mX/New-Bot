@@ -24,7 +24,7 @@ module.exports.run = async function({ api, event }) {
         };
         request(res.data.data).pipe(fs.createWriteStream(__dirname + `/cache/umaru.${ext}`)).on("close", callback);
       })
-}}
+}
 
 module.exports.handleEvent = async ({ api, event, args, Threads }) => {
     const { threadID, messageID } = event;

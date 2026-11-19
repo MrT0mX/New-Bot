@@ -328,6 +328,3 @@ module.exports.run = async ({ api, event, args, Currencies, Users }) => {
 		return api.sendMessage(`=== ${nameUser} ===\n🙆‍♂️ 𝘵𝘰̂̉𝘯𝘨 𝘴𝘰̂́ 𝘵𝘪𝘯 𝘯𝘩𝘢̆́𝘯: ${(typeof countMess.exp == "undefined") ? 0 : countMess.exp}\n🐸 𝐌𝐮̛́𝐜 𝐝𝐨̣̂ 𝐭𝐮̛𝐨̛𝐧𝐠 𝐭𝐚́𝐜: ${msg}\n⏱️ 𝑻𝒐̂̉𝒏𝒈 𝒔𝒐̂́ 𝒕𝒊𝒏 𝒏𝒉𝒂̆́𝒏 𝒉𝒐̂𝒎 𝒒𝒖𝒂: ${yesterDay}\n⏰ 𝘛𝘰̂̉𝘯𝘨 𝘴𝘰̂́ 𝘵𝘪𝘯 𝘯𝘩𝘢̆́𝘯 𝘩𝘰̂𝘮 𝘯𝘢𝘺: ${today}\n🖤 𝑻𝒐̂̉𝒏𝒈 𝒔𝒐̂́ 𝒕𝒊𝒏 𝒏𝒉𝒂̆́𝒏 𝒕𝒓𝒐𝒏𝒈 𝒕𝒖𝒂̂̀𝒏: ${weekDay}`, threadID, messageID);
 	}
 }
-𝒐̂̉𝒏𝒈 𝒔𝒐̂́ 𝒕𝒊𝒏 𝒏𝒉𝒂̆́𝒏 𝒕𝒓𝒐𝒏𝒈 𝒕𝒖𝒂̂̀𝒏: ${weekDay}`, threadID, messageID);
-	}
-}

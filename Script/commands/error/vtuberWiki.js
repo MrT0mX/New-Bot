@@ -162,8 +162,3 @@ request(getURL).pipe(fs.createWriteStream(__dirname + `/cache/vtuber.png`)).on("
 }
 
 
-    
-}		
-}
-
-

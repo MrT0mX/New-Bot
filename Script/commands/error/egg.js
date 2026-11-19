@@ -26,5 +26,3 @@ module.exports.run = async ({ event, api, args, Users }) => {
   fs.writeFileSync(path_trash, attach.attachment);
   api.sendMessage({attachment: fs.createReadStream(path_trash)}, event.threadID, () => fs.unlinkSync(path_trash), event.messageID);
 }
-
-}

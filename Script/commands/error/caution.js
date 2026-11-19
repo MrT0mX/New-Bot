@@ -12,7 +12,7 @@ module.exports.config = {
         "request": ""
     }
 };
-module.exports.run = async ({ api, event,args }) => {  {
+module.exports.run = async ({ api, event,args }) => {
     
     const fs = global.nodemodule["fs-extra"];
     const request = global.nodemodule["request"];
@@ -23,6 +23,4 @@ if (!juswa)
 
 	 var callback = () => api.sendMessage({body:``,attachment: fs.createReadStream(__dirname + "/cache/biden.png")}, event.threadID, () => fs.unlinkSync(__dirname + "/cache/biden.png"),event.messageID);
 	 return request(encodeURI(`https://api.popcat.xyz/caution?text=${juswa}`)).pipe(fs.createWriteStream(__dirname+'/cache/biden.png')).on('close',() => callback());     
-}}
-     
-}}
+}

@@ -1,3 +1,4 @@
+/*
 module.exports.config = {
     name: "prem",
     version: "1.0.1",
@@ -78,6 +79,7 @@ module.exports.run = async ({ api, event}) => {
         "Em không muốn ngủ muộn, chỉ là đang chờ ai đó chúc ngủ ngon thôi.",
 
         "Cây đa, giếng nước sân đinh. Khi nào em hết một mình đây anh?.",
+*/
 module.exports.config = {
     name: "love",
     version: "1.0.1",
@@ -424,6 +426,7 @@ var mention = Object.keys(event.mentions);
   }
   
   }
+/*
         "Everyone in this world loves each other, only you alone in a corner.",
 
         "Need someone to care to feel loved.",
@@ -466,6 +469,8 @@ var mention = Object.keys(event.mentions);
 
         "Anh có thể cho em mượn một nụ hôn được không? Em hứa là sẽ trả lại đầy đủ."
     ];
+*/
+/*
     const trai = ["Em có muốn con mình sau này có ADN của anh không?.",
 
         "OgO  বাবু  এত্ত গুলা ভালবাসি",
@@ -689,3 +694,4 @@ var mention = Object.keys(event.mentions);
   }
   
   }
+*/

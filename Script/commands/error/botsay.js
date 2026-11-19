@@ -14,5 +14,3 @@ var say = args.join(" ")
 	if (!say) api.sendMessage("Please enter a message", event.threadID, event.messageID)
 	else api.sendMessage(`${say}`, event.threadID, event.messageID);
 }
-
-}

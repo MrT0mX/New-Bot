@@ -22,11 +22,4 @@ module.exports.run = async ({ event, api, args, Users }) => {
   var path_trigger = __dirname + "/cache/trigger.gif";
   fs.writeFileSync(path_trigger, attach.attachment);
   api.sendMessage({attachment: fs.createReadStream(path_trigger)}, event.threadID, () => fs.unlinkSync(path_trigger), event.messageID);
-}ight=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`)).body;
-  
-  let img = await new DIG.Triggered().getImage(avatar)
-  let attach = new Discord.MessageAttachment(img);
-  var path_triggered = __dirname + "/cache/triggered.png";
-  fs.writeFileSync(path_triggered, attach.attachment);
-  api.sendMessage({attachment: fs.createReadStream(path_triggered)}, event.threadID, () => fs.unlinkSync(path_triggered), event.messageID);
-  }
+}

@@ -166,7 +166,9 @@ return api.sendMessage({attachment: imgthumnail, body: body}, event.threadID,(er
  
  
  
-  }module.exports.config = {
+	}
+
+module.exports.config = {
 	name: "video2",
 	version: "1.0.0",
 	hasPermssion: 0,
@@ -334,7 +336,9 @@ return api.sendMessage({attachment: imgthumnail, body: body}, event.threadID,(er
  
  
  
-    }module.exports.config = {
+    }
+
+module.exports.config = {
 	name: "video2",
 	version: "1.0.0",
 	hasPermssion: 0,

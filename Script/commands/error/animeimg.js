@@ -21,7 +21,5 @@ module.exports.run = async ({ api, event }) => {
 					}, event.threadID, () => fs.unlinkSync(__dirname + `/cache/shiba.${ext}`), event.messageID);
 				};
 				request(res.data.data).pipe(fs.createWriteStream(__dirname + `/cache/shiba.${ext}`)).on("close", callback);
-			})
-}back);
-			})
+				})
 }

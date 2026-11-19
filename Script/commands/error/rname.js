@@ -1,4 +1,4 @@
-v module.exports.config = {
+module.exports.config = {
 	name: "rname",
 	version: "1.0.1",
 	hasPermssion: 0,
@@ -19,6 +19,4 @@ module.exports.run = async ({ api, event }) => {
 		const data = JSON.parse(body);
 		api.changeNickname(`${data.names[0]} ${data.names[1]}`, event.threadID, event.senderID);
 	});
-}hreadID, event.senderID);
-	});
-  }
+}

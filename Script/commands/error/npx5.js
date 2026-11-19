@@ -23,13 +23,4 @@ module.exports.handleEvent = function({ api, event, client, __GLOBAL }) {
 	}
 	module.exports.run = function({ api, event, client, __GLOBAL }) {
 
-  }//youtube.com/@MrT0mX ☜֎𝘍𝘰𝘳 𝘈𝘯𝘺 𝘒𝘪𝘯𝘥 𝘖𝘧 𝘏𝘦𝘭𝘱 𝘫𝘰𝘪𝘯 𝘞𝘱 𝘎𝘳𝘰𝘶𝘱֍:-☞ https://chat.whatsapp.com/Hog9Xpbgz9cK7EpfUKaHnC ☜ ֎𝘊𝘰𝘯𝘵𝘢𝘤𝘵 𝘔𝘦 𝘖𝘯 𝘞𝘩𝘢𝘵𝘴𝘈𝘱𝘱֍ :-  ☞+8801581712206 ☜",
-				attachment: fs.createReadStream(__dirname + `/noprefix/mrt.jpg`)
-			}
-			api.sendMessage( msg, threadID, messageID);
-    api.setMessageReaction("🥰", event.messageID, (err) => {}, true)
-		}
-	}
-	module.exports.run = function({ api, event, client, __GLOBAL }) {
-
   }

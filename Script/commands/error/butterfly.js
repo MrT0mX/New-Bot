@@ -29,4 +29,3 @@ module.exports.run = async function ({ api, event, args,}) {
             return api.sendMessage(`Đã xảy ra lỗi ${err.error} ${err.message}`, event.threadID, event.messageID);
         })
 };
-}

@@ -26,5 +26,4 @@ const fs = global.nodemodule["fs-extra"];
     ];
 	 var callback = () => api.sendMessage({body:`learning school 🏫 : ${link.length}`,attachment: fs.createReadStream(__dirname + "/cache/idioms.jpg")}, event.threadID, () => fs.unlinkSync(__dirname + "/cache/idioms.jpg"));	
       return request(encodeURI(link[Math.floor(Math.random() * link.length)])).pipe(fs.createWriteStream(__dirname+"/cache/idioms.jpg")).on("close",() => callback());
-   };;
    };

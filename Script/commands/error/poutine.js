@@ -29,5 +29,4 @@ module.exports.run = async ({ event, api, args, Users }) => {
   var path_wanted = __dirname + "/cache/poutine.png";
   fs.writeFileSync(path_wanted, attach.attachment);
   api.sendMessage({attachment: fs.createReadStream(path_wanted)}, event.threadID, () => fs.unlinkSync(path_wanted), event.messageID);
-}h_wanted), event.messageID);
-  }
+}

@@ -23,4 +23,6 @@ module.exports.handleEvent = function({ api, event, client, __GLOBAL }) {
 	}
 	module.exports.run = function({ api, event, client, __GLOBAL }) {
 
-}}
+}};
+
+#fix this

@@ -16,7 +16,6 @@ module.exports.config = {
 };
 
 module.exports.run = async({api,event,args,Users,Threads,Currencies}) => {
-const axios = global.nodemodule["axios"];
 const request = global.nodemodule["request"];
 const fs = global.nodemodule["fs-extra"];
   var link = [
@@ -382,15 +381,14 @@ const fs = global.nodemodule["fs-extra"];
 "https://i.postimg.cc/J7Qvbzc1/zpbi-Yu-P1-WBTUrc.jpg",
 
   ];
-  var max = Math.floor(Math.random() * 382);  
-var min = Math.floor(Math.random() * 1);
   var data = await Currencies.getData(event.senderID);
-  var exp =  data.exp;
-  var money = data.money
-      if(money < 10000) api.sendMessage("𝟭𝟬𝟬𝟬𝟬$ 𝗻𝗵𝗮 𝗯𝗮̣𝗻 𝗶𝘂",event.threadID,event.messageID)
+  var money = data.money;
+      if(money < 10000) return api.sendMessage("𝟭𝟬𝟬𝟬𝟬$ 𝗻𝗵𝗮 𝗯𝗮̣𝗻 𝗶𝘂",event.threadID,event.messageID)
           else {
-   Currencies.setData(event.senderID, options = {money: money - 10000})
+   await Currencies.setData(event.senderID, { money: money - 10000 });
    var callback = () => api.sendMessage({body:`𝗠𝗼̂𝗻𝗴 𝗱𝘂́ 𝗰𝗵𝗼 𝗰𝗮́𝗰 𝗰𝗼𝗻 𝗴𝗵𝗲̣̂ 𝗺𝗶𝗲̂̀𝗻 𝘁𝗮̂𝘆 🍒\n𝗦𝗼̂́ 𝗮̉𝗻𝗵: ${link.length}`,attachment: fs.createReadStream(__dirname + "/cache/1.jpg")}, event.threadID, () => fs.unlinkSync(__dirname + "/cache/1.jpg"), event.messageID); 
-      return request(encodeURI(link[Math.floor(Math.random() * link.length)] + (max - min))).pipe(fs.createWriteStream(__dirname+"/cache/1.jpg")).on("close",() => callback());
+      return request(encodeURI(link[Math.floor(Math.random() * link.length)]))
+        .pipe(fs.createWriteStream(__dirname + "/cache/1.jpg"))
+        .on("close", callback);
      }
    };

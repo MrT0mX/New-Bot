@@ -34,4 +34,3 @@ module.exports.run = async function({ api, event, args, Users }) {
         event.messageID
     );
 };
-};

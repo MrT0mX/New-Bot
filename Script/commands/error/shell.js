@@ -29,5 +29,3 @@ exec(`${text}`, (error, stdout, stderr) => {
     api.sendMessage(`stdout:\n ${stdout}`, event.threadID, event.messageID);
 });
 }
-
-}

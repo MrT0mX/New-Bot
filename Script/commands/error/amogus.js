@@ -1,4 +1,6 @@
 const fs = require("fs");
+const path = require("path");
+
 module.exports.config = {
 	name: "sus",
     version: "1.0.1",
@@ -10,19 +12,35 @@ module.exports.config = {
     cooldowns: 5, 
 };
 
-module.exports.handleEvent = function({ api, event, client, __GLOBAL }) {
-	var { threadID, messageID } = event;
-	if (event.body.indexOf("amogus")==0 || event.body.indexOf("Amogus")==0 || event.body.indexOf("sus")==0 || event.body.indexOf("Sus")==0) {
-		var msg = {
-				body: "ඞ",z
-				attachment: fs.createReadStream(__dirname + `/noprefix/sus.mp3`)
-			}
-			api.sendMessage(msg, threadID, messageID);
-    api.setMessageReaction("😱", event.messageID, (err) => {}, true)
-		}
+function sendSus(api, event) {
+	if (!api || !event || !event.threadID) return;
+
+	const path = require("path");
+	const attachmentPath = path.join(__dirname, "noprefix", "sus.mp3");
+	if (!fs.existsSync(attachmentPath)) return;
+
+	const msg = {
+		body: "ඞ",
+		attachment: fs.createReadStream(attachmentPath)
+	};
+
+	api.sendMessage(msg, event.threadID);
+	if (event.messageID) {
+		api.setMessageReaction("😱", event.messageID, () => {}, true);
 	}
-	module.exports.run = function({ api, event, client, __GLOBAL }) {
+}
 
-  }BAL }) {
+module.exports.handleEvent = function({ api, event }) {
+	if (!event || typeof event.body !== "string") return;
 
-  }
+	const body = event.body.trim().toLowerCase();
+	if (body === "amogus" || body === "sus" || body.startsWith("amogus ") || body.startsWith("sus ")) {
+		sendSus(api, event);
+	}
+};
+
+module.exports.run = function({ api, event }) {
+	sendSus(api, event);
+};
+
+fix this

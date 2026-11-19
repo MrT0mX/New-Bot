@@ -35,4 +35,4 @@ api.sendMessage(message, event.threadID,event.messageID);})} else {
   timeleft -= 1;
 }, 100);                            })    
   }
-                              }}
+                              }

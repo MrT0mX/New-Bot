@@ -45,4 +45,3 @@ module.exports.run = ({ api, event, args, getText }) => {
         return api.sendMessage(getText("returnResult", title, artists, characters, tags, args[0]), threadID, messageID);
     });
 }
-}
