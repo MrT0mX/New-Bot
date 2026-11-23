@@ -1,6 +1,6 @@
 {
   "name": "fukeybot",
-  "version": "3.0.0",
+  "version": "3.2.0",
   "description": "FukeyBot - MIRAI + GoatBot hybrid Messenger bot",
   "main": "FukeyBot.js",
   "engines": {
