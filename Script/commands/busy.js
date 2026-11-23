@@ -3,8 +3,8 @@ module.exports.config = {
 	version: "1.0.0",
 	permissions: 1,
 	credits: "Henry",
-	description: "Bật hoặc tắt chế độ busy",
-  usages: "[lí do]",
+	description: "𝐄𝐧𝐚𝐛𝐥𝐞 𝐨𝐫 𝐝𝐢𝐬𝐚𝐛𝐥𝐞 𝐛𝐮𝐬𝐲 𝐦𝐨𝐝𝐞",
+  usages: "[𝐫𝐞𝐚𝐬𝐨𝐧]",
   commandCategory: "Box Chat",
   cooldowns: 5
 };
@@ -23,27 +23,27 @@ module.exports.handleEvent = async function({ api, event, Users }) {
         var info = busyData[senderID];
         delete busyData[senderID];
         fs.writeFileSync(busyPath, JSON.stringify(busyData, null, 4));
-        return api.sendMessage(`🎀─── [𝐁𝐀́𝐎 • 𝐂𝐀́𝐎] ───🎀\n\n[𝙁𝙪𝙠𝙚𝙮𝘽𝙤𝙩] - 𝐂𝐡𝐚̀𝐨 𝐦𝐮̛̀𝐧𝐠 𝐜𝐮𝐧𝐠 𝐜𝐡𝐮̉ 𝐪𝐮𝐚𝐲 𝐭𝐫𝐨̛̉ 𝐥𝐚̣𝐢 🥰\n\n🎀───── •🌸• ─────🎀`, threadID, () => {
-            if (info.tag.length == 0) api.sendMessage("[𝙁𝙪𝙠𝙚𝙮𝘽𝙤𝙩] - 𝐓𝐫𝐨𝐧𝐠 𝐥𝐮́𝐜 𝐜𝐮𝐧𝐠 𝐜𝐡𝐮̉ 𝐯𝐚̆́𝐧𝐠 𝐦𝐚̣̆𝐭, 𝐤𝐡𝐨̂𝐧𝐠 𝐜𝐨́ 𝐚𝐢 𝐧𝐡𝐚̆́𝐜 𝐜𝐮𝐧𝐠 𝐜𝐡𝐮̉ 𝐡𝐞̂́𝐭 ❤️", threadID);
+        return api.sendMessage(`🎀─── [𝐍𝐎𝐓𝐈𝐅𝐈𝐂𝐀𝐓𝐈𝐎𝐍] ───🎀\n\n[𝙁𝙪𝙠𝙚𝙮𝘽𝙤𝙩] - 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐛𝐚𝐜𝐤, 𝐨𝐰𝐧𝐞𝐫! 🥰\n\n🎀───── •🌸• ─────🎀`, threadID, () => {
+            if (info.tag.length == 0) api.sendMessage("[𝙁𝙪𝙠𝙚𝙮𝘽𝙤𝙩] - 𝐖𝐡𝐢𝐥𝐞 𝐭𝐡𝐞 𝐨𝐰𝐧𝐞𝐫 𝐰𝐚𝐬 𝐚𝐰𝐚𝐲, 𝐧𝐨𝐛𝐨𝐝𝐲 𝐦𝐞𝐧𝐭𝐢𝐨𝐧𝐞𝐝 𝐭𝐡𝐞𝐦. ❤️", threadID);
             else {
                 var msg = "";
                 for (var i of info.tag) {
                     msg += `${i}\n`
                 }
-                api.sendMessage("[𝙁𝙪𝙠𝙚𝙮𝘽𝙤𝙩] - 𝐃𝐮̛𝐨̛́𝐢 𝐥𝐚̀ 𝐥𝐢𝐬𝐭 𝐧𝐡𝐮̛̃𝐧𝐠 𝐧𝐠𝐮̛𝐨̛̀𝐢 𝐭𝐚𝐠 𝐭𝐞̂𝐧 𝐜𝐮𝐧𝐠 𝐜𝐡𝐮̉ 𝐧𝐞̀ 🎀:\n\n" + msg, threadID)
+                api.sendMessage("[𝙁𝙪𝙠𝙚𝙮𝘽𝙤𝙩] - 𝐇𝐞𝐫𝐞 𝐢𝐬 𝐭𝐡𝐞 𝐥𝐢𝐬𝐭 𝐨𝐟 𝐩𝐞𝐨𝐩𝐥𝐞 𝐰𝐡𝐨 𝐦𝐞𝐧𝐭𝐢𝐨𝐧𝐞𝐝 𝐭𝐡𝐞 𝐨𝐰𝐧𝐞𝐫 🎀:\n\n" + msg, threadID)
             }
         }, messageID);
     }
 
     if (!mentions || Object.keys(mentions).length == 0) return;
-    
+
     for (const [ID, name] of Object.entries(mentions)) {
         if (ID in busyData) {
             var infoBusy = busyData[ID], mentioner = await Users.getNameUser(senderID), replaceName = event.body.replace(`${name}`, "");
-            infoBusy.tag.push(`${mentioner}: ${replaceName == "" ? "𝐕𝐮̛̀𝐚 𝐭𝐚𝐠 𝐭𝐞̂𝐧 𝐜𝐮𝐧𝐠 𝐜𝐡𝐮̉ 𝟏 𝐥𝐚̂̀𝐧" : replaceName}`)
+            infoBusy.tag.push(`${mentioner}: ${replaceName == "" ? "𝐉𝐮𝐬𝐭 𝐦𝐞𝐧𝐭𝐢𝐨𝐧𝐞𝐝 𝐭𝐡𝐞 𝐨𝐰𝐧𝐞𝐫 𝐨𝐧𝐜𝐞" : replaceName}`)
             busyData[ID] = infoBusy;
             fs.writeFileSync(busyPath, JSON.stringify(busyData, null, 4));
-            return api.sendMessage(`🎀───[𝐓𝐇𝐎̂𝐍𝐆 𝐁𝐀́𝐎]───🎀\n\n${name.replace("@", "")} 𝐡𝐢𝐞̣̂𝐧 𝐫𝐚̂́𝐭 𝐛𝐚̣̂𝐧${infoBusy.lido ? ` 𝐯𝐨̛́𝐢 𝐥𝐲́ 𝐝𝐨: ${infoBusy.lido}.\n\n🎀───── •🌸• ─────🎀` : "."}`, threadID, messageID);
+            return api.sendMessage(`🎀───[𝐍𝐎𝐓𝐈𝐅𝐈𝐂𝐀𝐓𝐈𝐎𝐍]───🎀\n\n${name.replace("@", "")} 𝐢𝐬 𝐜𝐮𝐫𝐫𝐞𝐧𝐭𝐥𝐲 𝐛𝐮𝐬𝐲${infoBusy.lido ? ` 𝐰𝐢𝐭𝐡 𝐭𝐡𝐞 𝐫𝐞𝐚𝐬𝐨𝐧: ${infoBusy.lido}.\n\n🎀───── •🌸• ─────🎀` : "."}`, threadID, messageID);
         }
     }
 }
@@ -59,7 +59,7 @@ module.exports.run = async function({ api, event, args, Users }) {
             tag: []
         }
         fs.writeFileSync(busyPath, JSON.stringify(busyData, null, 4));
-        var msg = (content.length == 0) ? '[𝙁𝙪𝙠𝙚𝙮𝘽𝙤𝙩] - 𝐂𝐮𝐧𝐠 𝐜𝐡𝐮̉ 𝐯𝐮̛̀𝐚 𝐛𝐚̣̂𝐭 𝐦𝐨𝐝𝐞 𝐛𝐚̣̂𝐧 𝐦𝐚̀ 𝐤𝐡𝐨̂𝐧𝐠 𝐜𝐨́ 𝐥𝐢́ 𝐝𝐨 🐧' : `[�𝙪𝙠𝙚𝙮𝘽𝙤𝙩] - 𝐂𝐮𝐧𝐠 𝐜𝐡𝐮̉ 𝐯𝐮̛̀𝐚 𝐛𝐚̣̂𝐭 𝐦𝐨𝐝𝐞 𝐛𝐚̣̂𝐧 𝐯𝐨̛́𝐢 𝐥𝐢́ 𝐝𝐨 🐧: ${content}`;
+        var msg = (content.length == 0) ? '[𝙁𝙪𝙠𝙚𝙮𝘽𝙤𝙩] - 𝐓𝐡𝐞 𝐨𝐰𝐧𝐞𝐫 𝐡𝐚𝐬 𝐞𝐧𝐚𝐛𝐥𝐞𝐝 𝐛𝐮𝐬𝐲 𝐦𝐨𝐝𝐞 𝐰𝐢𝐭𝐡𝐨𝐮𝐭 𝐚 𝐫𝐞𝐚𝐬𝐨𝐧 🐧' : `[𝙁𝙪𝙠𝙚𝙲𝘽𝙤𝙭] - 𝐓𝐡𝐞 𝐨𝐰𝐧𝐞𝐫 𝐡𝐚𝐬 𝐞𝐧𝐚𝐛𝐥𝐞𝐝 𝐛𝐮𝐬𝐲 𝐦𝐨𝐝𝐞 𝐰𝐢𝐭𝐡 𝐭𝐡𝐞 𝐫𝐞𝐚𝐬𝐨𝐧 🐧: ${content}`;
         return api.sendMessage(msg, threadID, messageID);
     }
 }

@@ -50,24 +50,35 @@ module.exports.cleanAnilistHTML = function (text) {
 	return text;
 }
 
+const downloadQueues = new Map();
 module.exports.downloadFile = async function (url, path) {
-	const { createWriteStream } = require('fs');
+	const { createWriteStream, unlinkSync, existsSync } = require('fs');
 	const axios = require('axios');
-
-	const response = await axios({
-		method: 'GET',
-		responseType: 'stream',
-		url
+	const host = new URL(url).host;
+	const previous = downloadQueues.get(host) || Promise.resolve();
+	const current = previous.catch(() => {}).then(async () => {
+		for (let attempt = 0; ; attempt++) {
+			try {
+				const response = await axios({ method: 'GET', responseType: 'stream', url });
+				const writer = createWriteStream(path);
+				response.data.pipe(writer);
+				await new Promise((resolve, reject) => {
+					writer.on('finish', resolve);
+					writer.on('error', reject);
+					response.data.on('error', reject);
+				});
+				return;
+			} catch (error) {
+				if (existsSync(path)) try { unlinkSync(path); } catch {}
+				if (error.response?.status !== 429 || attempt >= 2) throw error;
+				const retryAfter = Number(error.response.headers?.['retry-after']);
+				await new Promise(resolve => setTimeout(resolve, retryAfter > 0 ? retryAfter * 1000 : 1000 * (attempt + 1)));
+			}
+		}
 	});
-
-	const writer = createWriteStream(path);
-
-	response.data.pipe(writer);
-
-	return new Promise((resolve, reject) => {
-		writer.on('finish', resolve);
-		writer.on('error', reject);
-	});
+	downloadQueues.set(host, current);
+	try { return await current; }
+	finally { if (downloadQueues.get(host) === current) downloadQueues.delete(host); }
 };
 
 module.exports.getContent = async function(url) {

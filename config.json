@@ -3,7 +3,7 @@
     "Author": "FukeyBot",
     "version": "3.0.0",
     "language": "en",
-    "╔═ 𝙱𝙾𝚃 ═╗": "",
+    "╔═ 𝙱𝙾𝚃 ═╗": "MTX",
     "BOTNAME": "fukeybot",
     "BOTADMINNAME": "FukeyBot",
     "PREFIX": ".",
@@ -63,7 +63,8 @@
     },
     "╔═ 𝙾𝙵𝙵 ═╗": "",
     "commandDisabled": [
-        "help2.js"
+        "help2.js",
+        "ramadanauto.js"
     ],
     "eventDisabled": [],
     "╚═ 𝙴𝙽𝙳 ═╝": "FukeyBot",

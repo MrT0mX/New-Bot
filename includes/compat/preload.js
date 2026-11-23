@@ -23,15 +23,17 @@ runtime.installGlobals();
 
 const originalRequire = Module.prototype.require;
 Module.prototype.require = function (request) {
+  // Replace Node's deprecated built-in punycode with the package implementation.
+  if (request === "punycode") return originalRequire.call(this, "punycode/");
   const exported = originalRequire.apply(this, arguments);
   try {
-    if (exported && typeof exported === "object" && exported.config && typeof request === "string" && request.indexOf("Script") !== -1) {
-      let resolved = null;
+    let resolved = null;
+    if (typeof request === "string") {
       try { resolved = Module._resolveFilename(request, this); } catch (e) { /* ignore */ }
-      if (resolved) {
-        if (resolved.includes(COMMANDS_DIR)) runtime.adaptCommandModule(exported);
-        else if (resolved.includes(EVENTS_DIR)) runtime.adaptEventModule(exported);
-      }
+    }
+    if (resolved && (resolved.includes(COMMANDS_DIR) || resolved.includes(EVENTS_DIR)) && exported && typeof exported === "object" && exported.config) {
+      if (resolved.includes(COMMANDS_DIR)) runtime.adaptCommandModule(exported);
+      else if (resolved.includes(EVENTS_DIR)) runtime.adaptEventModule(exported);
     }
   } catch (e) {
     // এই শিম-এর কারণে বট কখনো ক্র্যাশ করবে না

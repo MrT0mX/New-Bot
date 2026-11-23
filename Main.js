@@ -375,7 +375,7 @@ process.env.TZ = "Asia/Dhaka";
         a("Bot already running - duplicate login callback ignored", "[ LISTENER ]");
         return;
       }
-      global.client.api = o, global.client.timeStart = new Date().getTime(), function () {
+      global.client.api = o, global.client.timeStart = new Date().getTime(), await (async function () {
         const g = Array.isArray(global.config.commandDisabled) ? global.config.commandDisabled : [],
           u = q(global.client.mainPath + "/Script/commands").filter(d => d.endsWith(".js") && !/\(\d+\)\.js$/i.test(d) && !d.includes("example") && !g.includes(d));
         for (const d of u) {
@@ -386,12 +386,14 @@ process.env.TZ = "Asia/Dhaka";
             if (r = global.client.registerCommand(c, d), !r.ok) throw new Error(r.reason);
             for (const p of r.skipped) a.loader("Command \"" + r.name + "\": alias \"" + p.alias + "\" was ignored because " + p.reason + ".", "warn");
             if ((!c.languages || typeof c.languages != "object" || Object.keys(c.languages).length == 0) && a.loader(global.getText("mtx", "notFoundLanguage", c.config.name), "warn"), k(c), Y(c), c.onLoad) try {
-              c.onLoad({
+              await c.onLoad({
                 api: o,
                 models: n
               });
             } catch (p) {
-              throw new Error(global.getText("mtx", "cantOnload", c.config.name, JSON.stringify(p)), "error");
+              a.loader("Command onLoad failed; disabled " + c.config.name + ": " + a.redactSecrets(p && p.stack ? p.stack : String(p)), "warn");
+              if (r && r.ok) global.client.unregisterCommand(r.name);
+              continue;
             }
             c.handleEvent && global.client.eventRegistered.push(r.name), a.loader(global.getText("mtx", "successLoadModule", c.config.name));
           } catch (p) {
@@ -400,7 +402,7 @@ process.env.TZ = "Asia/Dhaka";
             a.loader(global.getText("mtx", "failLoadModule", be, p), "error");
           }
         }
-      }(), function () {
+      })(), await (async function () {
         const g = Array.isArray(global.config.eventDisabled) ? global.config.eventDisabled : [],
           u = q(global.client.mainPath + "/Script/events").filter(c => c.endsWith(".js") && !/\(\d+\)\.js$/i.test(c) && !g.includes(c));
         for (const c of u) try {
@@ -408,19 +410,20 @@ process.env.TZ = "Asia/Dhaka";
           if (!r.config || !r.run) throw new Error(global.getText("mtx", "errorFormat"));
           if (global.client.events.has(r.config.name) || "") throw new Error(global.getText("mtx", "nameExist"));
           if (k(r), Y(r), r.onLoad) try {
-            r.onLoad({
+            await r.onLoad({
               api: o,
               models: n
             });
           } catch (d) {
-            throw new Error(global.getText("mtx", "cantOnload", r.config.name, JSON.stringify(d)), "error");
+            a.loader("Event onLoad failed; disabled " + r.config.name + ": " + a.redactSecrets(d && d.stack ? d.stack : String(d)), "warn");
+            continue;
           }
           global.client.events.set(r.config.name, r), a.loader(global.getText("mtx", "successLoadModule", r.config.name));
         } catch (d) {
           const p = r && r.config && r.config.name ? r.config.name : c;
           a.loader(global.getText("mtx", "failLoadModule", p, d), "error");
         }
-      }(), console.log(re), a.loader(global.getText("mtx", "finishLoadModule", global.client.commands.size, global.client.events.size)), a.loader("Startup Time: " + ((Date.now() - global.client.timeStart) / 1e3).toFixed() + "s"), a.loader("===== [ " + (Date.now() - global.client.timeStart) + "ms ] ====="), w(global.client.configPath, JSON.stringify(global.config, null, 4), "utf8"), U(global.client.configPath + ".temp") && C(global.client.configPath + ".temp");
+      })(), console.log(re), a.loader(global.getText("mtx", "finishLoadModule", global.client.commands.size, global.client.events.size)), a.loader("Startup Time: " + ((Date.now() - global.client.timeStart) / 1e3).toFixed() + "s"), a.loader("===== [ " + (Date.now() - global.client.timeStart) + "ms ] ====="), w(global.client.configPath, JSON.stringify(global.config, null, 4), "utf8"), U(global.client.configPath + ".temp") && C(global.client.configPath + ".temp");
       const i = require("./includes/listen")({
         api: o,
         models: n,
@@ -443,9 +446,9 @@ process.env.TZ = "Asia/Dhaka";
     });
   }
   process.on("uncaughtException", n => {
-    a("Uncaught Exception: " + a.redactSecrets(n && n.message ? n.message : n), "[ ERROR ]");
+    a("Uncaught Exception: " + a.redactSecrets(n && n.stack ? n.stack : n && n.message ? n.message : n), "[ ERROR ]");
   }), process.on("unhandledRejection", n => {
-    a("Unhandled Rejection: " + a.redactSecrets(n && n.message ? n.message : n), "[ ERROR ]");
+    a("Unhandled Rejection: " + a.redactSecrets(n && n.stack ? n.stack : n && n.message ? n.message : n), "[ ERROR ]");
   });
   let z = !1;
   async function j(n) {
