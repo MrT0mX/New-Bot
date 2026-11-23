@@ -11,61 +11,48 @@ module.exports.config = {
  
 module.exports.onLoad = async () => {
     const fs = require("fs-extra");
-    const axios = require("axios");
     const path = require("path");
-    const dir = process.cwd() + `/node_modules/`;
-    if (!fs.existsSync(dir + "game/masoi/index.js")) {
-        await global.utils.downloadFile(`https://drive.google.com/u/0/uc?id=1DZ9e5cLzWmyLpTx4wpCnr0YhSUk29fWe&export=download`, dir + 'game.zip');
-        const unZip = require('adm-zip');
-        const zip = new unZip(dir + 'game.zip');
-        await zip.extractAllTo(dir + 'game', true);
-        fs.unlinkSync(dir + 'game.zip')
-    } 
+    const dir = path.join(process.cwd(), "node_modules", "game", "masoi");
+    const entry = path.join(dir, "index.js");
+    const manager = path.join(dir, "GameManager.js");
+
+    if (!fs.existsSync(entry) || !fs.existsSync(manager)) {
+        global.gameManager = null;
+        global.masoiUnavailable = true;
+        console.warn("[masoi] disabled: required game files are missing; the configured archive URL returns 404");
+        return;
+    }
+
     try {
-    const subname = text => {
-        return text
-            .split('.')
-            .slice(0, -1)
-            .join('.');
-    };
-    const loader = dir => {
-        const exportData = {};
-        const files = fs
-            .readdirSync(dir)
-            .filter(
-                filename =>
-                    fs.lstatSync(path.join(dir, filename)).isDirectory() ||
-                    filename.split('.').pop() == 'js'
-            );
-        for (const filename of files) {
-            try {
-                const data = require(path.join(dir, filename));
-                const sname = subname(filename) || filename;
-                if (sname == 'common') {
-                    Object.assign(exportData, data);
-                } else {
-                    exportData[sname] = data;
+        const subname = file => file.split(".").slice(0, -1).join(".");
+        const loader = folder => {
+            const exportData = {};
+            const files = fs.readdirSync(folder).filter(filename => {
+                const fullPath = path.join(folder, filename);
+                return fs.lstatSync(fullPath).isDirectory() || filename.endsWith(".js");
+            });
+            for (const filename of files) {
+                try {
+                    const data = require(path.join(folder, filename));
+                    const name = subname(filename) || filename;
+                    if (name === "common") Object.assign(exportData, data);
+                    else exportData[name] = data;
+                } catch (error) {
+                    console.warn("[masoi] skipped game module " + filename + ": " + error.message);
                 }
-            } catch (e) {
-                console.error(e.stack);
-                continue;
             }
-        }
-        return exportData;
-    };
-    var GameManager = require(dir + 'game/masoi/GameManager')
-    
-    new Promise(resolve => setTimeout(resolve, 2000));
-    var gameManager = new GameManager(
-        loader(dir + 'game/')
-    );
-    global.gameManager = gameManager
-    console.log(`=======[ WEREWOLF LOADED SUCCESSFULLY ]=======`)
+            return exportData;
+        };
+        const GameManager = require(path.join(dir, "GameManager"));
+        global.gameManager = new GameManager(loader(dir));
+        global.masoiUnavailable = false;
+        console.log("=======[ WEREWOLF LOADED SUCCESSFULLY ]=======");
+    } catch (error) {
+        global.gameManager = null;
+        global.masoiUnavailable = true;
+        console.warn("[masoi] game files could not be loaded: " + error.message);
     }
-    catch(e) {
-        console.log(e)
-    }
-}
+};
 
 module.exports.handleEvent = async function({ api, event, Currencies }) {
     const reply = function(message) {
@@ -80,6 +67,7 @@ module.exports.handleEvent = async function({ api, event, Currencies }) {
         }
 }
 module.exports.run = async ({ api, event, args, Users }) => {
+    if (!global.gameManager) return api.sendMessage("Ma Sói is currently unavailable because its game files are missing.", event.threadID, event.messageID);
     global.Users = Users
     global.gameManager.run(this.config.name, {
         masterID: event.senderID,

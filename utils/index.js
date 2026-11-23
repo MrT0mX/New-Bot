@@ -51,10 +51,18 @@ module.exports.cleanAnilistHTML = function (text) {
 }
 
 const downloadQueues = new Map();
+const downloadedUrls = new Map();
 module.exports.downloadFile = async function (url, path) {
 	const { createWriteStream, unlinkSync, existsSync } = require('fs');
 	const axios = require('axios');
+	const { copyFileSync, mkdirSync } = require('fs');
 	const host = new URL(url).host;
+	const cachedPath = downloadedUrls.get(url);
+	if (cachedPath && existsSync(cachedPath) && cachedPath !== path) {
+		mkdirSync(require('path').dirname(path), { recursive: true });
+		copyFileSync(cachedPath, path);
+		return;
+	}
 	const previous = downloadQueues.get(host) || Promise.resolve();
 	const current = previous.catch(() => {}).then(async () => {
 		for (let attempt = 0; ; attempt++) {
@@ -67,6 +75,7 @@ module.exports.downloadFile = async function (url, path) {
 					writer.on('error', reject);
 					response.data.on('error', reject);
 				});
+				downloadedUrls.set(url, path);
 				return;
 			} catch (error) {
 				if (existsSync(path)) try { unlinkSync(path); } catch {}

@@ -1,4 +1,3 @@
-const mongoose = require("mongoose");
 let models;
 const reactionKick = '❤';
 const reactionCancel = '👎';

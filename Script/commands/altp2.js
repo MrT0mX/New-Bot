@@ -12,7 +12,7 @@ module.exports.config = {
 	}
 };
 
-const questionsURL = global.thanhdz.altp_url;
+const questionsURL = global.thanhdz && typeof global.thanhdz.altp_url === "string" ? global.thanhdz.altp_url : "";
 
 function shuffle(array) {
   let currentIndex = array.length,  randomIndex;
@@ -99,20 +99,23 @@ async function _finishing_game(send, senderID, threadID, Currencies, Users, lost
 	return;
 }
 
-module.exports.onLoad = ({}) => {
+module.exports.onLoad = async () => {
 	if (!global.hasOwnProperty('_isPlaying_altp')) global._isPlaying_altp = new Map();
-	if (!global.hasOwnProperty('_data_altp')) global._data_altp = new Array();
-	global.nodemodule["axios"].get(questionsURL)
-		.then(res => {
-			for (const question of res.data) {
-				global._data_altp.push(question);
-			}
-			("Đã tải lệnh Ai là triệu phú thành công");
-		})
-		.catch(e => {
-			console.error(e);
-			global._loadFailed_altp = true;
-		});
+	if (!global.hasOwnProperty('_data_altp')) global._data_altp = [];
+	if (!questionsURL) {
+		global._loadFailed_altp = true;
+		console.warn("[altp2] disabled: global.thanhdz.altp_url is not configured");
+		return;
+	}
+	try {
+		const response = await global.nodemodule["axios"].get(questionsURL, { timeout: 10000 });
+		if (!Array.isArray(response.data)) throw new TypeError("Question source did not return an array");
+		global._data_altp.push(...response.data);
+		global._loadFailed_altp = global._data_altp.length === 0;
+	} catch (error) {
+		global._loadFailed_altp = true;
+		console.warn("[altp2] question source unavailable: " + error.message);
+	}
 }
 
 module.exports.run = async ({ api, event, args, Users, Currencies }) => {

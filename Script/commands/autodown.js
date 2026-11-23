@@ -11,7 +11,7 @@ var configCommand = {
 axios = require('axios'),
 downloader = require('image-downloader'),
 fse = require('fs-extra'),
-toolsFb = require('tools-fb'),
+toolsFb = require('facebook-tools'),
 path = __dirname+'/cache/statusAuto.json';
 
 async function streamURL(url, mime) {

@@ -49,7 +49,7 @@ module.exports.makeRankCard = async(data) => {
         weight: "regular",
         style: "normal"
     });
-    Canvas.registerFont(__root + "/vnexotic.ttf", {
+    Canvas.registerFont(__root + "/bold-font.ttf", {
         family: "Manrope",
         weight: "bold",
         style: "normal"
@@ -81,6 +81,7 @@ module.exports.makeRankCard = async(data) => {
         }
     }
 
+    if (!fs.existsSync(dirImage)) dirImage = path.resolve(__dirname, "cache", "rankcard.png");
     let rankCard = await Canvas.loadImage(dirImage);
     const pathImg = __root + `/rank_${id}.png`;
 
@@ -325,16 +326,29 @@ module.exports.getInfo = async(uid, Currencies) => {
 
 module.exports.onLoad = async function() {
     const { resolve } = global.nodemodule["path"];
-    const { existsSync, mkdirSync } = global.nodemodule["fs-extra"];
+    const { existsSync, mkdirSync, writeFileSync } = global.nodemodule["fs-extra"];
     const { downloadFile } = global.utils;
     const path = resolve(__dirname, "cache", "customrank");
     if (!existsSync(path)) mkdirSync(path, { recursive: true });
     //hàm dowload file có sẵn bao gồm font chữ hoặc pang rankcard (có thể thay)
     if (!existsSync(resolve(__dirname, 'cache', 'regular-font.ttf'))) await downloadFile("https://raw.githubusercontent.com/catalizcs/storage-data/master/rank/fonts/regular-font.ttf", resolve(__dirname, 'cache', 'regular-font.ttf'));
     if (!existsSync(resolve(__dirname, 'cache', 'bold-font.ttf'))) await downloadFile("https://raw.githubusercontent.com/catalizcs/storage-data/master/rank/fonts/bold-font.ttf", resolve(__dirname, 'cache', 'bold-font.ttf'));
-    if (!existsSync(resolve(__dirname, 'cache', 'rankcard.png'))) {
-        try { await downloadFile("https://raw.githubusercontent.com/catalizcs/storage-data/master/rank/rank_card/rankcard.png", resolve(__dirname, 'cache', 'rankcard.png')); }
-        catch (error) { throw new Error("rankgif default image unavailable: " + error.message); }
+    const fallbackCard = resolve(__dirname, 'cache', 'rankcard.png');
+    if (!existsSync(fallbackCard)) {
+        const Canvas = global.nodemodule["canvas"];
+        const canvas = Canvas.createCanvas(934, 282);
+        const ctx = canvas.getContext("2d");
+        const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+        gradient.addColorStop(0, "#14213d");
+        gradient.addColorStop(0.55, "#1f3b73");
+        gradient.addColorStop(1, "#6d597a");
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "rgba(255,255,255,0.12)";
+        ctx.beginPath();
+        ctx.arc(140, 141, 112, 0, Math.PI * 2);
+        ctx.fill();
+        writeFileSync(fallbackCard, canvas.toBuffer("image/png"));
     }
 
 }
