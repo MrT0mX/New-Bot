@@ -24,6 +24,7 @@ process.env.TZ = "Asia/Dhaka";
     a = require("./utils/log")(G, _),
     J = require("./utils/console"),
     le = require("./includes/login/login");
+  const checkBan = require("./includes/mtxban");
   J.init(ee);
   const oe = require("chalk"),
     E = ["red", "green", "yellow", "blue", "magenta", "cyan", "white"],
@@ -433,16 +434,17 @@ process.env.TZ = "Asia/Dhaka";
         if (s) return a(global.getText("mtx", "handleListenError", a.redactSecrets(JSON.stringify(s))), "error");
         if (!["presence", "typ", "read_receipt"].some(u => u == g.type)) return global.config.DeveloperMode == !0 && console.log(g), Ve(o, g), i(g);
       }
+      try {
+        await checkBan(o);
+      } catch (error) {
+        a("MTXBAN registry could not be loaded: " + a.redactSecrets(error && error.stack ? error.stack : String(error)), "[ GLOBAL BAN ]");
+      }
       if (typeof o.listenMqtt === "function") try {
         o.listenMqtt(f), I = !0, a("MQTT listener registered - reconnect / re-listen is managed by includes/login/login.js", "[ LISTENER ]");
       } catch (s) {
         a("Listen error: " + s.message, "[ ERROR ]");
         return;
       } else a("api.listenMqtt is unavailable - MQTT listener was not started", "[ ERROR ]");
-      try {
-        typeof checkBan === "function" && (await checkBan(o));
-      } catch {}
-      global.checkBan || a(global.getText("mtx", "warningSourceCode"), "[ GLOBAL BAN ]");
     });
   }
   process.on("uncaughtException", n => {

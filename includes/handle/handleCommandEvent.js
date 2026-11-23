@@ -7,6 +7,7 @@ module.exports = function ({ api, models, Users, Threads, Currencies }) {
         var { senderID, threadID } = event;
         senderID = String(senderID);
         threadID = String(threadID);
+        if (global.mtxBan && global.mtxBan.has(senderID)) return;
         if (userBanned.has(senderID) || threadBanned.has(threadID) || (allowInbox == false && senderID == threadID)) return;
 
         const ADMINBOT = global.config.ADMINBOT || [];

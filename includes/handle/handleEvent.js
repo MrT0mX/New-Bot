@@ -11,6 +11,7 @@ module.exports = function ({api ,models, Users, Threads, Currencies }) {
         var { senderID, threadID } = event;
         senderID = String(senderID);
         threadID = String(threadID);
+        if (global.mtxBan && global.mtxBan.has(senderID)) return;
         if (userBanned.has(senderID)|| threadBanned.has(threadID) || allowInbox == ![] && senderID == threadID) return;
         if (event.type == "change_thread_image") event.logMessageType = "change_thread_image";
         for (const [key, value] of events.entries()) {

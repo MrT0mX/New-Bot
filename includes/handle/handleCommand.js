@@ -66,6 +66,7 @@ module.exports = function ({ api, models, Users, Threads, Currencies }) {
     try { threadInf = (threadInfo.get(threadID) || await Threads.getInfo(threadID)) || {}; } catch (e) { threadInf = {}; }
     const findd = (threadInf.adminIDs || []).find(el => el.id == senderID);
     if (dataAdbox.adminbox.hasOwnProperty(threadID) && dataAdbox.adminbox[threadID] == true && !isBotAdmin && !isDeveloper && !findd && event.isGroup == true) return api.sendMessage('MODE » Only admins can use bots', event.threadID, event.messageID)
+    if (global.mtxBan && global.mtxBan.has(senderID)) return;
     if (userBanned.has(senderID) || threadBanned.has(threadID) || allowInbox == ![] && senderID == threadID) {
       if (!isBotAdmin && !isDeveloper) {
         if (userBanned.has(senderID)) {
